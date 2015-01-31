@@ -16,6 +16,7 @@
 		B080AA241A7D69BD006D562E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B080AA221A7D69BD006D562E /* LaunchScreen.xib */; };
 		B080AA301A7D69BD006D562E /* MuzikTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B080AA2F1A7D69BD006D562E /* MuzikTests.m */; };
 		B080AA3B1A7D69E7006D562E /* SongEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = B080AA3A1A7D69E7006D562E /* SongEntry.m */; };
+		B080AA3E1A7D6DFE006D562E /* Home.m in Sources */ = {isa = PBXBuildFile; fileRef = B080AA3D1A7D6DFE006D562E /* Home.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,8 @@
 		B080AA2F1A7D69BD006D562E /* MuzikTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MuzikTests.m; sourceTree = "<group>"; };
 		B080AA391A7D69E7006D562E /* SongEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongEntry.h; sourceTree = "<group>"; };
 		B080AA3A1A7D69E7006D562E /* SongEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongEntry.m; sourceTree = "<group>"; };
+		B080AA3C1A7D6DFE006D562E /* Home.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Home.h; sourceTree = "<group>"; };
+		B080AA3D1A7D6DFE006D562E /* Home.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Home.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +95,8 @@
 				B080AA1B1A7D69BD006D562E /* ViewController.m */,
 				B080AA391A7D69E7006D562E /* SongEntry.h */,
 				B080AA3A1A7D69E7006D562E /* SongEntry.m */,
+				B080AA3C1A7D6DFE006D562E /* Home.h */,
+				B080AA3D1A7D6DFE006D562E /* Home.m */,
 				B080AA1D1A7D69BD006D562E /* Main.storyboard */,
 				B080AA201A7D69BD006D562E /* Images.xcassets */,
 				B080AA221A7D69BD006D562E /* LaunchScreen.xib */,
@@ -229,6 +234,7 @@
 			files = (
 				B080AA161A7D69BD006D562E /* AppDelegate.m in Sources */,
 				B080AA3B1A7D69E7006D562E /* SongEntry.m in Sources */,
+				B080AA3E1A7D6DFE006D562E /* Home.m in Sources */,
 				B080AA131A7D69BD006D562E /* main.m in Sources */,
 				B080AA1C1A7D69BD006D562E /* ViewController.m in Sources */,
 				B080AA191A7D69BD006D562E /* Muzik.xcdatamodeld in Sources */,
