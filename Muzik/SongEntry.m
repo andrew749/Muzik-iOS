@@ -9,6 +9,10 @@
 #import "SongEntry.h"
 
 @implementation SongEntry
+-(id)initSongEntry:(NSString *)songName{
+    _songTitle=songName;
+    return self;
+}
 -(id)initSongEntry:(NSString *) songNameToInit withURL:(NSURL *) url{
     if(self=[super init]){
         _songTitle=songNameToInit;

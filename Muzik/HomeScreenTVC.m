@@ -14,27 +14,23 @@
     return [entries count];
 }
 -(void) awakeFromNib{
-    NSMutableArray *array=[self getElements];
+    entries=[self getElements];
 }
 -(NSMutableArray *)getElements{
-    NSURL*sUrl=[NSURL URLWithString:@"muzik-api.herokuapp.com/search"];
     NSMutableArray *elements=[[NSMutableArray alloc]init];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:sUrl]
-                                                           cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
-                                                       timeoutInterval:10];
     
-    [request setHTTPMethod: @"GET"];
-    
-    NSError *requestError;
-    NSURLResponse *urlResponse = nil;
-    
-    NSData *response1 = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&requestError];
-//    while (condition) {
-//        statements
-//    
-//    NSString*sName;
-//    [elements addObject:[[SongEntry alloc] initSongEntry:sName withURL:sUrl]];
-//    }
+
+    NSData* data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://muzik-api.herokuapp.com/top"]];
+    NSArray* array = [NSJSONSerialization
+                          JSONObjectWithData:data //1
+                          
+                          options:NSJSONReadingMutableLeaves
+                          error:nil];
+    NSDictionary *json=[array objectAtIndex:0];
+    for(id key in json){
+    NSString *sName=[json objectForKey:key];
+    [elements addObject:[[SongEntry alloc] initSongEntry:sName ]];
+    }
     return elements;
     
 }
