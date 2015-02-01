@@ -10,13 +10,13 @@
 		B080AA131A7D69BD006D562E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B080AA121A7D69BD006D562E /* main.m */; };
 		B080AA161A7D69BD006D562E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B080AA151A7D69BD006D562E /* AppDelegate.m */; };
 		B080AA191A7D69BD006D562E /* Muzik.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B080AA171A7D69BD006D562E /* Muzik.xcdatamodeld */; };
-		B080AA1C1A7D69BD006D562E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B080AA1B1A7D69BD006D562E /* ViewController.m */; };
 		B080AA1F1A7D69BD006D562E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B080AA1D1A7D69BD006D562E /* Main.storyboard */; };
 		B080AA211A7D69BD006D562E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B080AA201A7D69BD006D562E /* Images.xcassets */; };
 		B080AA241A7D69BD006D562E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B080AA221A7D69BD006D562E /* LaunchScreen.xib */; };
 		B080AA301A7D69BD006D562E /* MuzikTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B080AA2F1A7D69BD006D562E /* MuzikTests.m */; };
 		B080AA3B1A7D69E7006D562E /* SongEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = B080AA3A1A7D69E7006D562E /* SongEntry.m */; };
 		B080AA3E1A7D6DFE006D562E /* Home.m in Sources */ = {isa = PBXBuildFile; fileRef = B080AA3D1A7D6DFE006D562E /* Home.m */; };
+		B0CA5EBE1A7DF8D500EEBDB2 /* HomeScreenTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B0CA5EBD1A7DF8D500EEBDB2 /* HomeScreenTVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +36,6 @@
 		B080AA141A7D69BD006D562E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B080AA151A7D69BD006D562E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B080AA181A7D69BD006D562E /* Muzik.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Muzik.xcdatamodel; sourceTree = "<group>"; };
-		B080AA1A1A7D69BD006D562E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B080AA1B1A7D69BD006D562E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B080AA1E1A7D69BD006D562E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B080AA201A7D69BD006D562E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B080AA231A7D69BD006D562E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -48,6 +46,8 @@
 		B080AA3A1A7D69E7006D562E /* SongEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongEntry.m; sourceTree = "<group>"; };
 		B080AA3C1A7D6DFE006D562E /* Home.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Home.h; sourceTree = "<group>"; };
 		B080AA3D1A7D6DFE006D562E /* Home.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Home.m; sourceTree = "<group>"; };
+		B0CA5EBC1A7DF8D500EEBDB2 /* HomeScreenTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeScreenTVC.h; sourceTree = "<group>"; };
+		B0CA5EBD1A7DF8D500EEBDB2 /* HomeScreenTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeScreenTVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,10 +91,10 @@
 			children = (
 				B080AA141A7D69BD006D562E /* AppDelegate.h */,
 				B080AA151A7D69BD006D562E /* AppDelegate.m */,
-				B080AA1A1A7D69BD006D562E /* ViewController.h */,
-				B080AA1B1A7D69BD006D562E /* ViewController.m */,
 				B080AA391A7D69E7006D562E /* SongEntry.h */,
 				B080AA3A1A7D69E7006D562E /* SongEntry.m */,
+				B0CA5EBC1A7DF8D500EEBDB2 /* HomeScreenTVC.h */,
+				B0CA5EBD1A7DF8D500EEBDB2 /* HomeScreenTVC.m */,
 				B080AA3C1A7D6DFE006D562E /* Home.h */,
 				B080AA3D1A7D6DFE006D562E /* Home.m */,
 				B080AA1D1A7D69BD006D562E /* Main.storyboard */,
@@ -236,7 +236,7 @@
 				B080AA3B1A7D69E7006D562E /* SongEntry.m in Sources */,
 				B080AA3E1A7D6DFE006D562E /* Home.m in Sources */,
 				B080AA131A7D69BD006D562E /* main.m in Sources */,
-				B080AA1C1A7D69BD006D562E /* ViewController.m in Sources */,
+				B0CA5EBE1A7DF8D500EEBDB2 /* HomeScreenTVC.m in Sources */,
 				B080AA191A7D69BD006D562E /* Muzik.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,6 +430,7 @@
 				B080AA351A7D69BD006D562E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B080AA361A7D69BD006D562E /* Build configuration list for PBXNativeTarget "MuzikTests" */ = {
 			isa = XCConfigurationList;
@@ -438,6 +439,7 @@
 				B080AA381A7D69BD006D562E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
