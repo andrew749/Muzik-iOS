@@ -16,6 +16,9 @@
 -(void) awakeFromNib{
     entries=[self getElements];
 }
+-(void) viewDidLoad{
+    self.tableView.rowHeight=150;
+}
 -(NSMutableArray *)getElements{
     NSMutableArray *elements=[[NSMutableArray alloc]init];
     
@@ -26,9 +29,8 @@
                           
                           options:NSJSONReadingMutableLeaves
                           error:nil];
-    NSDictionary *json=[array objectAtIndex:0];
-    for(id key in json){
-    NSString *sName=[json objectForKey:key];
+    for(id element in array){
+    NSString *sName=element[@"title"];
     [elements addObject:[[SongEntry alloc] initSongEntry:sName ]];
     }
     return elements;
@@ -36,12 +38,14 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"homeentry" forIndexPath:indexPath];
+    tableView.rowHeight = UITableViewAutomaticDimension;
+
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"homeentry"];
     }
     SongEntry *entry=entries[indexPath.row];
-    cell.textLabel.text=entry.songTitle;
-    cell.imageView.image=entry.image;
+    UILabel *name=(UILabel *)[cell.contentView viewWithTag:1];
+    name.text=entry.songTitle;
     return cell;
 }
 @end
