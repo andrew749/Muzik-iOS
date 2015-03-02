@@ -14,8 +14,8 @@
 		B080AA211A7D69BD006D562E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B080AA201A7D69BD006D562E /* Images.xcassets */; };
 		B080AA241A7D69BD006D562E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B080AA221A7D69BD006D562E /* LaunchScreen.xib */; };
 		B080AA301A7D69BD006D562E /* MuzikTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B080AA2F1A7D69BD006D562E /* MuzikTests.m */; };
-		B080AA3B1A7D69E7006D562E /* SongEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = B080AA3A1A7D69E7006D562E /* SongEntry.m */; };
-		B080AA3E1A7D6DFE006D562E /* Home.m in Sources */ = {isa = PBXBuildFile; fileRef = B080AA3D1A7D6DFE006D562E /* Home.m */; };
+		B080AA3B1A7D69E7006D562E /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = B080AA3A1A7D69E7006D562E /* Song.m */; };
+		B0B841421AA412380088192D /* CustomDetailSongView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B841411AA412380088192D /* CustomDetailSongView.m */; };
 		B0CA5EBE1A7DF8D500EEBDB2 /* HomeScreenTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B0CA5EBD1A7DF8D500EEBDB2 /* HomeScreenTVC.m */; };
 /* End PBXBuildFile section */
 
@@ -42,10 +42,10 @@
 		B080AA291A7D69BD006D562E /* MuzikTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuzikTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B080AA2E1A7D69BD006D562E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B080AA2F1A7D69BD006D562E /* MuzikTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MuzikTests.m; sourceTree = "<group>"; };
-		B080AA391A7D69E7006D562E /* SongEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongEntry.h; sourceTree = "<group>"; };
-		B080AA3A1A7D69E7006D562E /* SongEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongEntry.m; sourceTree = "<group>"; };
-		B080AA3C1A7D6DFE006D562E /* Home.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Home.h; sourceTree = "<group>"; };
-		B080AA3D1A7D6DFE006D562E /* Home.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Home.m; sourceTree = "<group>"; };
+		B080AA391A7D69E7006D562E /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
+		B080AA3A1A7D69E7006D562E /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
+		B0B841401AA412380088192D /* CustomDetailSongView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomDetailSongView.h; sourceTree = "<group>"; };
+		B0B841411AA412380088192D /* CustomDetailSongView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomDetailSongView.m; sourceTree = "<group>"; };
 		B0CA5EBC1A7DF8D500EEBDB2 /* HomeScreenTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeScreenTVC.h; sourceTree = "<group>"; };
 		B0CA5EBD1A7DF8D500EEBDB2 /* HomeScreenTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeScreenTVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,12 +91,12 @@
 			children = (
 				B080AA141A7D69BD006D562E /* AppDelegate.h */,
 				B080AA151A7D69BD006D562E /* AppDelegate.m */,
-				B080AA391A7D69E7006D562E /* SongEntry.h */,
-				B080AA3A1A7D69E7006D562E /* SongEntry.m */,
+				B080AA391A7D69E7006D562E /* Song.h */,
+				B080AA3A1A7D69E7006D562E /* Song.m */,
+				B0B841401AA412380088192D /* CustomDetailSongView.h */,
+				B0B841411AA412380088192D /* CustomDetailSongView.m */,
 				B0CA5EBC1A7DF8D500EEBDB2 /* HomeScreenTVC.h */,
 				B0CA5EBD1A7DF8D500EEBDB2 /* HomeScreenTVC.m */,
-				B080AA3C1A7D6DFE006D562E /* Home.h */,
-				B080AA3D1A7D6DFE006D562E /* Home.m */,
 				B080AA1D1A7D69BD006D562E /* Main.storyboard */,
 				B080AA201A7D69BD006D562E /* Images.xcassets */,
 				B080AA221A7D69BD006D562E /* LaunchScreen.xib */,
@@ -181,6 +181,7 @@
 				TargetAttributes = {
 					B080AA0C1A7D69BD006D562E = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = B66QG745MJ;
 					};
 					B080AA281A7D69BD006D562E = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -233,8 +234,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B080AA161A7D69BD006D562E /* AppDelegate.m in Sources */,
-				B080AA3B1A7D69E7006D562E /* SongEntry.m in Sources */,
-				B080AA3E1A7D6DFE006D562E /* Home.m in Sources */,
+				B0B841421AA412380088192D /* CustomDetailSongView.m in Sources */,
+				B080AA3B1A7D69E7006D562E /* Song.m in Sources */,
 				B080AA131A7D69BD006D562E /* main.m in Sources */,
 				B0CA5EBE1A7DF8D500EEBDB2 /* HomeScreenTVC.m in Sources */,
 				B080AA191A7D69BD006D562E /* Muzik.xcdatamodeld in Sources */,

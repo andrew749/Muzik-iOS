@@ -7,7 +7,8 @@
 //
 
 #import "HomeScreenTVC.h"
-#import "SongEntry.h"
+#import "Song.h"
+#import "CustomDetailSongView.h"
 @implementation HomeScreenTVC
 @synthesize entries;
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -47,5 +48,14 @@
     UILabel *name=(UILabel *)[cell.contentView viewWithTag:1];
     name.text=entry.songTitle;
     return cell;
+}
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    //if the sender is the songdetail
+    if([segue.identifier isEqualToString:@"songdetail"]){
+        NSIndexPath *indexPath=[self.tableView indexPathForSelectedRow];
+        CustomDetailSongView *controller=segue.destinationViewController;
+        controller.songName=[entries objectAtIndex:indexPath.row];
+        
+    }
 }
 @end
