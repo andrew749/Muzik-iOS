@@ -32,7 +32,7 @@
                           error:nil];
     for(id element in array){
     NSString *sName=element[@"title"];
-    [elements addObject:[[SongEntry alloc] initSongEntry:sName ]];
+    [elements addObject:[[Song alloc] initSongEntry:sName ]];
     }
     return elements;
     
@@ -44,7 +44,7 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"homeentry"];
     }
-    SongEntry *entry=entries[indexPath.row];
+    Song *entry=entries[indexPath.row];
     UILabel *name=(UILabel *)[cell.contentView viewWithTag:1];
     name.text=entry.songTitle;
     return cell;
@@ -54,8 +54,7 @@
     if([segue.identifier isEqualToString:@"songdetail"]){
         NSIndexPath *indexPath=[self.tableView indexPathForSelectedRow];
         CustomDetailSongView *controller=segue.destinationViewController;
-        controller.songName=[entries objectAtIndex:indexPath.row];
-        
+        controller.songName=[(Song *)[entries objectAtIndex:indexPath.row] getSongTitle];
     }
 }
 @end

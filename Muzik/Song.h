@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 @import UIKit;
-@interface SongEntry : NSObject
+@interface Song : NSObject
 //holds the properties for a song
 @property (nonatomic, strong)NSString *songTitle;
 @property (nonatomic, strong)NSString *artistName;
@@ -17,5 +17,6 @@
 //constructor for the songentry object.
 -(id)initSongEntry:(NSString *) songName withURL:(NSURL *) url;
 -(id)initSongEntry:(NSString *)songName;
+-(NSString *)getSongTitle;
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "CustomDetailSongView.h"
-
+#import "Song.h"
 @implementation CustomDetailSongView
 @synthesize songName;
 @synthesize song_Label;

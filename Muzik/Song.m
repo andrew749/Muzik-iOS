@@ -8,7 +8,7 @@
 
 #import "Song.h"
 
-@implementation SongEntry
+@implementation Song
 -(id)initSongEntry:(NSString *)songName{
     _songTitle=songName;
     return self;
@@ -32,5 +32,8 @@
 }
 -(void) setSongUrl:(NSURL *)songUrl{
     self.songUrl=songUrl;
+}
+-(NSString *)getSongTitle{
+    return self.songTitle;
 }
 @end

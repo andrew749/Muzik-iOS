@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface CustomDetailSongView : UIViewController
-@property (weak, nonatomic) IBOutlet UILabel* song_Label;
-@property (strong,nonatomic,readwrite)NSString * songName;
+@property (weak,nonatomic) IBOutlet UILabel* song_Label;
+@property (strong,nonatomic)NSString* songName;
 @end
