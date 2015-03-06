@@ -54,7 +54,7 @@
     if([segue.identifier isEqualToString:@"songdetail"]){
         NSIndexPath *indexPath=[self.tableView indexPathForSelectedRow];
         CustomDetailSongView *controller=segue.destinationViewController;
-        controller.songName=[(Song *)[entries objectAtIndex:indexPath.row] getSongTitle];
+        controller.song=(Song *)[entries objectAtIndex:indexPath.row];
     }
 }
 @end

@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Song.h"
 @interface CustomDetailSongView : UIViewController
 @property (weak,nonatomic) IBOutlet UILabel* song_Label;
-@property (strong,nonatomic)NSString* songName;
+@property (strong,nonatomic)Song* song;
 @end

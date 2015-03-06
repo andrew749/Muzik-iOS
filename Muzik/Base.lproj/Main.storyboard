@@ -19,11 +19,17 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ylg-43-gNT" id="xo9-Lq-I1I">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ylh-sh-f5e">
-                                            <rect key="frame" x="8" y="9" width="153" height="133"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ylh-sh-f5e">
+                                            <rect key="frame" x="8" y="9" width="150" height="133"/>
                                             <constraints>
+                                                <constraint firstAttribute="width" constant="153" id="8Ng-eY-cMr"/>
                                                 <constraint firstAttribute="width" constant="150" id="ccl-Wv-53n"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="8Ng-eY-cMr"/>
+                                                </mask>
+                                            </variation>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="songname" text="SongName" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Io3-DN-kxQ">
                                             <rect key="frame" x="169" y="65" width="86" height="21"/>
@@ -39,7 +45,10 @@
                                         <constraint firstItem="Ylh-sh-f5e" firstAttribute="top" secondItem="xo9-Lq-I1I" secondAttribute="topMargin" constant="1" id="8jj-1f-61l"/>
                                         <constraint firstItem="Ylh-sh-f5e" firstAttribute="leading" secondItem="xo9-Lq-I1I" secondAttribute="leadingMargin" id="9E9-HT-6SX"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Ylh-sh-f5e" secondAttribute="bottom" constant="-1" id="Brl-9e-1Cp"/>
+                                        <constraint firstItem="Ylh-sh-f5e" firstAttribute="centerY" secondItem="Io3-DN-kxQ" secondAttribute="centerY" id="Nd2-c5-abY"/>
                                         <constraint firstItem="Io3-DN-kxQ" firstAttribute="leading" secondItem="Ylh-sh-f5e" secondAttribute="trailing" constant="8" symbolic="YES" id="Qsf-Wm-ufb"/>
+                                        <constraint firstItem="Io3-DN-kxQ" firstAttribute="top" secondItem="xo9-Lq-I1I" secondAttribute="topMargin" constant="57" id="bPX-he-yQT"/>
+                                        <constraint firstItem="Ylh-sh-f5e" firstAttribute="top" secondItem="xo9-Lq-I1I" secondAttribute="topMargin" constant="1" id="n5W-Ss-ahZ"/>
                                         <constraint firstItem="Io3-DN-kxQ" firstAttribute="centerY" secondItem="xo9-Lq-I1I" secondAttribute="centerY" id="vp7-Yh-jIv"/>
                                     </constraints>
                                     <variation key="default">
@@ -89,19 +98,22 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="QyR-eW-9uz">
+                                <rect key="frame" x="16" y="280" width="568" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEp-kh-Hzv">
                                 <rect key="frame" x="255" y="228" width="91" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="QyR-eW-9uz">
-                                <rect key="frame" x="16" y="280" width="568" height="300"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="tEp-kh-Hzv" secondAttribute="trailing" constant="238" id="179-C4-gJ4"/>
+                            <constraint firstAttribute="centerY" secondItem="tEp-kh-Hzv" secondAttribute="centerY" constant="61.5" id="1D6-t9-ba7"/>
+                            <constraint firstItem="tEp-kh-Hzv" firstAttribute="leading" secondItem="VH5-cl-tJg" secondAttribute="leadingMargin" constant="239" id="Pq9-sF-afU"/>
                             <constraint firstItem="QyR-eW-9uz" firstAttribute="trailing" secondItem="VH5-cl-tJg" secondAttribute="trailingMargin" id="SDy-dB-rxL"/>
                             <constraint firstItem="LOJ-o6-Acl" firstAttribute="top" secondItem="tEp-kh-Hzv" secondAttribute="bottom" constant="8" symbolic="YES" id="X4H-Ta-1qc"/>
                             <constraint firstItem="xl4-AH-NZu" firstAttribute="top" secondItem="Jyq-AQ-wKr" secondAttribute="bottom" id="Y0O-uP-51e"/>
@@ -113,6 +125,13 @@
                             <constraint firstItem="tEp-kh-Hzv" firstAttribute="top" secondItem="xl4-AH-NZu" secondAttribute="bottom" constant="8" symbolic="YES" id="yfj-It-SWd"/>
                             <constraint firstItem="tEp-kh-Hzv" firstAttribute="centerX" secondItem="LOJ-o6-Acl" secondAttribute="centerX" id="yvR-T2-Et7"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="179-C4-gJ4"/>
+                                <exclude reference="1D6-t9-ba7"/>
+                                <exclude reference="Pq9-sF-afU"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="song_Label" destination="tEp-kh-Hzv" id="Jxm-uL-Xcv"/>

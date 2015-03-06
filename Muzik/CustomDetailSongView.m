@@ -9,12 +9,12 @@
 #import "CustomDetailSongView.h"
 #import "Song.h"
 @implementation CustomDetailSongView
-@synthesize songName;
+@synthesize song;
 @synthesize song_Label;
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-    [song_Label setText:songName];
+    [song_Label setText:[song getSongTitle]];
 }
 
 @end
