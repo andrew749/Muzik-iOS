@@ -101,6 +101,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="urlcell" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="QyR-eW-9uz">
                                 <rect key="frame" x="16" y="280" width="568" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Nq2-kf-UWw" id="knO-oe-bTh"/>
+                                    <outlet property="delegate" destination="Nq2-kf-UWw" id="Us1-0p-lnD"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEp-kh-Hzv">
                                 <rect key="frame" x="255" y="228" width="91" height="21"/>
