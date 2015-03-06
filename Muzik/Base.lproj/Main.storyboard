@@ -98,7 +98,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="QyR-eW-9uz">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="urlcell" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="QyR-eW-9uz">
                                 <rect key="frame" x="16" y="280" width="568" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -134,6 +134,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="resultsTable" destination="QyR-eW-9uz" id="p7d-a3-3Yt"/>
                         <outlet property="song_Label" destination="tEp-kh-Hzv" id="Jxm-uL-Xcv"/>
                     </connections>
                 </viewController>

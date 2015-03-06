@@ -30,10 +30,13 @@
 -(void)setArtistName:(NSString *)artistName{
     self.artistName=artistName;
 }
--(void) setSongUrl:(NSURL *)songUrl{
+-(void) addSongUrl:(NSURL *)songUrl{
     self.songUrl=songUrl;
 }
 -(NSString *)getSongTitle{
     return self.songTitle;
+}
+-(NSURL *)getSongURL{
+    return self.songUrl;
 }
 @end

@@ -12,11 +12,12 @@
 //holds the properties for a song
 @property (nonatomic, strong)NSString *songTitle;
 @property (nonatomic, strong)NSString *artistName;
-@property  (nonatomic,strong)NSMutableArray *songUrl;
+@property  (nonatomic,strong)NSURL *songUrl;
 @property (nonatomic,strong)UIImage *image;
 //constructor for the songentry object.
 -(id)initSongEntry:(NSString *) songName withURL:(NSURL *) url;
 -(id)initSongEntry:(NSString *)songName;
 -(NSString *)getSongTitle;
+-(NSURL *)getSongURL;
 
 @end

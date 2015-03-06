@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "Song.h"
-@interface CustomDetailSongView : UIViewController
+@interface CustomDetailSongView : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (weak,nonatomic) IBOutlet UILabel* song_Label;
+@property (weak, nonatomic) IBOutlet UITableView *resultsTable;
 @property (strong,nonatomic)Song* song;
 @end
