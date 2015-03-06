@@ -36,6 +36,9 @@ NSMutableArray * songs;
     cell.textLabel.text = [[[songs objectAtIndex:indexPath.row] getSongURL] absoluteString];
     return cell;
 }
+-(void)viewDidLayoutSubviews{
+    song_Label.preferredMaxLayoutWidth=song_Label.frame.size.width;
+}
 -(NSMutableArray *)getLinks:(NSString *)songName{
     NSMutableArray* names=[[NSMutableArray alloc] init];
     NSString * baseurl=@"http://muzik-api.herokuapp.com/search?songname=";

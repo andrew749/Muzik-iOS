@@ -32,10 +32,23 @@
                           error:nil];
     for(id element in array){
     NSString *sName=element[@"title"];
-    [elements addObject:[[Song alloc] initSongEntry:sName ]];
+        NSURL *url=element[@"url"];
+    [elements addObject:[[Song alloc] initSongEntry:sName withURL:url]];
     }
     return elements;
     
+}
+//method to be implemented which plays the song
+-(void)playSongWithURL:(NSURL* ) url{
+
+}
+-(void)loadImage:(NSURL *)url forImageView:(UIImageView *)imageView{
+    if(![url isKindOfClass:[NSNull class]])
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    
+    NSData* data = [NSData dataWithContentsOfURL:url];
+        imageView.image=[UIImage imageWithData:data];
+    });
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"homeentry" forIndexPath:indexPath];
@@ -47,6 +60,7 @@
     Song *entry=entries[indexPath.row];
     UILabel *name=(UILabel *)[cell.contentView viewWithTag:1];
     name.text=entry.songTitle;
+    [self loadImage:[entry getSongURL] forImageView:cell.imageView];
     return cell;
 }
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

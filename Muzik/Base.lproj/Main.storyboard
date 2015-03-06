@@ -23,7 +23,7 @@
                                             <rect key="frame" x="8" y="9" width="150" height="133"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="153" id="8Ng-eY-cMr"/>
-                                                <constraint firstAttribute="width" constant="150" id="ccl-Wv-53n"/>
+                                                <constraint firstAttribute="width" priority="250" constant="150" id="ccl-Wv-53n"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -32,7 +32,7 @@
                                             </variation>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="songname" text="SongName" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Io3-DN-kxQ">
-                                            <rect key="frame" x="169" y="65" width="86" height="21"/>
+                                            <rect key="frame" x="166" y="65" width="86" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -59,7 +59,7 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Nq2-kf-UWw" kind="showDetail" identifier="songdetail" id="tCK-rp-HpL"/>
+                                    <segue destination="Nq2-kf-UWw" kind="show" identifier="songdetail" id="tCK-rp-HpL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -83,31 +83,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xl4-AH-NZu">
-                                <rect key="frame" x="200" y="20" width="200" height="200"/>
+                                <rect key="frame" x="200" y="72" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="AVs-76-L6p"/>
-                                    <constraint firstAttribute="height" constant="200" id="pUu-lR-xNG"/>
+                                    <constraint firstAttribute="width" constant="200" id="lcp-Q6-vAL"/>
+                                    <constraint firstAttribute="height" constant="200" id="nBM-vX-EBn"/>
                                 </constraints>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="35" y="300" width="300" height="300"/>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOJ-o6-Acl">
-                                <rect key="frame" x="279" y="257" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEp-kh-Hzv">
+                                <rect key="frame" x="255" y="280" width="91" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="urlcell" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="QyR-eW-9uz">
-                                <rect key="frame" x="16" y="280" width="568" height="300"/>
+                                <rect key="frame" x="16" y="338" width="568" height="242"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Nq2-kf-UWw" id="knO-oe-bTh"/>
                                     <outlet property="delegate" destination="Nq2-kf-UWw" id="Us1-0p-lnD"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEp-kh-Hzv">
-                                <rect key="frame" x="255" y="228" width="91" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOJ-o6-Acl">
+                                <rect key="frame" x="279" y="309" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -117,17 +117,17 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="tEp-kh-Hzv" secondAttribute="trailing" constant="238" id="179-C4-gJ4"/>
                             <constraint firstAttribute="centerY" secondItem="tEp-kh-Hzv" secondAttribute="centerY" constant="61.5" id="1D6-t9-ba7"/>
+                            <constraint firstAttribute="bottom" secondItem="QyR-eW-9uz" secondAttribute="bottom" constant="20" symbolic="YES" id="9Nf-Ir-gBA"/>
+                            <constraint firstItem="tEp-kh-Hzv" firstAttribute="centerX" secondItem="xl4-AH-NZu" secondAttribute="centerX" id="ECD-Pd-ZdB"/>
+                            <constraint firstItem="LOJ-o6-Acl" firstAttribute="centerX" secondItem="tEp-kh-Hzv" secondAttribute="centerX" id="KOO-FH-Pwo"/>
                             <constraint firstItem="tEp-kh-Hzv" firstAttribute="leading" secondItem="VH5-cl-tJg" secondAttribute="leadingMargin" constant="239" id="Pq9-sF-afU"/>
-                            <constraint firstItem="QyR-eW-9uz" firstAttribute="trailing" secondItem="VH5-cl-tJg" secondAttribute="trailingMargin" id="SDy-dB-rxL"/>
-                            <constraint firstItem="LOJ-o6-Acl" firstAttribute="top" secondItem="tEp-kh-Hzv" secondAttribute="bottom" constant="8" symbolic="YES" id="X4H-Ta-1qc"/>
-                            <constraint firstItem="xl4-AH-NZu" firstAttribute="top" secondItem="Jyq-AQ-wKr" secondAttribute="bottom" id="Y0O-uP-51e"/>
-                            <constraint firstItem="xl4-AH-NZu" firstAttribute="centerX" secondItem="tEp-kh-Hzv" secondAttribute="centerX" id="fFM-sw-Aqt"/>
-                            <constraint firstItem="QyR-eW-9uz" firstAttribute="top" secondItem="LOJ-o6-Acl" secondAttribute="bottom" constant="2" id="nYD-wI-943"/>
-                            <constraint firstItem="QyR-eW-9uz" firstAttribute="leading" secondItem="VH5-cl-tJg" secondAttribute="leadingMargin" id="ncb-MP-Esw"/>
-                            <constraint firstItem="LOJ-o6-Acl" firstAttribute="centerX" secondItem="QyR-eW-9uz" secondAttribute="centerX" id="t2W-n2-OUy"/>
-                            <constraint firstAttribute="bottom" secondItem="QyR-eW-9uz" secondAttribute="bottom" constant="20" symbolic="YES" id="wOz-I3-fSb"/>
-                            <constraint firstItem="tEp-kh-Hzv" firstAttribute="top" secondItem="xl4-AH-NZu" secondAttribute="bottom" constant="8" symbolic="YES" id="yfj-It-SWd"/>
-                            <constraint firstItem="tEp-kh-Hzv" firstAttribute="centerX" secondItem="LOJ-o6-Acl" secondAttribute="centerX" id="yvR-T2-Et7"/>
+                            <constraint firstItem="QyR-eW-9uz" firstAttribute="top" secondItem="LOJ-o6-Acl" secondAttribute="bottom" constant="8" symbolic="YES" id="Sme-VV-jrw"/>
+                            <constraint firstItem="QyR-eW-9uz" firstAttribute="leading" secondItem="VH5-cl-tJg" secondAttribute="leadingMargin" id="TQN-Om-Hzw"/>
+                            <constraint firstItem="QyR-eW-9uz" firstAttribute="centerX" secondItem="LOJ-o6-Acl" secondAttribute="centerX" id="q6R-wZ-ECs"/>
+                            <constraint firstItem="tEp-kh-Hzv" firstAttribute="top" secondItem="xl4-AH-NZu" secondAttribute="bottom" constant="8" symbolic="YES" id="rLt-Ph-fQ6"/>
+                            <constraint firstItem="LOJ-o6-Acl" firstAttribute="top" secondItem="tEp-kh-Hzv" secondAttribute="bottom" constant="8" symbolic="YES" id="rfe-69-kMn"/>
+                            <constraint firstItem="QyR-eW-9uz" firstAttribute="trailing" secondItem="VH5-cl-tJg" secondAttribute="trailingMargin" id="uti-gv-Eqk"/>
+                            <constraint firstItem="xl4-AH-NZu" firstAttribute="top" secondItem="Jyq-AQ-wKr" secondAttribute="bottom" constant="8" symbolic="YES" id="zWV-DX-0UM"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -144,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WfD-aJ-Bdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1966" y="489"/>
+            <point key="canvasLocation" x="2001" y="484"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dU2-qe-N5w">
