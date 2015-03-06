@@ -16,5 +16,22 @@
     [super viewDidLoad];
     [song_Label setText:[song getSongTitle]];
 }
+-(NSMutableArray *)getLinks:(NSString *)songName{
+    NSMutableArray* names=[[NSMutableArray alloc] init];
+    NSString * baseurl=@"http://muzik-api.herokuapp.com/search?songname=";
+    NSString * encodedName=[songName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString * finalUrl=[NSString stringWithFormat:baseurl,encodedName];
+    NSData* data = [NSData dataWithContentsOfURL:[NSURL URLWithString:finalUrl]];
+    NSArray* array = [NSJSONSerialization
+                      JSONObjectWithData:data //1
+                      
+                      options:NSJSONReadingMutableLeaves
+                      error:nil];
+    for(id element in array){
+        NSString *sName=element[@"title"];
+        [names addObject:[[Song alloc] initSongEntry:sName withURL:[NSURL URLWithString:element[@"url"]]]];
+    }
 
+    return names;
+}
 @end
