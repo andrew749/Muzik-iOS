@@ -32,7 +32,7 @@
                           error:nil];
     for(id element in array){
     NSString *sName=element[@"title"];
-        NSURL *url=element[@"url"];
+        NSURL *url=[NSURL URLWithString:element[@"url"]];
     [elements addObject:[[Song alloc] initSongEntry:sName withURL:url]];
     }
     return elements;
@@ -46,21 +46,20 @@
     if(![url isKindOfClass:[NSNull class]])
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
     
-    NSData* data = [NSData dataWithContentsOfURL:url];
+    NSData* data = [NSData dataWithContentsOfURL:[NSURL URLWithString:url.absoluteString]];
         imageView.image=[UIImage imageWithData:data];
     });
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"homeentry" forIndexPath:indexPath];
     tableView.rowHeight = UITableViewAutomaticDimension;
-
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"homeentry"];
-    }
     Song *entry=entries[indexPath.row];
     UILabel *name=(UILabel *)[cell.contentView viewWithTag:1];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"homeentry"];
+        [self loadImage:[entry getSongURL] forImageView:cell.imageView];
+    }
     name.text=entry.songTitle;
-    [self loadImage:[entry getSongURL] forImageView:cell.imageView];
     return cell;
 }
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
