@@ -8,10 +8,15 @@
 
 #import "CustomDetailSongView.h"
 #import "Song.h"
+@import AVFoundation;
 @implementation CustomDetailSongView
 @synthesize song;
 @synthesize song_Label;
 @synthesize resultsTable;
+
+
+AVPlayer* songPlayer;
+
 NSMutableArray * songs;
 -(void)viewDidLoad{
     [super viewDidLoad];
@@ -36,6 +41,16 @@ NSMutableArray * songs;
     cell.textLabel.text = [[[songs objectAtIndex:indexPath.row] getSongURL] absoluteString];
     return cell;
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Song *song=[songs objectAtIndex:indexPath.row];
+    NSURL* url=[song getSongURL];
+    //check to see if the url exists
+    if(song)
+    if(![[url absoluteString] isEqualToString:@""]){
+        [self playSongWithURL:url];
+    }
+}
 -(void)viewDidLayoutSubviews{
     song_Label.preferredMaxLayoutWidth=song_Label.frame.size.width;
 }
@@ -56,5 +71,31 @@ NSMutableArray * songs;
     }
 
     return names;
+}
+-(void)playSongWithURL:(NSURL* ) url{
+    NSError * error;
+    songPlayer = [[AVPlayer alloc]initWithURL:url];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(playerItemDidReachEnd:)
+                                                 name:AVPlayerItemDidPlayToEndTimeNotification
+                                               object:[songPlayer currentItem]];
+    [songPlayer addObserver:self forKeyPath:@"status" options:0 context:nil];
+}
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    
+    if (object == songPlayer && [keyPath isEqualToString:@"status"]) {
+        if (songPlayer.status == AVPlayerStatusFailed) {
+            NSLog(@"AVPlayer Failed");
+            
+        } else if (songPlayer.status == AVPlayerStatusReadyToPlay) {
+            NSLog(@"AVPlayerStatusReadyToPlay");
+            [songPlayer play];
+            
+            
+        } else if (songPlayer.status == AVPlayerItemStatusUnknown) {
+            NSLog(@"AVPlayer Unknown");
+            
+        }
+    }
 }
 @end

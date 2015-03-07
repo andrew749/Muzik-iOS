@@ -39,9 +39,7 @@
     
 }
 //method to be implemented which plays the song
--(void)playSongWithURL:(NSURL* ) url{
 
-}
 -(void)loadImage:(NSURL *)url forImageView:(UIImageView *)imageView{
     if(![url isKindOfClass:[NSNull class]])
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{

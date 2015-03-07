@@ -163,8 +163,8 @@
                                 <exclude reference="bLt-hR-6As"/>
                                 <exclude reference="2rU-W8-CsI"/>
                                 <exclude reference="5ri-fz-c7Z"/>
-                                <exclude reference="dWi-sJ-5Dn"/>
                                 <exclude reference="YLn-6H-Kkq"/>
+                                <exclude reference="dWi-sJ-5Dn"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -189,10 +189,10 @@
                                 <include reference="2rU-W8-CsI"/>
                                 <include reference="5ri-fz-c7Z"/>
                                 <exclude reference="Bkc-90-1zN"/>
-                                <include reference="dWi-sJ-5Dn"/>
-                                <exclude reference="h2V-I6-xiE"/>
                                 <include reference="YLn-6H-Kkq"/>
                                 <exclude reference="fA2-Ac-59M"/>
+                                <include reference="dWi-sJ-5Dn"/>
+                                <exclude reference="h2V-I6-xiE"/>
                             </mask>
                         </variation>
                     </view>
@@ -241,9 +241,6 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="urlcell" tableViewCell="9Ss-qC-2WW" id="IGe-Sa-m00">
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="gcJ-MT-Ovq" kind="show" identifier="playsong" id="Awi-LZ-dmd"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
