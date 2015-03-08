@@ -42,13 +42,6 @@ NSMutableArray * songs;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    Song *song=[songs objectAtIndex:indexPath.row];
-//    NSURL* url=[song getSongURL];
-//    //check to see if the url exists
-//    if(song)
-//    if(![[url absoluteString] isEqualToString:@""]){
-//        [self playSongWithURL:url];
-//    }
     [self performSegueWithIdentifier:@"playsong" sender:nil];
 }
 -(void)viewDidLayoutSubviews{

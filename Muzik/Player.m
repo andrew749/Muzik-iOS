@@ -10,16 +10,17 @@
 @import AVFoundation;
 @implementation Player
 @synthesize song;
+@synthesize state;
 @synthesize songLabel;
+@synthesize playButton;
 AVPlayer* songPlayer;
-
+state=NOT_PLAYING;
 -(void)viewDidLoad{
     [super viewDidLoad];
     [songLabel setText:[song getSongTitle]];
     
 }
 -(void)playSongWithURL:(NSURL* ) url{
-    NSError * error;
     songPlayer = [[AVPlayer alloc]initWithURL:url];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(playerItemDidReachEnd:)
@@ -31,6 +32,14 @@ AVPlayer* songPlayer;
     
     
 }
+-(void)pauseSong{
+    [songPlayer pause];
+    state=PAUSED;
+}
+-(void)resumeSong{
+    [songPlayer play];
+    state=PLAYING;
+}
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     
     if (object == songPlayer && [keyPath isEqualToString:@"status"]) {
@@ -40,7 +49,7 @@ AVPlayer* songPlayer;
         } else if (songPlayer.status == AVPlayerStatusReadyToPlay) {
             NSLog(@"AVPlayerStatusReadyToPlay");
             [songPlayer play];
-            
+            state=PLAYING;
             
         } else if (songPlayer.status == AVPlayerItemStatusUnknown) {
             NSLog(@"AVPlayer Unknown");
@@ -49,6 +58,19 @@ AVPlayer* songPlayer;
     }
 }
 - (IBAction)playButtonClick:(id)sender {
-    [self playSongWithURL:[song getSongURL ]];
+    if(state==NOT_PLAYING){
+        [self playSongWithURL:[song getSongURL]];
+        [playButton setTitle:@"Pause" forState:UIControlStateNormal];
+    }
+    else if (state==PAUSED){
+        [self resumeSong];
+        [playButton setTitle:@"Pause" forState:UIControlStateNormal];
+
+    }
+    else if (state==PLAYING){
+        [self pauseSong];
+        [playButton setTitle:@"Play" forState:UIControlStateNormal];
+
+    }
 }
 @end
