@@ -8,14 +8,13 @@
 
 #import "CustomDetailSongView.h"
 #import "Song.h"
-@import AVFoundation;
+#import "Player.h"
 @implementation CustomDetailSongView
 @synthesize song;
 @synthesize song_Label;
 @synthesize resultsTable;
 
 
-AVPlayer* songPlayer;
 
 NSMutableArray * songs;
 -(void)viewDidLoad{
@@ -43,13 +42,14 @@ NSMutableArray * songs;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Song *song=[songs objectAtIndex:indexPath.row];
-    NSURL* url=[song getSongURL];
-    //check to see if the url exists
-    if(song)
-    if(![[url absoluteString] isEqualToString:@""]){
-        [self playSongWithURL:url];
-    }
+//    Song *song=[songs objectAtIndex:indexPath.row];
+//    NSURL* url=[song getSongURL];
+//    //check to see if the url exists
+//    if(song)
+//    if(![[url absoluteString] isEqualToString:@""]){
+//        [self playSongWithURL:url];
+//    }
+    [self performSegueWithIdentifier:@"playsong" sender:nil];
 }
 -(void)viewDidLayoutSubviews{
     song_Label.preferredMaxLayoutWidth=song_Label.frame.size.width;
@@ -72,30 +72,15 @@ NSMutableArray * songs;
 
     return names;
 }
--(void)playSongWithURL:(NSURL* ) url{
-    NSError * error;
-    songPlayer = [[AVPlayer alloc]initWithURL:url];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(playerItemDidReachEnd:)
-                                                 name:AVPlayerItemDidPlayToEndTimeNotification
-                                               object:[songPlayer currentItem]];
-    [songPlayer addObserver:self forKeyPath:@"status" options:0 context:nil];
-}
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    
-    if (object == songPlayer && [keyPath isEqualToString:@"status"]) {
-        if (songPlayer.status == AVPlayerStatusFailed) {
-            NSLog(@"AVPlayer Failed");
-            
-        } else if (songPlayer.status == AVPlayerStatusReadyToPlay) {
-            NSLog(@"AVPlayerStatusReadyToPlay");
-            [songPlayer play];
-            
-            
-        } else if (songPlayer.status == AVPlayerItemStatusUnknown) {
-            NSLog(@"AVPlayer Unknown");
-            
-        }
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    //if the sender is the songdetail
+    if([segue.identifier isEqualToString:@"playsong"]){
+        NSIndexPath *indexPath=[resultsTable indexPathForSelectedRow];
+        Player *controller=segue.destinationViewController;
+        controller.song=(Song *)[songs objectAtIndex:indexPath.row];
+        NSLog(@"Performing segue to player.") ;
     }
 }
+
 @end

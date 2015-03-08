@@ -90,6 +90,9 @@
                                 <state key="normal" title="Play">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="playButtonClick:" destination="gcJ-MT-Ovq" eventType="touchUpInside" id="phJ-eJ-iIl"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPE-TX-PgE">
                                 <rect key="frame" x="255" y="328" width="91" height="21"/>
@@ -196,6 +199,12 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="albumImage" destination="hkk-Lp-HP3" id="OyY-pa-uJI"/>
+                        <outlet property="playButton" destination="fMO-5c-fh7" id="LnL-Xx-4E1"/>
+                        <outlet property="slider" destination="CsB-7C-mNh" id="Czk-Ce-0GQ"/>
+                        <outlet property="songLabel" destination="uPE-TX-PgE" id="75w-Ih-0Gt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VfW-vW-Noc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -241,6 +250,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="urlcell" tableViewCell="9Ss-qC-2WW" id="IGe-Sa-m00">
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="gcJ-MT-Ovq" kind="show" identifier="playsong" id="ybu-mG-5Q9"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
