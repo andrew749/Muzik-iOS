@@ -14,6 +14,10 @@
 @synthesize songLabel;
 @synthesize playButton;
 AVPlayer* songPlayer;
+- (IBAction)stopClick:(id)sender {
+    [self stopSong];
+}
+
 state=NOT_PLAYING;
 -(void)viewDidLoad{
     [super viewDidLoad];
@@ -32,6 +36,7 @@ state=NOT_PLAYING;
     
     
 }
+
 -(void)pauseSong{
     [songPlayer pause];
     state=PAUSED;
@@ -56,6 +61,10 @@ state=NOT_PLAYING;
             
         }
     }
+}
+-(void)stopSong{
+    [songPlayer pause];
+    [self.navigationController popViewControllerAnimated:true  ];
 }
 - (IBAction)playButtonClick:(id)sender {
     if(state==NOT_PLAYING){
