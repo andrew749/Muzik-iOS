@@ -60,7 +60,7 @@ NSMutableArray * songs;
                       error:nil];
     for(id element in array){
         NSString *sName=element[@"title"];
-        [names addObject:[[Song alloc] initSongEntry:sName withURL:[NSURL URLWithString:element[@"url"]]]];
+        [names addObject:[[Song alloc] initSongEntry:sName withURL:[NSURL URLWithString:element[@"url"] [0]]]];
     }
 
     return names;

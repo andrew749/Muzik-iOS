@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>B4666C64-B665-4B6E-A17A-7D7029C5EB1C</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Muzik</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>A471C4DD174B8C1D056153188C5B3BB378529CFD</key>
 		<string>github.com:andrew749/Muzik-iOS.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Muzik.xcodeproj</string>
+	<string>Muzik.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>A471C4DD174B8C1D056153188C5B3BB378529CFD</key>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>A471C4DD174B8C1D056153188C5B3BB378529CFD</string>
 			<key>IDESourceControlWCCName</key>
-			<string>Muzik</string>
+			<string>Muzik-iOS</string>
 		</dict>
 	</array>
 </dict>

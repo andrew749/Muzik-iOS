@@ -18,35 +18,36 @@
     entries=[self getElements];
 }
 -(void) viewDidLoad{
-    self.tableView.rowHeight=150;
+    self.tableView.rowHeight=160;
 }
 -(NSMutableArray *)getElements{
     NSMutableArray *elements=[[NSMutableArray alloc]init];
-    
-
     NSData* data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://muzik-api.herokuapp.com/top"]];
     NSArray* array = [NSJSONSerialization
-                          JSONObjectWithData:data //1
-                          
-                          options:NSJSONReadingMutableLeaves
-                          error:nil];
+                      JSONObjectWithData:data //1
+                      options:NSJSONReadingMutableLeaves
+                      error:nil];
     for(id element in array){
-    NSString *sName=element[@"title"];
-        NSURL *url=[NSURL URLWithString:element[@"url"]];
-    [elements addObject:[[Song alloc] initSongEntry:sName withURL:url]];
+        NSString *sName=element[@"title"];
+        NSURL* url=nil;
+        url=[NSURL URLWithString:element[@"albumArt"]];
+        [elements addObject:[[Song alloc] initSongEntry:sName withURL:url]];
     }
     return elements;
-    
 }
 //method to be implemented which plays the song
 
--(void)loadImage:(NSURL *)url forImageView:(UIImageView *)imageView{
-    if(![url isKindOfClass:[NSNull class]])
-    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-    
-    NSData* data = [NSData dataWithContentsOfURL:[NSURL URLWithString:url.absoluteString]];
-        imageView.image=[UIImage imageWithData:data];
-    });
+-(void)loadImage:(Song *)entry forImageView:(UIImageView *)imageView{
+    if(![[entry getSongURL] isKindOfClass:[NSNull class]])
+        dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSData* data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[entry getSongURL].absoluteString]];
+           // entry.image=[UIImage imageWithData:data];
+            imageView.image=[UIImage imageWithData:data];
+        });
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 160;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"homeentry" forIndexPath:indexPath];
@@ -55,8 +56,8 @@
     UILabel *name=(UILabel *)[cell.contentView viewWithTag:1];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"homeentry"];
-        [self loadImage:[entry getSongURL] forImageView:cell.imageView];
     }
+    [self loadImage:entry forImageView:(UIImageView *)[cell.contentView viewWithTag:2]];
     name.text=entry.songTitle;
     return cell;
 }
