@@ -27,11 +27,14 @@
                       JSONObjectWithData:data //1
                       options:NSJSONReadingMutableLeaves
                       error:nil];
+    int count=0;
     for(id element in array){
-        NSString *sName=element[@"title"];
-        NSURL* url=nil;
-        url=[NSURL URLWithString:element[@"albumArt"]];
-        [elements addObject:[[Song alloc] initSongEntry:sName withURL:url]];
+        if(count++<=25){
+            NSString *sName=element[@"title"];
+            NSURL* url=nil;
+            url=[NSURL URLWithString:element[@"albumArt"]];
+            [elements addObject:[[Song alloc] initSongEntry:sName withURL:url]];
+        }
     }
     return elements;
 }
@@ -39,11 +42,16 @@
 
 -(void)loadImage:(Song *)entry forImageView:(UIImageView *)imageView{
     if(![[entry getSongURL] isKindOfClass:[NSNull class]])
+        if(entry.image==nil)
         dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             NSData* data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[entry getSongURL].absoluteString]];
-           // entry.image=[UIImage imageWithData:data];
             imageView.image=[UIImage imageWithData:data];
+           // entry.image=[UIImage imageWithData:data];
+
         });
+        else{
+            imageView.image=entry.image;
+        }
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {

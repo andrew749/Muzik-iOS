@@ -25,6 +25,7 @@
     self.songTitle=songTitle;
 }
 -(void)setImage:(UIImage *)image{
+    if(image!=nil)
     self.image=image;
 }
 -(void)setArtistName:(NSString *)artistName{

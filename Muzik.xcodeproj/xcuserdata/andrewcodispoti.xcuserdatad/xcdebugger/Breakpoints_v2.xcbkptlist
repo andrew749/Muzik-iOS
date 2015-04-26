@@ -13,5 +13,53 @@
             stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Muzik/HomeScreenTVC.m"
+            timestampString = "451669140.798613"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "-loadImage:forImageView:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__40-[HomeScreenTVC loadImage:forImageView:]_block_invoke"
+                  moduleName = "Muzik"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrewcodispoti/Documents/Programming/Muzik-iOS/Muzik/HomeScreenTVC.m"
+                  timestampString = "451669292.101525"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "340">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__40-[HomeScreenTVC loadImage:forImageView:]_block_invoke"
+                  moduleName = "Muzik"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrewcodispoti/Documents/Programming/Muzik-iOS/Muzik/HomeScreenTVC.m"
+                  timestampString = "451669292.101722"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "352">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
