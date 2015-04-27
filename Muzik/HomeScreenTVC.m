@@ -42,13 +42,14 @@
 
 -(void)loadImage:(Song *)entry forImageView:(UIImageView *)imageView{
     if(![[entry getSongURL] isKindOfClass:[NSNull class]])
-        if(entry.image==nil)
+        if(entry.image==nil){
         dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             NSData* data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[entry getSongURL].absoluteString]];
             imageView.image=[UIImage imageWithData:data];
            // entry.image=[UIImage imageWithData:data];
 
         });
+        }
         else{
             imageView.image=entry.image;
         }
