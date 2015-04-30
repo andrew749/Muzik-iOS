@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B01CD9F21AF1B149005340FE /* SearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = B01CD9F11AF1B149005340FE /* SearchView.m */; };
 		B080AA131A7D69BD006D562E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B080AA121A7D69BD006D562E /* main.m */; };
 		B080AA161A7D69BD006D562E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B080AA151A7D69BD006D562E /* AppDelegate.m */; };
 		B080AA191A7D69BD006D562E /* Muzik.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B080AA171A7D69BD006D562E /* Muzik.xcdatamodeld */; };
@@ -31,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B01CD9F01AF1B149005340FE /* SearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchView.h; sourceTree = "<group>"; };
+		B01CD9F11AF1B149005340FE /* SearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchView.m; sourceTree = "<group>"; };
 		B080AA0D1A7D69BD006D562E /* Muzik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Muzik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B080AA111A7D69BD006D562E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B080AA121A7D69BD006D562E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -100,6 +103,8 @@
 				B0CA5EBD1A7DF8D500EEBDB2 /* HomeScreenTVC.m */,
 				B08AA01A1AAAA0D700F95A90 /* Player.h */,
 				B08AA01B1AAAA0D700F95A90 /* Player.m */,
+				B01CD9F01AF1B149005340FE /* SearchView.h */,
+				B01CD9F11AF1B149005340FE /* SearchView.m */,
 				B08AA0191AAAA0A200F95A90 /* Model */,
 				B080AA1D1A7D69BD006D562E /* Main.storyboard */,
 				B080AA201A7D69BD006D562E /* Images.xcassets */,
@@ -246,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B01CD9F21AF1B149005340FE /* SearchView.m in Sources */,
 				B080AA161A7D69BD006D562E /* AppDelegate.m in Sources */,
 				B0B841421AA412380088192D /* CustomDetailSongView.m in Sources */,
 				B080AA3B1A7D69E7006D562E /* Song.m in Sources */,

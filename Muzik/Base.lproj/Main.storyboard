@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Home ScreenTVC-->
+        <!--Top Hits-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeScreenTVC" sceneMemberID="viewController">
@@ -19,7 +19,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ylg-43-gNT" id="xo9-Lq-I1I">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ony-dm-q4h">
+                                        <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ony-dm-q4h">
                                             <rect key="frame" x="8" y="8" width="143" height="143"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="130" id="UM8-4d-Y0f"/>
@@ -38,7 +38,7 @@
                                                 </mask>
                                             </variation>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="songname" text="SongName" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Io3-DN-kxQ">
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" restorationIdentifier="songname" text="SongName" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Io3-DN-kxQ">
                                             <rect key="frame" x="159" y="69" width="86" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="86" id="ViM-q8-awV"/>
@@ -68,6 +68,7 @@
                                         <constraint firstItem="Io3-DN-kxQ" firstAttribute="centerY" secondItem="Ony-dm-q4h" secondAttribute="centerY" id="KTJ-cx-Qaj"/>
                                         <constraint firstItem="Ony-dm-q4h" firstAttribute="leading" secondItem="xo9-Lq-I1I" secondAttribute="leadingMargin" constant="-7" id="Srh-wA-Hf5"/>
                                         <constraint firstItem="Ony-dm-q4h" firstAttribute="bottom" secondItem="xo9-Lq-I1I" secondAttribute="bottomMargin" id="TWV-Wq-hB2"/>
+                                        <constraint firstAttribute="centerY" secondItem="Io3-DN-kxQ" secondAttribute="centerY" id="Umc-Bj-FV8"/>
                                         <constraint firstItem="Io3-DN-kxQ" firstAttribute="top" secondItem="xo9-Lq-I1I" secondAttribute="topMargin" constant="57" id="VpY-ZR-efK"/>
                                         <constraint firstAttribute="centerY" secondItem="Io3-DN-kxQ" secondAttribute="centerY" id="YOC-EO-Kqp"/>
                                         <constraint firstItem="Io3-DN-kxQ" firstAttribute="centerY" secondItem="Ony-dm-q4h" secondAttribute="centerY" id="a1K-KX-aAa"/>
@@ -86,21 +87,27 @@
                                     <variation key="default">
                                         <mask key="constraints">
                                             <exclude reference="Bdv-0P-IlW"/>
+                                            <exclude reference="D2d-hz-gkz"/>
                                             <exclude reference="Srh-wA-Hf5"/>
                                             <exclude reference="TWV-Wq-hB2"/>
+                                            <exclude reference="gpJ-hZ-ukq"/>
                                             <exclude reference="jVr-Am-kOV"/>
+                                            <exclude reference="okm-FU-oVB"/>
                                             <exclude reference="vBZ-8b-3VY"/>
                                             <exclude reference="vct-6h-mBm"/>
                                             <exclude reference="7Kk-tw-nEt"/>
+                                            <exclude reference="8qt-y3-weM"/>
                                             <exclude reference="9yE-K2-n0c"/>
                                             <exclude reference="CSW-d6-V9B"/>
                                             <exclude reference="DbD-Hv-PPV"/>
                                             <exclude reference="Jro-jz-VRB"/>
+                                            <exclude reference="KTJ-cx-Qaj"/>
                                             <exclude reference="VpY-ZR-efK"/>
                                             <exclude reference="YOC-EO-Kqp"/>
                                             <exclude reference="a1K-KX-aAa"/>
                                             <exclude reference="amt-ZY-IrQ"/>
                                             <exclude reference="bVC-sC-4Lv"/>
+                                            <exclude reference="d2V-xU-BUh"/>
                                             <exclude reference="iO7-ze-Iz6"/>
                                             <exclude reference="zKf-d6-ugA"/>
                                             <exclude reference="zci-mH-j84"/>
@@ -133,7 +140,7 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" id="MPq-G7-kiI"/>
+                    <navigationItem key="navigationItem" title="Top Hits" id="MPq-G7-kiI"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -263,6 +270,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="S3t-pI-duq"/>
                     <connections>
                         <outlet property="albumImage" destination="hkk-Lp-HP3" id="OyY-pa-uJI"/>
                         <outlet property="playButton" destination="fMO-5c-fh7" id="dtR-fw-ISC"/>
@@ -302,7 +310,7 @@
                                 <rect key="frame" x="16" y="309" width="568" height="271"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="urlcell" textLabel="Dr5-un-5Sa" style="IBUITableViewCellStyleDefault" id="9Ss-qC-2WW">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="urlcell" textLabel="Dr5-un-5Sa" style="IBUITableViewCellStyleDefault" id="9Ss-qC-2WW">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Ss-qC-2WW" id="IGe-Sa-m00">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -319,7 +327,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="gcJ-MT-Ovq" kind="show" identifier="playsong" id="ybu-mG-5Q9"/>
+                                            <segue destination="gcJ-MT-Ovq" kind="push" identifier="playsong" id="ybu-mG-5Q9"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -403,7 +411,7 @@
         <!--Search-->
         <scene sceneID="5Jk-cH-Jli">
             <objects>
-                <viewController title="Search" id="0Oy-gC-ijo" sceneMemberID="viewController">
+                <viewController title="Search" id="0Oy-gC-ijo" customClass="SearchView" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oaU-8i-gee"/>
                         <viewControllerLayoutGuide type="bottom" id="dnB-sN-8ln"/>
@@ -412,7 +420,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="NEo-oS-2lg">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Ahq-ly-Ne1">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="9Az-J1-E2C" style="IBUITableViewCellStyleDefault" id="LEN-nq-85R">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LEN-nq-85R" id="01k-Om-zum">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Song Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9Az-J1-E2C">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="gcJ-MT-Ovq" kind="show" id="7pI-Oj-4sn"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="NEo-oS-2lg">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -422,13 +453,26 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Ahq-ly-Ne1" firstAttribute="bottom" secondItem="dnB-sN-8ln" secondAttribute="top" id="5zi-q7-hQS"/>
                             <constraint firstAttribute="trailing" secondItem="NEo-oS-2lg" secondAttribute="trailing" id="K5p-ks-cAh"/>
                             <constraint firstItem="NEo-oS-2lg" firstAttribute="top" secondItem="oaU-8i-gee" secondAttribute="bottom" id="PJh-Hz-sx6"/>
+                            <constraint firstItem="Ahq-ly-Ne1" firstAttribute="top" secondItem="NEo-oS-2lg" secondAttribute="bottom" id="Ued-q3-Sv8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ahq-ly-Ne1" secondAttribute="trailing" constant="-16" id="YO4-QD-jVd"/>
+                            <constraint firstItem="Ahq-ly-Ne1" firstAttribute="leading" secondItem="NEo-oS-2lg" secondAttribute="leading" id="Yfe-fm-dJ0"/>
+                            <constraint firstItem="Ahq-ly-Ne1" firstAttribute="trailing" secondItem="NEo-oS-2lg" secondAttribute="trailing" id="b42-ro-SuW"/>
+                            <constraint firstItem="Ahq-ly-Ne1" firstAttribute="leading" secondItem="XNd-TJ-iSd" secondAttribute="leadingMargin" constant="-16" id="oWQ-Yb-89N"/>
                             <constraint firstItem="NEo-oS-2lg" firstAttribute="leading" secondItem="XNd-TJ-iSd" secondAttribute="leading" id="vfK-gH-Ceg"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Yfe-fm-dJ0"/>
+                                <exclude reference="b42-ro-SuW"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" id="1el-y5-HeT"/>
                     <connections>
+                        <outlet property="searchBar" destination="NEo-oS-2lg" id="U2i-zm-AJq"/>
                         <outlet property="searchDisplayController" destination="vfH-hM-04U" id="Q2O-W8-cOG"/>
                     </connections>
                 </viewController>
@@ -443,7 +487,10 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1403" y="1276"/>
+            <point key="canvasLocation" x="2583" y="1526"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="7pI-Oj-4sn"/>
+    </inferredMetricsTieBreakers>
 </document>

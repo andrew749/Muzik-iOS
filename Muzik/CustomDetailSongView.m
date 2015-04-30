@@ -62,7 +62,7 @@ NSMutableArray * songs;
         NSString *sName=element[@"title"];
         [names addObject:[[Song alloc] initSongEntry:sName withURL:[NSURL URLWithString:element[@"url"] [0]]]];
     }
-
+    
     return names;
 }
 
@@ -72,7 +72,6 @@ NSMutableArray * songs;
         NSIndexPath *indexPath=[resultsTable indexPathForSelectedRow];
         Player *controller=segue.destinationViewController;
         controller.song=(Song *)[songs objectAtIndex:indexPath.row];
-        NSLog(@"Performing segue to player.") ;
     }
 }
 
