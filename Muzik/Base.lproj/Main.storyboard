@@ -421,43 +421,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2rh-jj-Rdh">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="2rh-jj-Rdh">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="0Oy-gC-ijo" id="AjX-FH-8je"/>
                                 </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vOg-t1-2wU">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="0Oy-gC-ijo" id="hS1-3m-0uz"/>
-                                    <outlet property="delegate" destination="0Oy-gC-ijo" id="cRF-V5-x8P"/>
-                                </connections>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2rh-jj-Rdh" firstAttribute="top" secondItem="oaU-8i-gee" secondAttribute="bottom" id="3dS-05-Ief"/>
-                            <constraint firstItem="2rh-jj-Rdh" firstAttribute="trailing" secondItem="vOg-t1-2wU" secondAttribute="trailing" id="7uo-yO-QIG"/>
-                            <constraint firstItem="vOg-t1-2wU" firstAttribute="leading" secondItem="XNd-TJ-iSd" secondAttribute="leadingMargin" constant="-25" id="CVX-PL-Phh"/>
-                            <constraint firstItem="vOg-t1-2wU" firstAttribute="leading" secondItem="2rh-jj-Rdh" secondAttribute="leading" id="Rto-yb-QYJ"/>
-                            <constraint firstItem="vOg-t1-2wU" firstAttribute="top" secondItem="2rh-jj-Rdh" secondAttribute="bottom" id="Suy-h7-7eU"/>
-                            <constraint firstItem="vOg-t1-2wU" firstAttribute="bottom" secondItem="dnB-sN-8ln" secondAttribute="top" id="czA-mE-pJ0"/>
-                            <constraint firstAttribute="trailing" secondItem="vOg-t1-2wU" secondAttribute="trailing" id="ecu-uN-UEB"/>
-                            <constraint firstItem="2rh-jj-Rdh" firstAttribute="leading" secondItem="XNd-TJ-iSd" secondAttribute="leading" id="xhw-ps-Dda"/>
+                            <constraint firstItem="2rh-jj-Rdh" firstAttribute="top" secondItem="oaU-8i-gee" secondAttribute="bottom" id="GHO-GZ-u7b"/>
+                            <constraint firstItem="2rh-jj-Rdh" firstAttribute="leading" secondItem="XNd-TJ-iSd" secondAttribute="leading" id="Rye-gK-o1d"/>
+                            <constraint firstAttribute="trailing" secondItem="2rh-jj-Rdh" secondAttribute="trailing" id="mcF-EX-6Ko"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="CVX-PL-Phh"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="bx7-Fx-wv0"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="h5S-N9-9fi" id="84g-t5-RGe"/>
-                        <outlet property="tableView" destination="vOg-t1-2wU" id="L2c-tD-PUN"/>
                         <segue destination="gcJ-MT-Ovq" kind="show" identifier="playSongSearch" id="uIf-Q0-Xjq"/>
                     </connections>
                 </viewController>

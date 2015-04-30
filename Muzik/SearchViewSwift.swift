@@ -17,7 +17,7 @@ class SearchViewSwift:UIViewController,UITableViewDataSource,UITableViewDelegate
     @IBOutlet weak var tableView: UITableView!
     func tableView(tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-            var cell=self.tableView.dequeueReusableCellWithIdentifier("songIdentifier") as? UITableViewCell
+            var cell=tableView.dequeueReusableCellWithIdentifier("songIdentifier") as? UITableViewCell
             if cell == nil {
                 cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "songIdentifier")
             }
