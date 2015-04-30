@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B01CD9F21AF1B149005340FE /* SearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = B01CD9F11AF1B149005340FE /* SearchView.m */; };
+		B01CD9F51AF1B731005340FE /* SearchViewSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01CD9F41AF1B731005340FE /* SearchViewSwift.swift */; };
 		B080AA131A7D69BD006D562E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B080AA121A7D69BD006D562E /* main.m */; };
 		B080AA161A7D69BD006D562E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B080AA151A7D69BD006D562E /* AppDelegate.m */; };
 		B080AA191A7D69BD006D562E /* Muzik.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B080AA171A7D69BD006D562E /* Muzik.xcdatamodeld */; };
@@ -32,8 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B01CD9F01AF1B149005340FE /* SearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchView.h; sourceTree = "<group>"; };
-		B01CD9F11AF1B149005340FE /* SearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchView.m; sourceTree = "<group>"; };
+		B01CD9F31AF1B730005340FE /* Muzik-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Muzik-Bridging-Header.h"; sourceTree = "<group>"; };
+		B01CD9F41AF1B731005340FE /* SearchViewSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewSwift.swift; sourceTree = "<group>"; };
 		B080AA0D1A7D69BD006D562E /* Muzik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Muzik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B080AA111A7D69BD006D562E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B080AA121A7D69BD006D562E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -103,14 +103,14 @@
 				B0CA5EBD1A7DF8D500EEBDB2 /* HomeScreenTVC.m */,
 				B08AA01A1AAAA0D700F95A90 /* Player.h */,
 				B08AA01B1AAAA0D700F95A90 /* Player.m */,
-				B01CD9F01AF1B149005340FE /* SearchView.h */,
-				B01CD9F11AF1B149005340FE /* SearchView.m */,
+				B01CD9F41AF1B731005340FE /* SearchViewSwift.swift */,
 				B08AA0191AAAA0A200F95A90 /* Model */,
 				B080AA1D1A7D69BD006D562E /* Main.storyboard */,
 				B080AA201A7D69BD006D562E /* Images.xcassets */,
 				B080AA221A7D69BD006D562E /* LaunchScreen.xib */,
 				B080AA171A7D69BD006D562E /* Muzik.xcdatamodeld */,
 				B080AA101A7D69BD006D562E /* Supporting Files */,
+				B01CD9F31AF1B730005340FE /* Muzik-Bridging-Header.h */,
 			);
 			path = Muzik;
 			sourceTree = "<group>";
@@ -251,10 +251,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B01CD9F21AF1B149005340FE /* SearchView.m in Sources */,
 				B080AA161A7D69BD006D562E /* AppDelegate.m in Sources */,
 				B0B841421AA412380088192D /* CustomDetailSongView.m in Sources */,
 				B080AA3B1A7D69E7006D562E /* Song.m in Sources */,
+				B01CD9F51AF1B731005340FE /* SearchViewSwift.swift in Sources */,
 				B080AA131A7D69BD006D562E /* main.m in Sources */,
 				B0CA5EBE1A7DF8D500EEBDB2 /* HomeScreenTVC.m in Sources */,
 				B08AA01C1AAAA0D700F95A90 /* Player.m in Sources */,
@@ -382,9 +382,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Muzik/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Muzik/Muzik-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -392,9 +395,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Muzik/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Muzik/Muzik-Bridging-Header.h";
 			};
 			name = Release;
 		};

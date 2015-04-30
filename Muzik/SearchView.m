@@ -9,7 +9,10 @@
 #import "SearchView.h"
 
 @implementation SearchView
-
+@synthesize table;
+-(void)viewDidLoad{
+    table.delegate=self;
+}
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     [self handleSearch:searchBar];
 }
@@ -27,4 +30,5 @@
     NSLog(@"User canceled search");
     [searchBar resignFirstResponder]; // if you want the keyboard to go away
 }
+
 @end
