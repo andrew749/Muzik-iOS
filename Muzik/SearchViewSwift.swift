@@ -23,7 +23,7 @@ class SearchViewSwift:UIViewController,UITableViewDataSource,UITableViewDelegate
             }
             if !(indexPath.row>items.endIndex){
                 let title:String=self.items[indexPath.row].getSongTitle()
-                 cell?.textLabel?.text=title
+                cell?.textLabel?.text=title
             }
             return cell!
     }
@@ -42,7 +42,7 @@ class SearchViewSwift:UIViewController,UITableViewDataSource,UITableViewDelegate
         });
         
     }
-   
+    
     func loadSongs(query:String){
         
         let encodedQuery:String=query.stringByReplacingOccurrencesOfString(" ", withString: "_", options: NSStringCompareOptions.LiteralSearch, range: nil)
@@ -65,5 +65,11 @@ class SearchViewSwift:UIViewController,UITableViewDataSource,UITableViewDelegate
     func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchString searchString: String!) -> Bool{
         return true
     }
-
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier=="playSong"){
+            var player=segue.destinationViewController as? Player
+//            player!.song=items[self.searchDisplayController?.searchResultsTableView.indexPathForSelectedRow()?.row!]
+        }
+    }
+    
 }

@@ -458,6 +458,7 @@
                     <connections>
                         <outlet property="searchDisplayController" destination="h5S-N9-9fi" id="84g-t5-RGe"/>
                         <outlet property="tableView" destination="vOg-t1-2wU" id="L2c-tD-PUN"/>
+                        <segue destination="Nq2-kf-UWw" kind="show" identifier="playSong" id="5Cs-hx-gtv"/>
                     </connections>
                 </viewController>
                 <searchDisplayController id="h5S-N9-9fi">
@@ -473,4 +474,7 @@
             <point key="canvasLocation" x="1148" y="1332"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="5Cs-hx-gtv"/>
+    </inferredMetricsTieBreakers>
 </document>

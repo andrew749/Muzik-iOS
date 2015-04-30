@@ -42,7 +42,7 @@ NSMutableArray * songs;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"playsong" sender:nil];
+//    [self performSegueWithIdentifier:@"playsong" sender:nil];
 }
 -(void)viewDidLayoutSubviews{
     song_Label.preferredMaxLayoutWidth=song_Label.frame.size.width;
