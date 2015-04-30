@@ -8,24 +8,22 @@
 
 import Foundation
 import UIKit
-class SearchViewSwift:UIViewController,UISearchBarDelegate,UITableViewDelegate,UITableViewDataSource{
-    @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var table: UITableView!
+class SearchViewSwift:UIViewController,UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate,UISearchDisplayDelegate{
     var items:[Song] = []
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         // Return the number of rows in the section.
-        return items.count
+        return self.items.count
     }
+    @IBOutlet weak var tableView: UITableView!
     func tableView(tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
             var cell=tableView.dequeueReusableCellWithIdentifier("songIdentifier") as? UITableViewCell
             if cell == nil {
-                cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "Component")
+                cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "songIdentifier")
             }
-            if !(items.endIndex<indexPath.row){
-                let title:String=items[indexPath.row].getSongTitle()
-                cell!.textLabel!.text=title
+            if !(indexPath.row>items.endIndex){
+                let title:String=self.items[indexPath.row].getSongTitle()
+                 cell?.textLabel?.text=title
             }
             return cell!
     }
@@ -33,26 +31,26 @@ class SearchViewSwift:UIViewController,UISearchBarDelegate,UITableViewDelegate,U
         didSelectRowAtIndexPath indexPath: NSIndexPath){
             
     }
-    override func viewDidLoad(){
-        super.viewDidLoad()
-        table.delegate=self;
-    }
-    
     
     //keyboard search button clicked
     func searchBarSearchButtonClicked(searchBar: UISearchBar){
         var query=searchBar.text
         dispatch_async(dispatch_get_main_queue(), {()->Void in
             self.loadSongs(query)
-            self.table.reloadData()
+            self.searchDisplayController?.searchResultsTableView.reloadData()
+            searchBar.resignFirstResponder()
         });
         
     }
+   
     func loadSongs(query:String){
-        let stringUrl:String="http://muzik-api.herokuapp.com/search?songname="+query
+        
+        let encodedQuery:String=query.stringByReplacingOccurrencesOfString(" ", withString: "_", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        let stringUrl:String="http://muzik-api.herokuapp.com/search?songname="+encodedQuery
         var url=NSURL(string:stringUrl)
         var jsonData=NSData(contentsOfURL: url!)
         var err:NSError?
+        self.items.removeAll(keepCapacity: false)
         if let json: NSArray = NSJSONSerialization.JSONObjectWithData(jsonData!, options: NSJSONReadingOptions.MutableContainers, error: &err) as? NSArray {
             for var i=0;i<json.count;i++ {
                 var obj=json[i]
@@ -64,7 +62,8 @@ class SearchViewSwift:UIViewController,UISearchBarDelegate,UITableViewDelegate,U
         }
         
     }
-    // called when text ends editing
-    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+    func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchString searchString: String!) -> Bool{
+        return true
     }
+
 }

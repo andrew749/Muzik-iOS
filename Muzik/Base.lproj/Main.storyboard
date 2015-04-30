@@ -411,6 +411,7 @@
         <!--Search-->
         <scene sceneID="5Jk-cH-Jli">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="loS-s9-umF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="Search" id="0Oy-gC-ijo" customClass="SearchViewSwift" customModule="Muzik" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oaU-8i-gee"/>
@@ -420,82 +421,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="NEo-oS-2lg">
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="2rh-jj-Rdh">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <outlet property="delegate" destination="0Oy-gC-ijo" id="pQL-bX-YKV"/>
+                                    <outlet property="delegate" destination="0Oy-gC-ijo" id="AjX-FH-8je"/>
                                 </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Ahq-ly-Ne1">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vOg-t1-2wU">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="9Az-J1-E2C" style="IBUITableViewCellStyleDefault" id="LEN-nq-85R">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="songIdentifier" tableViewCell="LEN-nq-85R" id="01k-Om-zum">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Song Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9Az-J1-E2C">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="gcJ-MT-Ovq" kind="show" id="7pI-Oj-4sn"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="0Oy-gC-ijo" id="fi7-6M-cl2"/>
-                                    <outlet property="delegate" destination="0Oy-gC-ijo" id="DyF-vI-lZU"/>
+                                    <outlet property="dataSource" destination="0Oy-gC-ijo" id="hS1-3m-0uz"/>
+                                    <outlet property="delegate" destination="0Oy-gC-ijo" id="cRF-V5-x8P"/>
                                 </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Ahq-ly-Ne1" firstAttribute="bottom" secondItem="dnB-sN-8ln" secondAttribute="top" id="5zi-q7-hQS"/>
-                            <constraint firstAttribute="trailing" secondItem="NEo-oS-2lg" secondAttribute="trailing" id="K5p-ks-cAh"/>
-                            <constraint firstItem="NEo-oS-2lg" firstAttribute="top" secondItem="oaU-8i-gee" secondAttribute="bottom" id="PJh-Hz-sx6"/>
-                            <constraint firstItem="Ahq-ly-Ne1" firstAttribute="top" secondItem="NEo-oS-2lg" secondAttribute="bottom" id="Ued-q3-Sv8"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Ahq-ly-Ne1" secondAttribute="trailing" constant="-16" id="YO4-QD-jVd"/>
-                            <constraint firstItem="Ahq-ly-Ne1" firstAttribute="leading" secondItem="NEo-oS-2lg" secondAttribute="leading" id="Yfe-fm-dJ0"/>
-                            <constraint firstItem="Ahq-ly-Ne1" firstAttribute="trailing" secondItem="NEo-oS-2lg" secondAttribute="trailing" id="b42-ro-SuW"/>
-                            <constraint firstItem="Ahq-ly-Ne1" firstAttribute="leading" secondItem="XNd-TJ-iSd" secondAttribute="leadingMargin" constant="-16" id="oWQ-Yb-89N"/>
-                            <constraint firstItem="NEo-oS-2lg" firstAttribute="leading" secondItem="XNd-TJ-iSd" secondAttribute="leading" id="vfK-gH-Ceg"/>
+                            <constraint firstItem="2rh-jj-Rdh" firstAttribute="top" secondItem="oaU-8i-gee" secondAttribute="bottom" id="3dS-05-Ief"/>
+                            <constraint firstItem="2rh-jj-Rdh" firstAttribute="trailing" secondItem="vOg-t1-2wU" secondAttribute="trailing" id="7uo-yO-QIG"/>
+                            <constraint firstItem="vOg-t1-2wU" firstAttribute="leading" secondItem="XNd-TJ-iSd" secondAttribute="leadingMargin" constant="-25" id="CVX-PL-Phh"/>
+                            <constraint firstItem="vOg-t1-2wU" firstAttribute="leading" secondItem="2rh-jj-Rdh" secondAttribute="leading" id="Rto-yb-QYJ"/>
+                            <constraint firstItem="vOg-t1-2wU" firstAttribute="top" secondItem="2rh-jj-Rdh" secondAttribute="bottom" id="Suy-h7-7eU"/>
+                            <constraint firstItem="vOg-t1-2wU" firstAttribute="bottom" secondItem="dnB-sN-8ln" secondAttribute="top" id="czA-mE-pJ0"/>
+                            <constraint firstAttribute="trailing" secondItem="vOg-t1-2wU" secondAttribute="trailing" id="ecu-uN-UEB"/>
+                            <constraint firstItem="2rh-jj-Rdh" firstAttribute="leading" secondItem="XNd-TJ-iSd" secondAttribute="leading" id="xhw-ps-Dda"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="Yfe-fm-dJ0"/>
-                                <exclude reference="b42-ro-SuW"/>
+                                <exclude reference="CVX-PL-Phh"/>
                             </mask>
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" id="1el-y5-HeT"/>
                     <connections>
-                        <outlet property="searchBar" destination="NEo-oS-2lg" id="9lj-oj-zrh"/>
-                        <outlet property="searchDisplayController" destination="vfH-hM-04U" id="Q2O-W8-cOG"/>
-                        <outlet property="table" destination="Ahq-ly-Ne1" id="gxY-n4-3RF"/>
+                        <outlet property="searchDisplayController" destination="h5S-N9-9fi" id="84g-t5-RGe"/>
+                        <outlet property="tableView" destination="vOg-t1-2wU" id="L2c-tD-PUN"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="loS-s9-umF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="vfH-hM-04U">
+                <searchDisplayController id="h5S-N9-9fi">
                     <connections>
-                        <outlet property="delegate" destination="0Oy-gC-ijo" id="RZx-yV-60j"/>
-                        <outlet property="searchBar" destination="NEo-oS-2lg" id="j4z-Yh-0Li"/>
-                        <outlet property="searchContentsController" destination="0Oy-gC-ijo" id="6rz-Fv-ybu"/>
-                        <outlet property="searchResultsDataSource" destination="0Oy-gC-ijo" id="e5n-zU-0BF"/>
-                        <outlet property="searchResultsDelegate" destination="0Oy-gC-ijo" id="xDn-Ey-RuL"/>
+                        <outlet property="delegate" destination="0Oy-gC-ijo" id="c42-6u-mCc"/>
+                        <outlet property="searchBar" destination="2rh-jj-Rdh" id="OTU-Zu-UMR"/>
+                        <outlet property="searchContentsController" destination="0Oy-gC-ijo" id="Fze-Dz-Z7c"/>
+                        <outlet property="searchResultsDataSource" destination="0Oy-gC-ijo" id="XAq-rl-fyr"/>
+                        <outlet property="searchResultsDelegate" destination="0Oy-gC-ijo" id="Ui8-eV-PPg"/>
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="2583" y="1526"/>
+            <point key="canvasLocation" x="1148" y="1332"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="7pI-Oj-4sn"/>
-    </inferredMetricsTieBreakers>
 </document>
