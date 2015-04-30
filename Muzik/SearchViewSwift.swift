@@ -17,7 +17,7 @@ class SearchViewSwift:UIViewController,UITableViewDataSource,UITableViewDelegate
     @IBOutlet weak var tableView: UITableView!
     func tableView(tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-            var cell=tableView.dequeueReusableCellWithIdentifier("songIdentifier") as? UITableViewCell
+            var cell=self.tableView.dequeueReusableCellWithIdentifier("songIdentifier") as? UITableViewCell
             if cell == nil {
                 cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "songIdentifier")
             }
@@ -26,10 +26,6 @@ class SearchViewSwift:UIViewController,UITableViewDataSource,UITableViewDelegate
                 cell?.textLabel?.text=title
             }
             return cell!
-    }
-    func tableView(tableView: UITableView,
-        didSelectRowAtIndexPath indexPath: NSIndexPath){
-            
     }
     
     //keyboard search button clicked
@@ -65,10 +61,15 @@ class SearchViewSwift:UIViewController,UITableViewDataSource,UITableViewDelegate
     func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchString searchString: String!) -> Bool{
         return true
     }
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("playSongSearch", sender: nil)
+    }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue.identifier=="playSong"){
-            var player=segue.destinationViewController as? Player
-//            player!.song=items[self.searchDisplayController?.searchResultsTableView.indexPathForSelectedRow()?.row!]
+        if(segue.identifier=="playSongSearch"){
+            var player=segue.destinationViewController as! Player
+            let indexPath:NSIndexPath=self.searchDisplayController?.searchResultsTableView.indexPathForSelectedRow() as! NSIndexPath!
+            let song:Song=items[indexPath.row] as! Song!
+            player.song=song
         }
     }
     
