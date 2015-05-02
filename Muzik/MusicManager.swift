@@ -8,19 +8,18 @@
 
 import Foundation
 import AVFoundation
-class MusicManager{
+@objc public class MusicManager:NSObject{
     var title:String!
     var url:NSURL!
-    var player:AVAudioPlayer!
+    var player:AVPlayer!
     static let manager:MusicManager=MusicManager()
-    init(){
+    override init(){
     }
     func setSong(title:String, url:NSURL ){
         self.title=title
         self.url=url
-        self.player=AVAudioPlayer(contentsOfURL: url, error: nil)
-        player.prepareToPlay()
-        player.play()
+        self.player=AVPlayer(URL: url)
+            self.play()
     }
     //PLAY
     func play(){
@@ -30,17 +29,26 @@ class MusicManager{
     }
     //PAUSE
     func pause(){
-        if((self.player)!=nil){
+        if((player) != nil){
             player.pause()
         }
+        
     }
-    //STOP 
+    //STOP
     func stop(){
-        if((player)!=nil)
+        if((player) != nil)
         {
-            player.stop()
+            player.pause()
         }
         player=nil
+    }
+    static var instance:MusicManager!
+    @objc public class func getObjInstance()->MusicManager{
+        if (instance == nil)
+        {
+            instance=MusicManager()
+        }
+        return instance
     }
     
 }

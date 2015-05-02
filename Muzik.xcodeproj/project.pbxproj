@@ -55,7 +55,6 @@
 		B0B841411AA412380088192D /* CustomDetailSongView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomDetailSongView.m; sourceTree = "<group>"; };
 		B0CA5EBC1A7DF8D500EEBDB2 /* HomeScreenTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeScreenTVC.h; sourceTree = "<group>"; };
 		B0CA5EBD1A7DF8D500EEBDB2 /* HomeScreenTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeScreenTVC.m; sourceTree = "<group>"; };
-		B0E12BDC1AF51CCE00BBC62F /* MusicManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicManager.h; sourceTree = "<group>"; };
 		B0E12BDF1AF51D7A00BBC62F /* MusicManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,7 +105,6 @@
 				B0CA5EBD1A7DF8D500EEBDB2 /* HomeScreenTVC.m */,
 				B08AA01A1AAAA0D700F95A90 /* Player.h */,
 				B08AA01B1AAAA0D700F95A90 /* Player.m */,
-				B0E12BDC1AF51CCE00BBC62F /* MusicManager.h */,
 				B0E12BDF1AF51D7A00BBC62F /* MusicManager.swift */,
 				B01CD9F41AF1B731005340FE /* SearchViewSwift.swift */,
 				B08AA0191AAAA0A200F95A90 /* Model */,

@@ -193,12 +193,28 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Muzik/Player.m"
-            timestampString = "452270887.538384"
+            filePath = "Muzik/MusicManager.swift"
+            timestampString = "452294581.694124"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "stop()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Muzik/Player.m"
+            timestampString = "452293663.739602"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "-playSongWithURL:"
             landmarkType = "5">
          </BreakpointContent>
@@ -210,12 +226,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Muzik/MusicManager.swift"
-            timestampString = "452272828.157019"
+            timestampString = "452294581.694124"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "stop()"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "setSong(_:url:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

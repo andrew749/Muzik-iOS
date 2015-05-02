@@ -7,7 +7,7 @@
 //
 
 #import "Player.h"
-#import "AppDelegate.h"
+#import "Muzik-Swift.h"
 @import AVFoundation;
 @implementation Player
 @synthesize song;
@@ -15,6 +15,7 @@
 @synthesize songLabel;
 @synthesize playButton;
 AVPlayer* songPlayer;
+MusicManager* manager;
 - (IBAction)stopClick:(id)sender {
     [self stopSong];
 }
@@ -26,15 +27,11 @@ state=NOT_PLAYING;
    
 }
 -(void)playSongWithURL:(NSURL* ) url{
-    AppDelegate *mainDelegate =[UIApplication sharedApplication].delegate;
-    songPlayer=mainDelegate.player;
-    if(!songPlayer)
-        songPlayer= [[AVPlayer alloc]initWithURL:url];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(playerItemDidReachEnd:)
-                                                 name:AVPlayerItemDidPlayToEndTimeNotification
-                                               object:[songPlayer currentItem]];
-    [songPlayer addObserver:self forKeyPath:@"status" options:0 context:nil];
+    manager=[MusicManager getObjInstance];
+    [manager setSong:[song getSongTitle] url:[song getSongURL]];
+    //    if(!songPlayer)
+//        songPlayer= [[AVPlayer alloc]initWithURL:url];
+//    [songPlayer play];
 }
 -(void)switchSong{
     
@@ -42,11 +39,13 @@ state=NOT_PLAYING;
 }
 
 -(void)pauseSong{
-    [songPlayer pause];
+    [manager pause];
+//    [songPlayer pause];
     state=PAUSED;
 }
 -(void)resumeSong{
-    [songPlayer play];
+    [manager play];
+//    [songPlayer play];
     state=PLAYING;
 }
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
@@ -67,8 +66,8 @@ state=NOT_PLAYING;
     }
 }
 -(void)stopSong{
-    [songPlayer pause];
-    songPlayer=nil;
+    [manager stop];
+//    [songPlayer pause];
     [self.navigationController popViewControllerAnimated:true  ];
 }
 - (IBAction)playButtonClick:(id)sender {
