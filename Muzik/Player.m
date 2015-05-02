@@ -7,6 +7,7 @@
 //
 
 #import "Player.h"
+#import "AppDelegate.h"
 @import AVFoundation;
 @implementation Player
 @synthesize song;
@@ -22,10 +23,13 @@ state=NOT_PLAYING;
 -(void)viewDidLoad{
     [super viewDidLoad];
     [songLabel setText:[song getSongTitle]];
-    
+   
 }
 -(void)playSongWithURL:(NSURL* ) url{
-    songPlayer = [[AVPlayer alloc]initWithURL:url];
+    AppDelegate *mainDelegate =[UIApplication sharedApplication].delegate;
+    songPlayer=mainDelegate.player;
+    if(!songPlayer)
+        songPlayer= [[AVPlayer alloc]initWithURL:url];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(playerItemDidReachEnd:)
                                                  name:AVPlayerItemDidPlayToEndTimeNotification
@@ -64,6 +68,7 @@ state=NOT_PLAYING;
 }
 -(void)stopSong{
     [songPlayer pause];
+    songPlayer=nil;
     [self.navigationController popViewControllerAnimated:true  ];
 }
 - (IBAction)playButtonClick:(id)sender {
@@ -74,12 +79,12 @@ state=NOT_PLAYING;
     else if (state==PAUSED){
         [self resumeSong];
         [playButton setTitle:@"Pause" forState:UIControlStateNormal];
-
+        
     }
     else if (state==PLAYING){
         [self pauseSong];
         [playButton setTitle:@"Play" forState:UIControlStateNormal];
-
+        
     }
 }
 @end
