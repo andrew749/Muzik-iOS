@@ -19,7 +19,7 @@ import AVFoundation
         self.title=title
         self.url=url
         self.player=AVPlayer(URL: url)
-            self.play()
+        self.play()
     }
     //PLAY
     func play(){

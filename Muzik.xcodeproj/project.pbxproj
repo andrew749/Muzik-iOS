@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B01CD9F51AF1B731005340FE /* SearchViewSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01CD9F41AF1B731005340FE /* SearchViewSwift.swift */; };
+		B0693EA31B229A78005F1D93 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0693EA21B229A78005F1D93 /* AudioToolbox.framework */; };
 		B080AA131A7D69BD006D562E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B080AA121A7D69BD006D562E /* main.m */; };
 		B080AA161A7D69BD006D562E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B080AA151A7D69BD006D562E /* AppDelegate.m */; };
 		B080AA191A7D69BD006D562E /* Muzik.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B080AA171A7D69BD006D562E /* Muzik.xcdatamodeld */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		B01CD9F31AF1B730005340FE /* Muzik-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Muzik-Bridging-Header.h"; sourceTree = "<group>"; };
 		B01CD9F41AF1B731005340FE /* SearchViewSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewSwift.swift; sourceTree = "<group>"; };
+		B0693EA21B229A78005F1D93 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		B080AA0D1A7D69BD006D562E /* Muzik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Muzik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B080AA111A7D69BD006D562E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B080AA121A7D69BD006D562E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0693EA31B229A78005F1D93 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +82,7 @@
 		B080AA041A7D69BD006D562E = {
 			isa = PBXGroup;
 			children = (
+				B0693EA21B229A78005F1D93 /* AudioToolbox.framework */,
 				B080AA0F1A7D69BD006D562E /* Muzik */,
 				B080AA2C1A7D69BD006D562E /* MuzikTests */,
 				B080AA0E1A7D69BD006D562E /* Products */,
