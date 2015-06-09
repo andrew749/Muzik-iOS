@@ -12,6 +12,7 @@ import AVFoundation
     var title:String!
     var url:NSURL!
     var player:AVPlayer!
+    var songLoaded:Bool=false
     static let manager:MusicManager=MusicManager()
     override init(){
     }
@@ -19,6 +20,8 @@ import AVFoundation
         self.title=title
         self.url=url
         self.player=AVPlayer(URL: url)
+        songLoaded=true;
+        NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "com.andrew749.muzik.updatestate", object: nil))
         self.play()
     }
     //PLAY

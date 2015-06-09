@@ -8,81 +8,63 @@
 
 #import "Player.h"
 #import "Muzik-Swift.h"
+#import <UIKit/UIKit.h>
 @import AVFoundation;
+@interface Player ()
+@property (strong,readwrite)UIImage* playImage;
+@property (strong,readwrite)UIImage* pauseImage;
+@end
 @implementation Player
 @synthesize song;
-@synthesize state;
 @synthesize songLabel;
 @synthesize playButton;
-AVPlayer* songPlayer;
+@synthesize state;
+@synthesize playImage;
+@synthesize pauseImage;
 MusicManager* manager;
 - (IBAction)stopClick:(id)sender {
     [self stopSong];
 }
 
-state=NOT_PLAYING;
 -(void)viewDidLoad{
     [super viewDidLoad];
     [songLabel setText:[song getSongTitle]];
-   
+    playImage=[UIImage imageNamed:@"playbuttonblack.png"];
+    pauseImage=[UIImage imageNamed:@"pausebuttonblack.png"];
+    manager=[MusicManager getObjInstance];
+    self.state=NOT_PLAYING;
 }
 -(void)playSongWithURL:(NSURL* ) url{
-    manager=[MusicManager getObjInstance];
     [manager setSong:[song getSongTitle] url:[song getSongURL]];
-    //    if(!songPlayer)
-//        songPlayer= [[AVPlayer alloc]initWithURL:url];
-//    [songPlayer play];
-}
--(void)switchSong{
-    
-    
+    state=PLAYING;
 }
 
 -(void)pauseSong{
     [manager pause];
-//    [songPlayer pause];
-    state=PAUSED;
+    self.state=PAUSED;
 }
 -(void)resumeSong{
     [manager play];
-//    [songPlayer play];
-    state=PLAYING;
-}
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    
-    if (object == songPlayer && [keyPath isEqualToString:@"status"]) {
-        if (songPlayer.status == AVPlayerStatusFailed) {
-            NSLog(@"AVPlayer Failed");
-            
-        } else if (songPlayer.status == AVPlayerStatusReadyToPlay) {
-            NSLog(@"AVPlayerStatusReadyToPlay");
-            [songPlayer play];
-            state=PLAYING;
-            
-        } else if (songPlayer.status == AVPlayerItemStatusUnknown) {
-            NSLog(@"AVPlayer Unknown");
-            
-        }
-    }
+    self.state=PLAYING;
 }
 -(void)stopSong{
     [manager stop];
-//    [songPlayer pause];
     [self.navigationController popViewControllerAnimated:true  ];
+    self.state=STOPPED;
 }
 - (IBAction)playButtonClick:(id)sender {
-    if(state==NOT_PLAYING){
+    if(self.state==NOT_PLAYING){
         [self playSongWithURL:[song getSongURL]];
-        [playButton setTitle:@"Pause" forState:UIControlStateNormal];
+        [playButton setImage:pauseImage forState:UIControlStateNormal];
     }
-    else if (state==PAUSED){
+    else if (self.state==PAUSED){
         [self resumeSong];
-        [playButton setTitle:@"Pause" forState:UIControlStateNormal];
+        [playButton setImage:pauseImage forState:UIControlStateNormal];
         
     }
-    else if (state==PLAYING){
+    else if (self.state==PLAYING){
         [self pauseSong];
-        [playButton setTitle:@"Play" forState:UIControlStateNormal];
+        [playButton setImage:playImage forState:UIControlStateNormal];
         
     }
 }
