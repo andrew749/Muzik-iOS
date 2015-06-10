@@ -22,7 +22,7 @@
 		B0B2E7B01B27A4A700952C9E /* pausebuttonblack.png in Resources */ = {isa = PBXBuildFile; fileRef = B0B2E7AD1B27A4A700952C9E /* pausebuttonblack.png */; };
 		B0B2E7B11B27A4A700952C9E /* playbuttonblack.png in Resources */ = {isa = PBXBuildFile; fileRef = B0B2E7AE1B27A4A700952C9E /* playbuttonblack.png */; };
 		B0B2E7B21B27A4A700952C9E /* stopbuttonblack.png in Resources */ = {isa = PBXBuildFile; fileRef = B0B2E7AF1B27A4A700952C9E /* stopbuttonblack.png */; };
-		B0B2E7B51B27A85400952C9E /* musicimage.png in Resources */ = {isa = PBXBuildFile; fileRef = B0B2E7B41B27A85400952C9E /* musicimage.png */; };
+		B0B2E7B71B27EF8100952C9E /* musicimage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0B2E7B61B27EF8100952C9E /* musicimage.jpg */; };
 		B0B841421AA412380088192D /* CustomDetailSongView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B841411AA412380088192D /* CustomDetailSongView.m */; };
 		B0CA5EBE1A7DF8D500EEBDB2 /* HomeScreenTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B0CA5EBD1A7DF8D500EEBDB2 /* HomeScreenTVC.m */; };
 		B0E12BE01AF51D7A00BBC62F /* MusicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E12BDF1AF51D7A00BBC62F /* MusicManager.swift */; };
@@ -62,7 +62,7 @@
 		B0B2E7AD1B27A4A700952C9E /* pausebuttonblack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pausebuttonblack.png; sourceTree = "<group>"; };
 		B0B2E7AE1B27A4A700952C9E /* playbuttonblack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playbuttonblack.png; sourceTree = "<group>"; };
 		B0B2E7AF1B27A4A700952C9E /* stopbuttonblack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stopbuttonblack.png; sourceTree = "<group>"; };
-		B0B2E7B41B27A85400952C9E /* musicimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = musicimage.png; sourceTree = "<group>"; };
+		B0B2E7B61B27EF8100952C9E /* musicimage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = musicimage.jpg; sourceTree = "<group>"; };
 		B0B841401AA412380088192D /* CustomDetailSongView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomDetailSongView.h; sourceTree = "<group>"; };
 		B0B841411AA412380088192D /* CustomDetailSongView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomDetailSongView.m; sourceTree = "<group>"; };
 		B0CA5EBC1A7DF8D500EEBDB2 /* HomeScreenTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeScreenTVC.h; sourceTree = "<group>"; };
@@ -172,7 +172,7 @@
 		B0B2E7B31B27A51300952C9E /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				B0B2E7B41B27A85400952C9E /* musicimage.png */,
+				B0B2E7B61B27EF8100952C9E /* musicimage.jpg */,
 				B0B2E7AD1B27A4A700952C9E /* pausebuttonblack.png */,
 				B0B2E7AE1B27A4A700952C9E /* playbuttonblack.png */,
 				B0B2E7AF1B27A4A700952C9E /* stopbuttonblack.png */,
@@ -261,7 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0B2E7B51B27A85400952C9E /* musicimage.png in Resources */,
+				B0B2E7B71B27EF8100952C9E /* musicimage.jpg in Resources */,
 				B080AA1F1A7D69BD006D562E /* Main.storyboard in Resources */,
 				B080AA241A7D69BD006D562E /* LaunchScreen.xib in Resources */,
 				B0B2E7B01B27A4A700952C9E /* pausebuttonblack.png in Resources */,

@@ -24,10 +24,6 @@
 -(void)setSongTitle:(NSString *)songTitle{
     self.songTitle=songTitle;
 }
--(void)setImage:(UIImage *)image{
-    if(image!=nil)
-    self.image=image;
-}
 -(void)setArtistName:(NSString *)artistName{
     self.artistName=artistName;
 }
