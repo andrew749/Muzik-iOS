@@ -27,7 +27,8 @@
 -(UIImage *)defaultPlaceholder{
     if(self.defaultPlaceholder==nil)
     {
-        self.defaultPlaceholder=[UIImage imageNamed:@"musicimage.jpg"];
+        UIImage* tempImage=[UIImage imageNamed:@"musicimage.png"];
+        self.defaultPlaceholder=tempImage;
     }
     return self.defaultPlaceholder;
 }
@@ -54,7 +55,6 @@
 -(void)loadImage:(Song *)entry forImageView:(UIImageView *)imageView{
     if(![[entry getSongURL] isKindOfClass:[NSNull class]])
         if(entry.image==nil){
-            imageView.image=defaultPlaceholder;
             dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 NSData* data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[entry getSongURL].absoluteString]];
                 UIImage* tempImage=[UIImage imageWithData:data];
@@ -82,6 +82,7 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"homeentry"];
     }
+    cell.imageView.image=defaultPlaceholder;
     [self loadImage:entry forImageView:(UIImageView *)[cell.contentView viewWithTag:2]];
     name.text=entry.songTitle;
     return cell;
