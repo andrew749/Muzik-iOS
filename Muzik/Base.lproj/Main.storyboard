@@ -189,6 +189,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="musicimage.png" translatesAutoresizingMaskIntoConstraints="NO" id="hkk-Lp-HP3">
                                 <rect key="frame" x="135" y="72" width="330" height="338"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" secondItem="hkk-Lp-HP3" secondAttribute="height" multiplier="165:169" id="IRG-k8-hwd"/>
                                     <constraint firstAttribute="width" constant="330" id="t3K-u5-g2x"/>
                                     <constraint firstAttribute="height" constant="248" id="wvq-sW-8bR"/>
                                     <constraint firstAttribute="width" secondItem="hkk-Lp-HP3" secondAttribute="height" multiplier="33:31" id="x7I-Zo-pq9"/>
@@ -246,6 +247,7 @@
                             <constraint firstItem="ajg-JY-AP5" firstAttribute="top" secondItem="fMO-5c-fh7" secondAttribute="bottom" constant="8" symbolic="YES" id="i4n-Pa-Wzc"/>
                             <constraint firstItem="CsB-7C-mNh" firstAttribute="leading" secondItem="OiJ-ty-GGr" secondAttribute="leadingMargin" id="j15-PO-Fx9"/>
                             <constraint firstItem="lGx-ms-WPY" firstAttribute="top" secondItem="CsB-7C-mNh" secondAttribute="bottom" constant="12" id="jGZ-fH-cvD"/>
+                            <constraint firstItem="fMO-5c-fh7" firstAttribute="top" secondItem="CsB-7C-mNh" secondAttribute="bottom" constant="8" id="lOv-AL-jQs"/>
                             <constraint firstItem="lGx-ms-WPY" firstAttribute="centerY" secondItem="fMO-5c-fh7" secondAttribute="centerY" id="viG-eC-xVl"/>
                             <constraint firstItem="hkk-Lp-HP3" firstAttribute="leading" secondItem="OiJ-ty-GGr" secondAttribute="leadingMargin" constant="62" id="yv0-xz-Y9I"/>
                         </constraints>
@@ -261,6 +263,7 @@
                                 <exclude reference="cUg-jG-tJr"/>
                                 <exclude reference="gOf-bK-SFb"/>
                                 <exclude reference="YLn-6H-Kkq"/>
+                                <exclude reference="i4n-Pa-Wzc"/>
                                 <exclude reference="5ri-fz-c7Z"/>
                             </mask>
                         </variation>
