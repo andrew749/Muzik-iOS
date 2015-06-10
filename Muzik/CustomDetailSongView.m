@@ -72,6 +72,7 @@ NSMutableArray * songs;
         NSIndexPath *indexPath=[resultsTable indexPathForSelectedRow];
         Player *controller=segue.destinationViewController;
         controller.song=(Song *)[songs objectAtIndex:indexPath.row];
+        controller.image=song.image;
     }
 }
 

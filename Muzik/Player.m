@@ -31,6 +31,9 @@ MusicManager* manager;
     [songLabel setText:[song getSongTitle]];
     playImage=[UIImage imageNamed:@"playbuttonblack.png"];
     pauseImage=[UIImage imageNamed:@"pausebuttonblack.png"];
+    if(self.image){
+        self.albumImage.image=self.image;
+    }
     manager=[MusicManager getObjInstance];
     self.state=NOT_PLAYING;
 }
