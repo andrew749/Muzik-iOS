@@ -13,7 +13,7 @@
 @synthesize song;
 @synthesize song_Label;
 @synthesize resultsTable;
-
+@synthesize albumImage;
 
 
 NSMutableArray * songs;
@@ -22,7 +22,7 @@ NSMutableArray * songs;
     [song_Label setText:[song getSongTitle]];
     songs=[[NSMutableArray alloc] init ];
     songs=[self getLinks:[song getSongTitle]];
-    NSLog(@"got songs");
+    albumImage.image=song.image;
     [resultsTable setDelegate:self];
     [resultsTable reloadData];
     NSLog(@"done reloading data");

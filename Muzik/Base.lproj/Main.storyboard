@@ -433,6 +433,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="albumImage" destination="xl4-AH-NZu" id="2ot-i7-2bu"/>
                         <outlet property="resultsTable" destination="QyR-eW-9uz" id="p7d-a3-3Yt"/>
                         <outlet property="song_Label" destination="tEp-kh-Hzv" id="Jxm-uL-Xcv"/>
                     </connections>
