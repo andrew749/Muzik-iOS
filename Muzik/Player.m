@@ -13,8 +13,11 @@
 @interface Player ()
 @property (strong,readwrite)UIImage* playImage;
 @property (strong,readwrite)UIImage* pauseImage;
+@property (weak, nonatomic) IBOutlet UILabel *currentTime;
 @property (weak, nonatomic) IBOutlet UISlider *slider;
+@property (weak, nonatomic) IBOutlet UILabel *totalTime;
 @property (strong,readwrite)NSTimer* timer;
+@property BOOL timestate;
 @end
 @implementation Player
 @synthesize song;
@@ -40,8 +43,16 @@ MusicManager* manager;
     _timer=[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateBar) userInfo:nil repeats:YES];
 }
 -(void)updateBar{
-    CGFloat seconds=CMTimeGetSeconds([manager getTime]);
-    _slider.value=seconds/CMTimeGetSeconds([manager songLength]);
+    int seconds=CMTimeGetSeconds([manager getTime]);
+    _currentTime.text=[NSString stringWithFormat:@"%d:%02d",seconds/60,seconds%60];
+    int totalSeconds=CMTimeGetSeconds([manager songLength]);
+    if (!_timestate) {
+        if(totalSeconds/60>0){
+        _totalTime.text=[NSString stringWithFormat:@"%d:%02d",totalSeconds/60,totalSeconds%60];
+        _timestate=YES;
+        }
+    }
+    _slider.value=seconds/totalSeconds;
 }
 - (IBAction)sliderPanned:(id)sender {
     UISlider *s=sender;
