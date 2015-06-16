@@ -13,6 +13,8 @@
 @interface Player ()
 @property (strong,readwrite)UIImage* playImage;
 @property (strong,readwrite)UIImage* pauseImage;
+@property (weak, nonatomic) IBOutlet UISlider *slider;
+@property (strong,readwrite)NSTimer* timer;
 @end
 @implementation Player
 @synthesize song;
@@ -25,7 +27,6 @@ MusicManager* manager;
 - (IBAction)stopClick:(id)sender {
     [self stopSong];
 }
-
 -(void)viewDidLoad{
     [super viewDidLoad];
     [songLabel setText:[song getSongTitle]];
@@ -36,6 +37,11 @@ MusicManager* manager;
     }
     manager=[MusicManager getObjInstance];
     self.state=NOT_PLAYING;
+    _timer=[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateBar) userInfo:nil repeats:YES];
+}
+-(void)updateBar{
+    CGFloat seconds=CMTimeGetSeconds([manager getTime]);
+    _slider.value=seconds/CMTimeGetSeconds([manager songLength]);
 }
 - (IBAction)sliderPanned:(id)sender {
     UISlider *s=sender;

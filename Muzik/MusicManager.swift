@@ -54,9 +54,13 @@ import AVFoundation
     }
     func songLength()->CMTime{
         if(player != nil){
-            var currentTime=player.currentItem.duration.value
-            var timescale=player.currentItem.duration.timescale
-            return CMTimeMake(currentTime, timescale)
+            return player.currentItem.duration
+        }
+        return CMTime()
+    }
+    func getTime()->CMTime{
+        if player != nil{
+            return player.currentItem.currentTime()
         }
         return CMTime()
     }

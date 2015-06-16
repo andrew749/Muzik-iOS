@@ -194,7 +194,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMO-5c-fh7">
+                            <button opaque="NO" contentMode="center" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMO-5c-fh7">
                                 <rect key="frame" x="271" y="485" width="58" height="58"/>
                                 <state key="normal" image="playbuttonblack.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -226,7 +226,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGx-ms-WPY">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGx-ms-WPY">
                                 <rect key="frame" x="526" y="485" width="58" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="185" id="K2G-TT-sax"/>
@@ -332,6 +332,7 @@
                     <connections>
                         <outlet property="albumImage" destination="hkk-Lp-HP3" id="OyY-pa-uJI"/>
                         <outlet property="playButton" destination="fMO-5c-fh7" id="dtR-fw-ISC"/>
+                        <outlet property="slider" destination="CsB-7C-mNh" id="VyK-fo-UAB"/>
                         <outlet property="songLabel" destination="uPE-TX-PgE" id="75w-Ih-0Gt"/>
                     </connections>
                 </viewController>
