@@ -10,11 +10,11 @@
 #import "Song.h"
 #import "CustomDetailSongView.h"
 @interface HomeScreenTVC()
-@property (nonatomic, strong,readwrite)UIImage* defaultPlaceholder;
+@property (strong,readwrite)UIImage* defaultPlaceholder;
 @end
 @implementation HomeScreenTVC
 @synthesize entries;
-@synthesize defaultPlaceholder;
+@synthesize defaultPlaceholder=_defaultPlaceholder;
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [entries count];
 }
@@ -24,13 +24,16 @@
 -(void) viewDidLoad{
     self.tableView.rowHeight=160;
 }
+-(void)setDefaultPlaceholder:(UIImage *)defaultPlaceholder{
+    self.defaultPlaceholder=defaultPlaceholder;
+}
 -(UIImage *)defaultPlaceholder{
-    if(self.defaultPlaceholder==nil)
+    if(_defaultPlaceholder==nil)
     {
         UIImage* tempImage=[UIImage imageNamed:@"musicimage.png"];
-        self.defaultPlaceholder=tempImage;
+        _defaultPlaceholder=tempImage;
     }
-    return self.defaultPlaceholder;
+    return _defaultPlaceholder;
 }
 -(NSMutableArray *)getElements{
     NSMutableArray *elements=[[NSMutableArray alloc]init];
@@ -59,9 +62,11 @@
                 NSData* data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[entry getSongURL].absoluteString]];
                 UIImage* tempImage=[UIImage imageWithData:data];
                 if(tempImage!=nil){
-                    imageView.image=[UIImage imageWithData:data];
-                    if(entry!=nil)
-                        entry.image=[UIImage imageWithData:data];
+                    entry.image=tempImage;
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        // Your code to run on the main queue/thread
+                        imageView.image=entry.image;
+                    });
                 }
                 
             });
@@ -82,8 +87,9 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"homeentry"];
     }
-    cell.imageView.image=defaultPlaceholder;
-    [self loadImage:entry forImageView:(UIImageView *)[cell.contentView viewWithTag:2]];
+    UIImageView *iv=[cell viewWithTag:2];
+    iv.image=self.defaultPlaceholder;
+    [self loadImage:entry forImageView:(UIImageView *)[cell viewWithTag:2]];
     name.text=entry.songTitle;
     return cell;
 }
