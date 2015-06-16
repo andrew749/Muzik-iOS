@@ -45,6 +45,21 @@ import AVFoundation
         }
         player=nil
     }
+    func seek(time:Int){
+        if ((player) != nil){
+            let a:Int64=Int64(time)
+            let t=CMTimeMake( a, 1 as Int32)
+            player.seekToTime(t)
+        }
+    }
+    func songLength()->CMTime{
+        if(player != nil){
+            var currentTime=player.currentItem.duration.value
+            var timescale=player.currentItem.duration.timescale
+            return CMTimeMake(currentTime, timescale)
+        }
+        return CMTime()
+    }
     static var instance:MusicManager!
     @objc public class func getObjInstance()->MusicManager{
         if (instance == nil)

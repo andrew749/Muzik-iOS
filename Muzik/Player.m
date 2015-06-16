@@ -37,6 +37,13 @@ MusicManager* manager;
     manager=[MusicManager getObjInstance];
     self.state=NOT_PLAYING;
 }
+- (IBAction)sliderPanned:(id)sender {
+    UISlider *s=sender;
+    CGFloat songlen=CMTimeGetSeconds([manager songLength]);
+    int time=s.value*songlen;
+    [manager seek:time];
+}
+
 -(void)playSongWithURL:(NSURL* ) url{
     [manager setSong:[song getSongTitle] url:[song getSongURL]];
     state=PLAYING;
