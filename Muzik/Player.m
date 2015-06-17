@@ -48,11 +48,12 @@ MusicManager* manager;
     int totalSeconds=CMTimeGetSeconds([manager songLength]);
     if (!_timestate) {
         if(totalSeconds/60>0){
-        _totalTime.text=[NSString stringWithFormat:@"%d:%02d",totalSeconds/60,totalSeconds%60];
-        _timestate=YES;
+            _totalTime.text=[NSString stringWithFormat:@"%d:%02d",totalSeconds/60,totalSeconds%60];
+            _timestate=YES;
         }
     }
-    _slider.value=seconds/totalSeconds;
+    _slider.value = (CGFloat)seconds/totalSeconds;
+
 }
 - (IBAction)sliderPanned:(id)sender {
     UISlider *s=sender;
