@@ -37,7 +37,7 @@
                                             </variation>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="songname" text="SongName" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Io3-DN-kxQ">
-                                            <rect key="frame" x="160" y="69.5" width="86" height="20.5"/>
+                                            <rect key="frame" x="160" y="70" width="86" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="86" id="ViM-q8-awV"/>
                                             </constraints>
@@ -159,10 +159,10 @@
             </objects>
             <point key="canvasLocation" x="2101.5" y="489"/>
         </scene>
-        <!--Player-->
+        <!--Now Playing-->
         <scene sceneID="UNK-uL-odL">
             <objects>
-                <viewController id="gcJ-MT-Ovq" customClass="Player" sceneMemberID="viewController">
+                <viewController title="Now Playing" id="gcJ-MT-Ovq" customClass="Player" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Iw6-fQ-2q9"/>
                         <viewControllerLayoutGuide type="bottom" id="ajg-JY-AP5"/>
@@ -232,7 +232,7 @@
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fc-qN-Mbg">
-                                <rect key="frame" x="538" y="466" width="50" height="20.5"/>
+                                <rect key="frame" x="538" y="466" width="50" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -335,6 +335,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="SIU-fB-sBW"/>
                     <navigationItem key="navigationItem" id="S3t-pI-duq"/>
                     <connections>
                         <outlet property="albumImage" destination="hkk-Lp-HP3" id="OyY-pa-uJI"/>
@@ -347,7 +348,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VfW-vW-Noc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3756" y="463"/>
+            <point key="canvasLocation" x="2790" y="2007"/>
         </scene>
         <!--Custom Detail Song View-->
         <scene sceneID="nrj-Y9-Bvn">
@@ -407,7 +408,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="musicimage.png" translatesAutoresizingMaskIntoConstraints="NO" id="xl4-AH-NZu">
-                                <rect key="frame" x="214.5" y="72" width="171" height="171"/>
+                                <rect key="frame" x="215" y="72" width="171" height="171"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="1F5-Gs-7as"/>
                                     <constraint firstAttribute="width" secondItem="xl4-AH-NZu" secondAttribute="height" multiplier="1:1" id="4RJ-HA-tSg"/>
@@ -475,6 +476,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UNO-xP-dFY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.098039215686274508" green="0.73333333333333328" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -548,7 +550,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="3084" y="1396"/>
+            <point key="canvasLocation" x="2292" y="1256"/>
         </scene>
         <!--Search-->
         <scene sceneID="HVM-qv-Row">
@@ -559,6 +561,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="yvr-Tc-Qb1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.098039215690000001" green="0.73333333329999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -567,7 +570,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZoE-Jw-PLZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2272" y="1396"/>
+            <point key="canvasLocation" x="1530" y="1256"/>
         </scene>
     </scenes>
     <resources>
@@ -576,6 +579,6 @@
         <image name="stopbuttonblack.png" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ybu-mG-5Q9"/>
+        <segue reference="uIf-Q0-Xjq"/>
     </inferredMetricsTieBreakers>
 </document>
