@@ -13,6 +13,7 @@ import AVFoundation
     var url:NSURL!
     var player:AVPlayer!
     var songLoaded:Bool=false
+    var loaded:Bool=false
     static let manager:MusicManager=MusicManager()
     override init(){
     }
@@ -28,12 +29,14 @@ import AVFoundation
     func play(){
         if((self.player) != nil){
             player.play()
+            self.loaded=true
         }
     }
     //PAUSE
     func pause(){
         if((player) != nil){
             player.pause()
+            self.loaded=true
         }
         
     }
@@ -42,8 +45,12 @@ import AVFoundation
         if((player) != nil)
         {
             player.pause()
+            self.loaded=false
         }
         player=nil
+    }
+    func isLoaded()->Bool{
+        return self.loaded
     }
     func seek(time:Int){
         if ((player) != nil){

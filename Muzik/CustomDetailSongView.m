@@ -9,6 +9,7 @@
 #import "CustomDetailSongView.h"
 #import "Song.h"
 #import "Player.h"
+#import "Muzik-Swift.h"
 @implementation CustomDetailSongView
 @synthesize song;
 @synthesize song_Label;
@@ -27,7 +28,14 @@ NSMutableArray * songs;
     [resultsTable reloadData];
     NSLog(@"done reloading data");
 }
-
+-(void)viewDidAppear:(BOOL)animated{
+    if([[MusicManager getObjInstance] isLoaded]){
+        self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithTitle:@"Now Playing" style:UIBarButtonItemStylePlain target:self action:@selector(openPlayer)];
+    }
+}
+-(void)openPlayer{
+    [self performSegueWithIdentifier:@"playsong" sender:self];
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return[songs count];
 }
@@ -37,7 +45,7 @@ NSMutableArray * songs;
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault  reuseIdentifier:MyIdentifier];
     }
-    cell.textLabel.text = [[[songs objectAtIndex:indexPath.row] getSongURL] absoluteString];
+    cell.textLabel.text = [[songs objectAtIndex:indexPath.row] getSongTitle];
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
