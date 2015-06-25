@@ -11,6 +11,7 @@
 @interface CustomDetailSongView : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (weak,nonatomic) IBOutlet UILabel* song_Label;
 @property (weak, nonatomic) IBOutlet UITableView *resultsTable;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 @property (weak, nonatomic) IBOutlet UIImageView *albumImage;
 @property (strong,nonatomic)Song* song;
 @end

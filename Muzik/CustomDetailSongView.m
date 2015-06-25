@@ -22,15 +22,18 @@ NSMutableArray * songs;
     [super viewDidLoad];
     [song_Label setText:[song getSongTitle]];
     songs=[[NSMutableArray alloc] init ];
-    songs=[self getLinks:[song getSongTitle]];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self.spinner startAnimating];
+        [self getLinks:[song getSongTitle]];
+    });
     albumImage.image=song.image;
     [resultsTable setDelegate:self];
-    [resultsTable reloadData];
     NSLog(@"done reloading data");
 }
 -(void)viewDidAppear:(BOOL)animated{
     if([[MusicManager getObjInstance] isLoaded]){
         self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithTitle:@"Now Playing" style:UIBarButtonItemStylePlain target:self action:@selector(openPlayer)];
+        self.navigationItem.rightBarButtonItem.tintColor=[UIColor whiteColor];
     }
 }
 -(void)openPlayer{
@@ -55,7 +58,7 @@ NSMutableArray * songs;
 -(void)viewDidLayoutSubviews{
     song_Label.preferredMaxLayoutWidth=song_Label.frame.size.width;
 }
--(NSMutableArray *)getLinks:(NSString *)songName{
+-(void)getLinks:(NSString *)songName{
     NSMutableArray* names=[[NSMutableArray alloc] init];
     NSString * baseurl=@"http://muzik-api.herokuapp.com/search?songname=";
     NSString * encodedName=[songName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -71,7 +74,11 @@ NSMutableArray * songs;
         [names addObject:[[Song alloc] initSongEntry:sName withURL:[NSURL URLWithString:element[@"url"] [0]]]];
     }
     
-    return names;
+    songs=names;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.spinner stopAnimating];
+        [resultsTable reloadData];
+    });
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

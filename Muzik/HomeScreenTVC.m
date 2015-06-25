@@ -9,6 +9,7 @@
 #import "HomeScreenTVC.h"
 #import "Song.h"
 #import "CustomDetailSongView.h"
+#import "Muzik-Swift.h"
 @interface HomeScreenTVC()
 @property (strong,readwrite)UIImage* defaultPlaceholder;
 @end
@@ -23,6 +24,15 @@
 }
 -(void) viewDidLoad{
     self.tableView.rowHeight=160;
+}
+-(void)viewDidAppear:(BOOL)animated{
+    if ([[MusicManager getObjInstance] isLoaded]){
+        self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]  initWithTitle:@"Now Playing" style:UIBarButtonItemStylePlain target:self action:@selector(goToPlayer)];
+        self.navigationItem.rightBarButtonItem.tintColor=[UIColor whiteColor];
+    }
+}
+-(void)goToPlayer{
+    
 }
 -(void)setDefaultPlaceholder:(UIImage *)defaultPlaceholder{
     self.defaultPlaceholder=defaultPlaceholder;

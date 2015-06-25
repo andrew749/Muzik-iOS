@@ -421,15 +421,20 @@
                                     </mask>
                                 </variation>
                             </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="KVK-WB-7Pr">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="tEp-kh-Hzv" secondAttribute="trailing" constant="238" id="179-C4-gJ4"/>
                             <constraint firstAttribute="centerY" secondItem="tEp-kh-Hzv" secondAttribute="centerY" constant="61.5" id="1D6-t9-ba7"/>
                             <constraint firstItem="xl4-AH-NZu" firstAttribute="centerX" secondItem="tEp-kh-Hzv" secondAttribute="centerX" id="3A5-OF-biK"/>
+                            <constraint firstItem="KVK-WB-7Pr" firstAttribute="centerX" secondItem="tEp-kh-Hzv" secondAttribute="centerX" id="9yZ-Xv-Ss9"/>
                             <constraint firstItem="xl4-AH-NZu" firstAttribute="top" secondItem="Jyq-AQ-wKr" secondAttribute="bottom" constant="8" symbolic="YES" id="BJk-dz-Ohh"/>
                             <constraint firstItem="tEp-kh-Hzv" firstAttribute="leading" secondItem="VH5-cl-tJg" secondAttribute="leading" id="BhX-0f-v7M"/>
                             <constraint firstItem="tEp-kh-Hzv" firstAttribute="centerX" secondItem="xl4-AH-NZu" secondAttribute="centerX" id="ECD-Pd-ZdB"/>
+                            <constraint firstItem="KVK-WB-7Pr" firstAttribute="centerY" secondItem="VH5-cl-tJg" secondAttribute="centerY" id="FDv-hs-CIk"/>
                             <constraint firstItem="tEp-kh-Hzv" firstAttribute="width" secondItem="QyR-eW-9uz" secondAttribute="width" id="G3d-Gs-nZc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QyR-eW-9uz" secondAttribute="trailing" id="KIV-a8-OyI"/>
                             <constraint firstAttribute="trailing" secondItem="tEp-kh-Hzv" secondAttribute="trailing" id="Le5-lu-znc"/>
@@ -461,6 +466,7 @@
                         <outlet property="albumImage" destination="xl4-AH-NZu" id="2ot-i7-2bu"/>
                         <outlet property="resultsTable" destination="QyR-eW-9uz" id="p7d-a3-3Yt"/>
                         <outlet property="song_Label" destination="tEp-kh-Hzv" id="Jxm-uL-Xcv"/>
+                        <outlet property="spinner" destination="KVK-WB-7Pr" id="w4i-Yi-XbI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WfD-aJ-Bdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
