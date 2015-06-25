@@ -44,16 +44,17 @@ MusicManager* manager;
 }
 -(void)updateBar{
     int seconds=CMTimeGetSeconds([manager getTime]);
-    _currentTime.text=[NSString stringWithFormat:@"%d:%02d",seconds/60,seconds%60];
-    int totalSeconds=CMTimeGetSeconds([manager songLength]);
-    if (!_timestate) {
-        if(totalSeconds/60>0){
-            _totalTime.text=[NSString stringWithFormat:@"%d:%02d",totalSeconds/60,totalSeconds%60];
-            _timestate=YES;
+    if (seconds > 0){
+        _currentTime.text=[NSString stringWithFormat:@"%d:%02d",seconds/60,seconds%60];
+        int totalSeconds=CMTimeGetSeconds([manager songLength]);
+        if (!_timestate) {
+            if(totalSeconds/60>0){
+                _totalTime.text=[NSString stringWithFormat:@"%d:%02d",totalSeconds/60,totalSeconds%60];
+                _timestate=YES;
+            }
         }
+        _slider.value = (CGFloat)seconds/totalSeconds;
     }
-    _slider.value = (CGFloat)seconds/totalSeconds;
-
 }
 - (IBAction)sliderPanned:(id)sender {
     UISlider *s=sender;
