@@ -42,7 +42,7 @@ class SearchViewSwift:UIViewController,UITableViewDataSource,UITableViewDelegate
     func loadSongs(query:String){
         
         let encodedQuery:String=query.stringByReplacingOccurrencesOfString(" ", withString: "_", options: NSStringCompareOptions.LiteralSearch, range: nil)
-        let stringUrl:String="http://muzik-api.herokuapp.com/search?songname="+encodedQuery
+        let stringUrl:String="http://muzik.elasticbeanstalk.com/search?songname="+encodedQuery
         var url=NSURL(string:stringUrl)
         var jsonData=NSData(contentsOfURL: url!)
         var err:NSError?
