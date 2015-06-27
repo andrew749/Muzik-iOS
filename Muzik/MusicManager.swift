@@ -42,10 +42,10 @@ import AVFoundation
     }
     //STOP
     func stop(){
+        self.loaded=false
         if((player) != nil)
         {
             player.pause()
-            self.loaded=false
         }
         player=nil
     }
@@ -67,7 +67,9 @@ import AVFoundation
     }
     func getTime()->CMTime{
         if player != nil{
-            return player.currentItem.currentTime()
+            if (isLoaded()){
+                return player.currentItem.currentTime()
+            }
         }
         return CMTime()
     }

@@ -12,9 +12,7 @@
 		B0693EA51B229E3F005F1D93 /* CustomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0693EA41B229E3F005F1D93 /* CustomController.swift */; };
 		B080AA131A7D69BD006D562E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B080AA121A7D69BD006D562E /* main.m */; };
 		B080AA161A7D69BD006D562E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B080AA151A7D69BD006D562E /* AppDelegate.m */; };
-		B080AA191A7D69BD006D562E /* Muzik.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B080AA171A7D69BD006D562E /* Muzik.xcdatamodeld */; };
 		B080AA1F1A7D69BD006D562E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B080AA1D1A7D69BD006D562E /* Main.storyboard */; };
-		B080AA211A7D69BD006D562E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B080AA201A7D69BD006D562E /* Images.xcassets */; };
 		B080AA241A7D69BD006D562E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B080AA221A7D69BD006D562E /* LaunchScreen.xib */; };
 		B080AA301A7D69BD006D562E /* MuzikTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B080AA2F1A7D69BD006D562E /* MuzikTests.m */; };
 		B080AA3B1A7D69E7006D562E /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = B080AA3A1A7D69E7006D562E /* Song.m */; };
@@ -25,6 +23,7 @@
 		B0B2E7B71B27EF8100952C9E /* musicimage.png in Resources */ = {isa = PBXBuildFile; fileRef = B0B2E7B61B27EF8100952C9E /* musicimage.png */; };
 		B0B841421AA412380088192D /* CustomDetailSongView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B841411AA412380088192D /* CustomDetailSongView.m */; };
 		B0CA5EBE1A7DF8D500EEBDB2 /* HomeScreenTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B0CA5EBD1A7DF8D500EEBDB2 /* HomeScreenTVC.m */; };
+		B0DA770B1B3CFEBE00B31FAA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B080AA201A7D69BD006D562E /* Images.xcassets */; };
 		B0E12BE01AF51D7A00BBC62F /* MusicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E12BDF1AF51D7A00BBC62F /* MusicManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +47,6 @@
 		B080AA121A7D69BD006D562E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B080AA141A7D69BD006D562E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B080AA151A7D69BD006D562E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B080AA181A7D69BD006D562E /* Muzik.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Muzik.xcdatamodel; sourceTree = "<group>"; };
 		B080AA1E1A7D69BD006D562E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B080AA201A7D69BD006D562E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B080AA231A7D69BD006D562E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -127,7 +125,6 @@
 				B0B2E7B31B27A51300952C9E /* Images */,
 				B080AA201A7D69BD006D562E /* Images.xcassets */,
 				B080AA221A7D69BD006D562E /* LaunchScreen.xib */,
-				B080AA171A7D69BD006D562E /* Muzik.xcdatamodeld */,
 				B080AA101A7D69BD006D562E /* Supporting Files */,
 				B01CD9F31AF1B730005340FE /* Muzik-Bridging-Header.h */,
 			);
@@ -261,11 +258,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0DA770B1B3CFEBE00B31FAA /* Images.xcassets in Resources */,
 				B0B2E7B71B27EF8100952C9E /* musicimage.png in Resources */,
 				B080AA1F1A7D69BD006D562E /* Main.storyboard in Resources */,
 				B080AA241A7D69BD006D562E /* LaunchScreen.xib in Resources */,
 				B0B2E7B01B27A4A700952C9E /* pausebuttonblack.png in Resources */,
-				B080AA211A7D69BD006D562E /* Images.xcassets in Resources */,
 				B0B2E7B11B27A4A700952C9E /* playbuttonblack.png in Resources */,
 				B0B2E7B21B27A4A700952C9E /* stopbuttonblack.png in Resources */,
 			);
@@ -293,7 +290,6 @@
 				B080AA131A7D69BD006D562E /* main.m in Sources */,
 				B0CA5EBE1A7DF8D500EEBDB2 /* HomeScreenTVC.m in Sources */,
 				B08AA01C1AAAA0D700F95A90 /* Player.m in Sources */,
-				B080AA191A7D69BD006D562E /* Muzik.xcdatamodeld in Sources */,
 				B0E12BE01AF51D7A00BBC62F /* MusicManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,6 +414,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Muzik/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -431,6 +428,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Muzik/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -504,19 +502,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		B080AA171A7D69BD006D562E /* Muzik.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				B080AA181A7D69BD006D562E /* Muzik.xcdatamodel */,
-			);
-			currentVersion = B080AA181A7D69BD006D562E /* Muzik.xcdatamodel */;
-			path = Muzik.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = B080AA051A7D69BD006D562E /* Project object */;
 }
