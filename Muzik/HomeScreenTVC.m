@@ -58,7 +58,8 @@
             NSString *sName=element[@"title"];
             NSURL* url=nil;
             url=[NSURL URLWithString:element[@"albumArt"]];
-            [elements addObject:[[Song alloc] initSongEntry:sName withURL:url]];
+            NSString* artist=element[@"artist"];
+            [elements addObject:[[Song alloc] initSongEntry:sName withURL:url artistName:artist]];
         }
     }
     return elements;
@@ -101,6 +102,9 @@
     iv.image=self.defaultPlaceholder;
     [self loadImage:entry forImageView:(UIImageView *)[cell viewWithTag:2]];
     name.text=entry.songTitle;
+    UILabel *artistlabel=[cell viewWithTag:3];
+    artistlabel.text=entry.artistName;
+    
     return cell;
 }
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

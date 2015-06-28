@@ -15,6 +15,8 @@
 @property  (nonatomic,strong)NSURL *songUrl;
 @property (nonatomic,strong)UIImage *image;
 //constructor for the songentry object.
+-(id)initSongEntry:(NSString *) songName withURL:(NSURL *) url artistName:(NSString *)artist;
+
 -(id)initSongEntry:(NSString *) songName withURL:(NSURL *) url;
 -(id)initSongEntry:(NSString *)songName;
 -(NSString *)getSongTitle;

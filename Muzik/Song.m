@@ -13,6 +13,16 @@
     _songTitle=songName;
     return self;
 }
+-(id)initSongEntry:(NSString *) songName withURL:(NSURL *) url artistName:(NSString *)artist{
+    if(self=[super init]){
+        _songTitle=songName;
+        _songUrl=url;
+        _artistName=artist;
+    }
+    return self;
+
+}
+
 -(id)initSongEntry:(NSString *) songNameToInit withURL:(NSURL *) url{
     if(self=[super init]){
         _songTitle=songNameToInit;
@@ -35,5 +45,8 @@
 }
 -(NSURL *)getSongURL{
     return self.songUrl;
+}
+-(NSString *)getArtistName{
+    return self.artistName;
 }
 @end

@@ -22,10 +22,10 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ony-dm-q4h">
-                                            <rect key="frame" x="8" y="8" width="144" height="144"/>
+                                            <rect key="frame" x="1" y="8" width="144" height="144"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="143" id="9T8-HB-Ceq"/>
-                                                <constraint firstAttribute="width" secondItem="Ony-dm-q4h" secondAttribute="height" multiplier="143:143" id="ApV-kk-5aQ"/>
+                                                <constraint firstAttribute="width" constant="144" id="GGR-PV-27y"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -36,8 +36,8 @@
                                                 <rect key="frame" x="11" y="15" width="130" height="130"/>
                                             </variation>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="songname" text="SongName" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Io3-DN-kxQ">
-                                            <rect key="frame" x="160" y="70" width="86" height="20.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="songname" text="SongName" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Io3-DN-kxQ">
+                                            <rect key="frame" x="153" y="71" width="446" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="86" id="ViM-q8-awV"/>
                                             </constraints>
@@ -56,45 +56,52 @@
                                                 <rect key="frame" x="149" y="69.5" width="86" height="20.5"/>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Artist" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Go-hg-adp">
-                                            <rect key="frame" x="160" y="99" width="41" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Go-hg-adp">
+                                            <rect key="frame" x="153" y="99" width="446" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="7Go-hg-adp" firstAttribute="top" secondItem="Io3-DN-kxQ" secondAttribute="bottom" constant="8" symbolic="YES" id="01V-SD-RCL"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Io3-DN-kxQ" secondAttribute="trailing" constant="-7" id="2dc-xH-o3r"/>
                                         <constraint firstItem="Io3-DN-kxQ" firstAttribute="trailing" secondItem="xo9-Lq-I1I" secondAttribute="trailingMargin" id="3QB-gf-TvI"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Io3-DN-kxQ" secondAttribute="trailing" constant="-7" id="5at-kW-zmt"/>
+                                        <constraint firstItem="Ony-dm-q4h" firstAttribute="top" secondItem="xo9-Lq-I1I" secondAttribute="topMargin" id="7EM-Ve-Uze"/>
                                         <constraint firstItem="Io3-DN-kxQ" firstAttribute="centerY" secondItem="Ony-dm-q4h" secondAttribute="centerY" id="7Kk-tw-nEt"/>
                                         <constraint firstItem="Io3-DN-kxQ" firstAttribute="leading" secondItem="xo9-Lq-I1I" secondAttribute="leading" constant="159" id="8qt-y3-weM"/>
                                         <constraint firstItem="Io3-DN-kxQ" firstAttribute="top" secondItem="xo9-Lq-I1I" secondAttribute="topMargin" constant="57" id="9yE-K2-n0c"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Ony-dm-q4h" secondAttribute="bottom" constant="-0.5" id="Bc1-ev-SS2"/>
                                         <constraint firstItem="Io3-DN-kxQ" firstAttribute="leading" secondItem="xo9-Lq-I1I" secondAttribute="leading" constant="159" id="CSW-d6-V9B"/>
                                         <constraint firstItem="Ony-dm-q4h" firstAttribute="leading" secondItem="xo9-Lq-I1I" secondAttribute="leadingMargin" constant="-7" id="D2d-hz-gkz"/>
                                         <constraint firstAttribute="centerX" secondItem="Io3-DN-kxQ" secondAttribute="centerX" constant="8" id="DbD-Hv-PPV"/>
+                                        <constraint firstItem="Io3-DN-kxQ" firstAttribute="top" secondItem="xo9-Lq-I1I" secondAttribute="topMargin" constant="62" id="Hgh-1H-69o"/>
                                         <constraint firstItem="Io3-DN-kxQ" firstAttribute="top" secondItem="xo9-Lq-I1I" secondAttribute="topMargin" constant="57" id="Jro-jz-VRB"/>
                                         <constraint firstItem="Io3-DN-kxQ" firstAttribute="centerY" secondItem="Ony-dm-q4h" secondAttribute="centerY" id="KTJ-cx-Qaj"/>
-                                        <constraint firstItem="Ony-dm-q4h" firstAttribute="leading" secondItem="xo9-Lq-I1I" secondAttribute="leadingMargin" id="L7N-FW-9QA"/>
+                                        <constraint firstItem="Ony-dm-q4h" firstAttribute="leading" secondItem="xo9-Lq-I1I" secondAttribute="leadingMargin" constant="-7" id="MnI-Uk-yq9"/>
                                         <constraint firstItem="Io3-DN-kxQ" firstAttribute="top" secondItem="xo9-Lq-I1I" secondAttribute="topMargin" constant="61" id="MuS-Wc-xgS"/>
-                                        <constraint firstItem="Io3-DN-kxQ" firstAttribute="leading" secondItem="Ony-dm-q4h" secondAttribute="trailing" constant="8" id="Nxr-xI-hgK"/>
+                                        <constraint firstItem="Io3-DN-kxQ" firstAttribute="centerY" secondItem="Ony-dm-q4h" secondAttribute="centerY" id="NZ2-hL-RBW"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="7Go-hg-adp" secondAttribute="bottom" constant="31.5" id="ONu-mS-ENb"/>
+                                        <constraint firstItem="7Go-hg-adp" firstAttribute="trailing" secondItem="Io3-DN-kxQ" secondAttribute="trailing" id="Rnz-xg-X0g"/>
                                         <constraint firstItem="Ony-dm-q4h" firstAttribute="leading" secondItem="xo9-Lq-I1I" secondAttribute="leadingMargin" constant="-7" id="Srh-wA-Hf5"/>
                                         <constraint firstItem="Ony-dm-q4h" firstAttribute="bottom" secondItem="xo9-Lq-I1I" secondAttribute="bottomMargin" id="TWV-Wq-hB2"/>
                                         <constraint firstItem="Io3-DN-kxQ" firstAttribute="top" secondItem="xo9-Lq-I1I" secondAttribute="topMargin" constant="57" id="VpY-ZR-efK"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Ony-dm-q4h" secondAttribute="bottom" constant="6.5" id="Vzv-02-I7J"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Ony-dm-q4h" secondAttribute="bottom" constant="-0.5" id="YMV-ZL-i1P"/>
                                         <constraint firstAttribute="centerY" secondItem="Io3-DN-kxQ" secondAttribute="centerY" id="YOC-EO-Kqp"/>
                                         <constraint firstItem="Io3-DN-kxQ" firstAttribute="centerY" secondItem="Ony-dm-q4h" secondAttribute="centerY" id="a1K-KX-aAa"/>
                                         <constraint firstItem="Io3-DN-kxQ" firstAttribute="leading" secondItem="Ony-dm-q4h" secondAttribute="trailing" constant="8" id="amt-ZY-IrQ"/>
+                                        <constraint firstItem="Io3-DN-kxQ" firstAttribute="leading" secondItem="Ony-dm-q4h" secondAttribute="trailing" constant="8" symbolic="YES" id="av9-P4-3NH"/>
                                         <constraint firstItem="Io3-DN-kxQ" firstAttribute="leading" secondItem="xo9-Lq-I1I" secondAttribute="leadingMargin" constant="141" id="bVC-sC-4Lv"/>
                                         <constraint firstItem="Io3-DN-kxQ" firstAttribute="leading" secondItem="Ony-dm-q4h" secondAttribute="trailing" constant="8" symbolic="YES" id="d2V-xU-BUh"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="7Go-hg-adp" secondAttribute="bottom" constant="31.5" id="fQo-t3-XyR"/>
                                         <constraint firstItem="Ony-dm-q4h" firstAttribute="top" secondItem="xo9-Lq-I1I" secondAttribute="topMargin" id="gpJ-hZ-ukq"/>
                                         <constraint firstItem="Io3-DN-kxQ" firstAttribute="leading" secondItem="xo9-Lq-I1I" secondAttribute="leading" constant="149" id="iO7-ze-Iz6"/>
                                         <constraint firstItem="Ony-dm-q4h" firstAttribute="top" secondItem="xo9-Lq-I1I" secondAttribute="topMargin" id="jVr-Am-kOV"/>
-                                        <constraint firstAttribute="centerY" secondItem="Io3-DN-kxQ" secondAttribute="centerY" id="kOE-TG-KTf"/>
                                         <constraint firstItem="Ony-dm-q4h" firstAttribute="bottom" secondItem="xo9-Lq-I1I" secondAttribute="bottomMargin" id="okm-FU-oVB"/>
+                                        <constraint firstItem="Io3-DN-kxQ" firstAttribute="leading" secondItem="7Go-hg-adp" secondAttribute="leading" id="riL-Ys-zQD"/>
                                         <constraint firstItem="Ony-dm-q4h" firstAttribute="centerY" secondItem="Io3-DN-kxQ" secondAttribute="centerY" id="vBZ-8b-3VY"/>
                                         <constraint firstItem="Ony-dm-q4h" firstAttribute="leading" secondItem="xo9-Lq-I1I" secondAttribute="leadingMargin" constant="-7" id="vct-6h-mBm"/>
-                                        <constraint firstItem="Ony-dm-q4h" firstAttribute="top" secondItem="xo9-Lq-I1I" secondAttribute="topMargin" id="y8w-8W-cyb"/>
                                         <constraint firstItem="Io3-DN-kxQ" firstAttribute="leading" secondItem="Ony-dm-q4h" secondAttribute="trailing" constant="8" symbolic="YES" id="zKf-d6-ugA"/>
                                         <constraint firstItem="Io3-DN-kxQ" firstAttribute="leading" secondItem="xo9-Lq-I1I" secondAttribute="leading" constant="149" id="zci-mH-j84"/>
                                     </constraints>
@@ -116,6 +123,7 @@
                                             <exclude reference="9yE-K2-n0c"/>
                                             <exclude reference="CSW-d6-V9B"/>
                                             <exclude reference="DbD-Hv-PPV"/>
+                                            <exclude reference="Hgh-1H-69o"/>
                                             <exclude reference="Jro-jz-VRB"/>
                                             <exclude reference="KTJ-cx-Qaj"/>
                                             <exclude reference="MuS-Wc-xgS"/>
@@ -128,6 +136,8 @@
                                             <exclude reference="iO7-ze-Iz6"/>
                                             <exclude reference="zKf-d6-ugA"/>
                                             <exclude reference="zci-mH-j84"/>
+                                            <exclude reference="ONu-mS-ENb"/>
+                                            <exclude reference="fQo-t3-XyR"/>
                                         </mask>
                                     </variation>
                                     <variation key="widthClass=compact">
@@ -135,7 +145,6 @@
                                             <exclude reference="Srh-wA-Hf5"/>
                                             <exclude reference="TWV-Wq-hB2"/>
                                             <include reference="Vzv-02-I7J"/>
-                                            <exclude reference="YMV-ZL-i1P"/>
                                             <exclude reference="jVr-Am-kOV"/>
                                             <exclude reference="vBZ-8b-3VY"/>
                                             <exclude reference="vct-6h-mBm"/>
@@ -163,7 +172,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2101.5" y="489"/>
+            <point key="canvasLocation" x="2101" y="489"/>
         </scene>
         <!--Now Playing-->
         <scene sceneID="UNK-uL-odL">
