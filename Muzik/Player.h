@@ -15,7 +15,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *songLabel;
 @property (strong, nonatomic)Song *song;
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
-typedef enum {NOT_PLAYING, PLAYING, PAUSED, STOPPED}STATE;
 - (IBAction)stopClick:(id)sender;
-@property STATE state;
 @end

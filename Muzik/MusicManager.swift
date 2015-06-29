@@ -12,9 +12,9 @@ import AVFoundation
     var title:String!
     var url:NSURL!
     var player:AVPlayer!
-    var songLoaded:Bool=false
-    var loaded:Bool=false
-    var playing:Bool=false
+ 
+    var state:STATE=STATE.NOT_PLAYING
+
     static let manager:MusicManager=MusicManager()
     override init(){
     }
@@ -22,38 +22,42 @@ import AVFoundation
         self.title=title
         self.url=url
         self.player=AVPlayer(URL: url)
-        songLoaded=true;
         NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "com.andrew749.muzik.updatestate", object: nil))
         self.play()
     }
     //PLAY
     func play(){
-        playing=true
         if((self.player) != nil){
             player.play()
-            self.loaded=true
+            state=STATE.PLAYING
         }
     }
     //PAUSE
     func pause(){
         if((player) != nil){
             player.pause()
-            self.loaded=true
+            state=STATE.PAUSED
         }
         
     }
+    func toggleSong(){
+        if(state==STATE.PLAYING){
+            self.pause()
+        }else if (state==STATE.PAUSED){
+            self.play()
+        }
+    }
     //STOP
     func stop(){
-        playing=false
-        self.loaded=false
         if((player) != nil)
         {
             player.pause()
+            state=STATE.STOPPED
         }
         player=nil
     }
     func isLoaded()->Bool{
-        return self.loaded
+        return state==STATE.PLAYING||state==STATE.PAUSED||state==STATE.LOADED
     }
     func seek(time:Int){
         if ((player) != nil){
@@ -71,7 +75,9 @@ import AVFoundation
     func getTime()->CMTime{
         if player != nil{
             if (isLoaded()){
-                return player.currentItem.currentTime()
+                if(player.currentItem != nil){
+                    return player.currentItem.currentTime()
+                }
             }
         }
         return CMTime()

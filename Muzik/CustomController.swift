@@ -8,11 +8,9 @@
 
 class CustomController: UINavigationController {
     override func viewDidLoad() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "addNowPlayingIcon:", name: "com.andrew749.muzik.updatestate", object: nil)
     }
     func addNowPlayingIcon(){
-        println("got update notification")
-        if(MusicManager.getObjInstance().songLoaded==true){
+        if(MusicManager.getObjInstance().isLoaded()){
             self.navigationItem.setRightBarButtonItem(UIBarButtonItem(title: "Now Playing", style: UIBarButtonItemStyle.Plain, target: self.viewControllers[0], action: nil), animated: true)
         }
     }

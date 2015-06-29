@@ -23,7 +23,6 @@
 @synthesize song;
 @synthesize songLabel;
 @synthesize playButton;
-@synthesize state;
 @synthesize playImage;
 @synthesize pauseImage;
 MusicManager* manager;
@@ -39,19 +38,30 @@ MusicManager* manager;
         self.albumImage.image=self.image;
     }
     manager=[MusicManager getObjInstance];
-    if (!manager.playing){
-        self.state=NOT_PLAYING;
-        _timer=[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateBar) userInfo:nil repeats:YES];
+    if(manager.state == STATENOT_PLAYING){
+        [self startSong];
+        [playButton setImage:pauseImage forState:UIControlStateNormal];
     }else{
-        if([manager.url.absoluteString isEqualToString:[self.song getSongURL].absoluteString]){
-            [playButton setImage:pauseImage forState:UIControlStateNormal];
-            self.state=PLAYING;
-            _timer=[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateBar) userInfo:nil repeats:YES];
-        }else{
-            self.state=NOT_PLAYING;
-            _timer=[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateBar) userInfo:nil repeats:YES];
+        if([manager isLoaded]){
+            if (![manager.url.absoluteString isEqualToString:[self.song getSongURL].absoluteString]){
+                [self startSong];
+            }
+            if(manager.state == STATEPLAYING){
+                [playButton setImage:pauseImage forState:UIControlStateNormal];
+            }else{
+                [playButton setImage:playImage forState:UIControlStateNormal];
+            }
         }
     }
+}
+-(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    [_timer invalidate];
+    _timer=nil;
+}
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    _timer=[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateBar) userInfo:nil repeats:YES];
 }
 -(void)updateBar{
     int seconds=CMTimeGetSeconds([manager getTime]);
@@ -74,38 +84,22 @@ MusicManager* manager;
     [manager seek:time];
 }
 
--(void)playSongWithURL:(NSURL* ) url{
+-(void)startSong{
     [manager setSong:[song getSongTitle] url:[song getSongURL]];
-    state=PLAYING;
-}
-
--(void)pauseSong{
-    [manager pause];
-    self.state=PAUSED;
-}
--(void)resumeSong{
-    [manager play];
-    self.state=PLAYING;
 }
 -(void)stopSong{
     [manager stop];
     [self.navigationController popViewControllerAnimated:true  ];
-    self.state=STOPPED;
 }
 - (IBAction)playButtonClick:(id)sender {
-    if(self.state==NOT_PLAYING){
-        [self playSongWithURL:[song getSongURL]];
-        [playButton setImage:pauseImage forState:UIControlStateNormal];
-    }
-    else if (self.state==PAUSED){
-        [self resumeSong];
-        [playButton setImage:pauseImage forState:UIControlStateNormal];
-        
-    }
-    else if (self.state==PLAYING){
-        [self pauseSong];
-        [playButton setImage:playImage forState:UIControlStateNormal];
-        
+    if ([manager isLoaded]){
+        [manager toggleSong];
+        if(manager.state==STATEPAUSED){
+            [playButton setImage:playImage forState:UIControlStateNormal];
+        }else{
+            [playButton setImage:pauseImage forState:UIControlStateNormal];
+            
+        }
     }
 }
 @end
