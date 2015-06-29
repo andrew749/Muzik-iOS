@@ -38,7 +38,8 @@ MusicManager* manager;
         self.albumImage.image=self.image;
     }
     manager=[MusicManager getObjInstance];
-    if(manager.state == STATENOT_PLAYING){
+    if(manager.state == STATENOT_PLAYING|| manager.state
+       ==STATESTOPPED){
         [self startSong];
         [playButton setImage:pauseImage forState:UIControlStateNormal];
     }else{
