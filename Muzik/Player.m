@@ -39,8 +39,19 @@ MusicManager* manager;
         self.albumImage.image=self.image;
     }
     manager=[MusicManager getObjInstance];
-    self.state=NOT_PLAYING;
-    _timer=[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateBar) userInfo:nil repeats:YES];
+    if (!manager.playing){
+        self.state=NOT_PLAYING;
+        _timer=[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateBar) userInfo:nil repeats:YES];
+    }else{
+        if([manager.url.absoluteString isEqualToString:[self.song getSongURL].absoluteString]){
+            [playButton setImage:pauseImage forState:UIControlStateNormal];
+            self.state=PLAYING;
+            _timer=[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateBar) userInfo:nil repeats:YES];
+        }else{
+            self.state=NOT_PLAYING;
+            _timer=[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateBar) userInfo:nil repeats:YES];
+        }
+    }
 }
 -(void)updateBar{
     int seconds=CMTimeGetSeconds([manager getTime]);

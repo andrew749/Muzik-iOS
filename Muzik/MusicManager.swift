@@ -14,6 +14,7 @@ import AVFoundation
     var player:AVPlayer!
     var songLoaded:Bool=false
     var loaded:Bool=false
+    var playing:Bool=false
     static let manager:MusicManager=MusicManager()
     override init(){
     }
@@ -27,6 +28,7 @@ import AVFoundation
     }
     //PLAY
     func play(){
+        playing=true
         if((self.player) != nil){
             player.play()
             self.loaded=true
@@ -42,6 +44,7 @@ import AVFoundation
     }
     //STOP
     func stop(){
+        playing=false
         self.loaded=false
         if((player) != nil)
         {
