@@ -202,7 +202,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGx-ms-WPY">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGx-ms-WPY">
                                 <rect key="frame" x="526" y="493" width="58" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="185" id="K2G-TT-sax"/>
@@ -252,8 +252,11 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="center" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMO-5c-fh7">
+                            <button opaque="NO" contentMode="center" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMO-5c-fh7">
                                 <rect key="frame" x="271" y="493" width="58" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="edc-TU-dWE"/>
+                                </constraints>
                                 <state key="normal" image="playbuttonblack.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -302,7 +305,9 @@
                             <constraint firstAttribute="centerX" secondItem="uPE-TX-PgE" secondAttribute="centerX" id="NHT-fY-7Pe"/>
                             <constraint firstItem="uPE-TX-PgE" firstAttribute="leading" secondItem="OiJ-ty-GGr" secondAttribute="leadingMargin" id="RiQ-Wv-Ubd"/>
                             <constraint firstItem="fMO-5c-fh7" firstAttribute="top" secondItem="6fc-qN-Mbg" secondAttribute="bottom" constant="8" id="SP9-pT-9US"/>
+                            <constraint firstItem="fMO-5c-fh7" firstAttribute="top" secondItem="lGx-ms-WPY" secondAttribute="top" id="Suu-Mu-V44"/>
                             <constraint firstItem="lGx-ms-WPY" firstAttribute="trailing" secondItem="OiJ-ty-GGr" secondAttribute="trailingMargin" id="TS7-GY-czh"/>
+                            <constraint firstItem="fMO-5c-fh7" firstAttribute="bottom" secondItem="lGx-ms-WPY" secondAttribute="bottom" id="Uxk-wS-l0W"/>
                             <constraint firstItem="6fc-qN-Mbg" firstAttribute="top" secondItem="tJp-v7-Q2t" secondAttribute="bottom" constant="8" id="VGa-B6-M2s"/>
                             <constraint firstItem="ajg-JY-AP5" firstAttribute="top" secondItem="lGx-ms-WPY" secondAttribute="bottom" constant="8" id="VTE-EI-Bks"/>
                             <constraint firstItem="uPE-TX-PgE" firstAttribute="top" secondItem="hkk-Lp-HP3" secondAttribute="bottom" constant="8" symbolic="YES" id="VgN-yX-Ss9"/>
@@ -326,12 +331,12 @@
                                 <exclude reference="VgN-yX-Ss9"/>
                                 <exclude reference="gOf-bK-SFb"/>
                                 <exclude reference="FJu-FX-1yf"/>
-                                <exclude reference="6bi-hB-Kao"/>
-                                <exclude reference="7SI-L6-WVR"/>
                                 <exclude reference="BWY-Xv-2Ph"/>
                                 <exclude reference="Cif-au-Te4"/>
                                 <exclude reference="i4n-Pa-Wzc"/>
                                 <exclude reference="oBR-m2-aem"/>
+                                <exclude reference="6bi-hB-Kao"/>
+                                <exclude reference="7SI-L6-WVR"/>
                                 <exclude reference="2O9-Bk-Eba"/>
                                 <exclude reference="7eA-Bb-Pda"/>
                                 <exclude reference="EuK-jd-hxC"/>
@@ -344,9 +349,9 @@
                                 <exclude reference="yv0-xz-Y9I"/>
                                 <include reference="VgN-yX-Ss9"/>
                                 <include reference="gOf-bK-SFb"/>
+                                <include reference="oBR-m2-aem"/>
                                 <include reference="6bi-hB-Kao"/>
                                 <exclude reference="7SI-L6-WVR"/>
-                                <include reference="oBR-m2-aem"/>
                             </mask>
                         </variation>
                     </view>
