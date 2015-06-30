@@ -12,7 +12,7 @@ import AVFoundation
     var title:String!
     var url:NSURL!
     var player:AVPlayer!
- 
+    var song:Song?
     var state:STATE=STATE.NOT_PLAYING
 
     static let manager:MusicManager=MusicManager()
@@ -21,6 +21,7 @@ import AVFoundation
     func setSong(title:String, url:NSURL ){
         self.title=title
         self.url=url
+        self.song=Song(songEntry: self.title, withURL: self.url)
         self.player=AVPlayer(URL: url)
         NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "com.andrew749.muzik.updatestate", object: nil))
         self.play()

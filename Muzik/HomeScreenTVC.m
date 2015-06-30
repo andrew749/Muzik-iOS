@@ -10,6 +10,7 @@
 #import "Song.h"
 #import "CustomDetailSongView.h"
 #import "Muzik-Swift.h"
+#import "Player.h"
 @interface HomeScreenTVC()
 @property (strong,readwrite)UIImage* defaultPlaceholder;
 @end
@@ -32,7 +33,7 @@
     }
 }
 -(void)goToPlayer{
-    
+    [self performSegueWithIdentifier:@"showplayer" sender:self];
 }
 -(void)setDefaultPlaceholder:(UIImage *)defaultPlaceholder{
     self.defaultPlaceholder=defaultPlaceholder;
@@ -113,6 +114,9 @@
         NSIndexPath *indexPath=[self.tableView indexPathForSelectedRow];
         CustomDetailSongView *controller=segue.destinationViewController;
         controller.song=(Song *)[entries objectAtIndex:indexPath.row];
+    }if([segue.identifier isEqualToString:@"showplayer"]){
+        Player* controller= segue.destinationViewController;
+        controller.song=[MusicManager getObjInstance].song;
     }
 }
 @end

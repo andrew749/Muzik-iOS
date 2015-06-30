@@ -27,7 +27,16 @@ class SearchViewSwift:UIViewController,UITableViewDataSource,UITableViewDelegate
             }
             return cell!
     }
-    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        if(MusicManager.getObjInstance().isLoaded()){
+            self.navigationItem.rightBarButtonItem=UIBarButtonItem(title: "Now Playing", style: UIBarButtonItemStyle.Plain, target: self, action: "launchPlayer")
+            self.navigationItem.rightBarButtonItem?.tintColor=UIColor.whiteColor()
+        }
+    }
+    func launchPlayer(){
+        self.performSegueWithIdentifier("showplayer", sender: self)
+    }
     //keyboard search button clicked
     func searchBarSearchButtonClicked(searchBar: UISearchBar){
         var query=searchBar.text
@@ -70,6 +79,9 @@ class SearchViewSwift:UIViewController,UITableViewDataSource,UITableViewDelegate
             let indexPath:NSIndexPath=self.searchDisplayController?.searchResultsTableView.indexPathForSelectedRow() as! NSIndexPath!
             let song:Song=items[indexPath.row] as! Song!
             player.song=song
+        }else if(segue.identifier=="showplayer"){
+            var player=segue.destinationViewController as! Player
+            player.song=MusicManager.getObjInstance().song
         }
     }
     
