@@ -27,6 +27,7 @@ class SearchViewSwift:UIViewController,UITableViewDataSource,UITableViewDelegate
             }
             return cell!
     }
+
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         if(MusicManager.getObjInstance().isLoaded()){
@@ -37,17 +38,29 @@ class SearchViewSwift:UIViewController,UITableViewDataSource,UITableViewDelegate
     func launchPlayer(){
         self.performSegueWithIdentifier("showplayer", sender: self)
     }
+    var alertView:UIAlertView?
+    var activityIndicator:UIActivityIndicatorView?
     //keyboard search button clicked
     func searchBarSearchButtonClicked(searchBar: UISearchBar){
-        searchBar.resignFirstResponder()
+        self.searchDisplayController?.searchBar.endEditing(true)
         var query=searchBar.text
-        dispatch_async(dispatch_get_main_queue(), {()->Void in
+        //set frame for activity indicator
+        alertView=UIAlertView(title: "Loading Song", message: nil, delegate: nil, cancelButtonTitle: "Cancel")
+        activityIndicator=UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+        alertView?.addSubview(activityIndicator!)
+        activityIndicator!.startAnimating()
+        alertView?.show()
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {()->Void in
             self.loadSongs(query)
         });
         
     }
     func songsLoaded(){
-        self.searchDisplayController?.searchResultsTableView.reloadData()
+        dispatch_async(dispatch_get_main_queue(),{
+            self.activityIndicator?.stopAnimating()
+            self.alertView?.dismissWithClickedButtonIndex(0, animated: true)
+            self.searchDisplayController?.searchResultsTableView.reloadData()
+        })
     }
     func loadSongs(query:String){
         let encodedQuery:String=query.stringByReplacingOccurrencesOfString(" ", withString: "_", options: NSStringCompareOptions.LiteralSearch, range: nil)
@@ -56,13 +69,15 @@ class SearchViewSwift:UIViewController,UITableViewDataSource,UITableViewDelegate
         var jsonData=NSData(contentsOfURL: url!)
         var err:NSError?
         self.items.removeAll(keepCapacity: false)
-        if let json: NSArray = NSJSONSerialization.JSONObjectWithData(jsonData!, options: NSJSONReadingOptions.MutableContainers, error: &err) as? NSArray {
-            for var i=0;i<json.count;i++ {
-                var obj: AnyObject=json[i]
-                let title:String=obj["title"] as! String!
-                let sURL:String=(obj["url"] as! NSArray!)[0] as! String
-                let url=NSURL(string:sURL)
-                items.append(Song(songEntry: title, withURL:url))
+        if let data=jsonData{
+            if let json: NSArray = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as? NSArray {
+                for var i=0;i<json.count;i++ {
+                    var obj: AnyObject=json[i]
+                    let title:String=obj["title"] as! String!
+                    let sURL:String=(obj["url"] as! NSArray!)[0] as! String
+                    let url=NSURL(string:sURL)
+                    items.append(Song(songEntry: title, withURL:url))
+                }
             }
         }
         self.songsLoaded()
