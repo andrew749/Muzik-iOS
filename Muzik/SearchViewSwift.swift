@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 class SearchViewSwift:UIViewController,UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate,UISearchDisplayDelegate{
     var items:[Song] = []
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
         return self.items.count
     }
@@ -39,17 +39,17 @@ class SearchViewSwift:UIViewController,UITableViewDataSource,UITableViewDelegate
     }
     //keyboard search button clicked
     func searchBarSearchButtonClicked(searchBar: UISearchBar){
+        searchBar.resignFirstResponder()
         var query=searchBar.text
         dispatch_async(dispatch_get_main_queue(), {()->Void in
             self.loadSongs(query)
-            self.searchDisplayController?.searchResultsTableView.reloadData()
-            searchBar.resignFirstResponder()
         });
         
     }
-    
+    func songsLoaded(){
+        self.searchDisplayController?.searchResultsTableView.reloadData()
+    }
     func loadSongs(query:String){
-        
         let encodedQuery:String=query.stringByReplacingOccurrencesOfString(" ", withString: "_", options: NSStringCompareOptions.LiteralSearch, range: nil)
         let stringUrl:String="http://muzik.elasticbeanstalk.com/search?songname="+encodedQuery
         var url=NSURL(string:stringUrl)
@@ -58,13 +58,14 @@ class SearchViewSwift:UIViewController,UITableViewDataSource,UITableViewDelegate
         self.items.removeAll(keepCapacity: false)
         if let json: NSArray = NSJSONSerialization.JSONObjectWithData(jsonData!, options: NSJSONReadingOptions.MutableContainers, error: &err) as? NSArray {
             for var i=0;i<json.count;i++ {
-                var obj=json[i]
+                var obj: AnyObject=json[i]
                 let title:String=obj["title"] as! String!
                 let sURL:String=(obj["url"] as! NSArray!)[0] as! String
                 let url=NSURL(string:sURL)
                 items.append(Song(songEntry: title, withURL:url))
             }
         }
+        self.songsLoaded()
         
     }
     func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchString searchString: String!) -> Bool{
@@ -76,8 +77,8 @@ class SearchViewSwift:UIViewController,UITableViewDataSource,UITableViewDelegate
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier=="playSongSearch"){
             var player=segue.destinationViewController as! Player
-            let indexPath:NSIndexPath=self.searchDisplayController?.searchResultsTableView.indexPathForSelectedRow() as! NSIndexPath!
-            let song:Song=items[indexPath.row] as! Song!
+            let indexPath:NSIndexPath=self.searchDisplayController?.searchResultsTableView.indexPathForSelectedRow() as NSIndexPath!
+            let song:Song=items[indexPath.row] as Song!
             player.song=song
         }else if(segue.identifier=="showplayer"){
             var player=segue.destinationViewController as! Player

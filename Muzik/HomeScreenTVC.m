@@ -68,7 +68,7 @@
 //method to be implemented which plays the song
 
 -(void)loadImage:(Song *)entry forImageView:(UIImageView *)imageView{
-    if(![[entry getSongURL] isKindOfClass:[NSNull class]])
+    if(![[entry getSongURL] isKindOfClass:[NSNull class]]){
         if(entry.image==nil){
             dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 NSData* data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[entry getSongURL].absoluteString]];
@@ -82,10 +82,10 @@
                 }
                 
             });
-        }
-        else{
+        }else{
             imageView.image=entry.image;
         }
+    }
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -99,11 +99,11 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"homeentry"];
     }
-    UIImageView *iv=[cell viewWithTag:2];
+    UIImageView *iv=(UIImageView *)[cell viewWithTag:2];
     iv.image=self.defaultPlaceholder;
     [self loadImage:entry forImageView:(UIImageView *)[cell viewWithTag:2]];
     name.text=entry.songTitle;
-    UILabel *artistlabel=[cell viewWithTag:3];
+    UILabel *artistlabel=(UILabel *)[cell viewWithTag:3];
     artistlabel.text=entry.artistName;
     
     return cell;
