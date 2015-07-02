@@ -14,7 +14,7 @@ import AVFoundation
     var player:AVPlayer!
     var song:Song?
     var state:STATE=STATE.NOT_PLAYING
-
+    var albumImage:UIImage?
     static let manager:MusicManager=MusicManager()
     override init(){
     }
@@ -69,9 +69,12 @@ import AVFoundation
     }
     func songLength()->CMTime{
         if(player != nil){
-            return player.currentItem.duration
+            if let currentItem=player.currentItem{
+                return currentItem.duration
+                
+            }
         }
-        return CMTime()
+        return CMTimeMake(0, 1)
     }
     func getTime()->CMTime{
         if player != nil{
