@@ -15,6 +15,7 @@ import AVFoundation
     var song:Song?
     var state:STATE=STATE.NOT_PLAYING
     var albumImage:UIImage?
+    var playerItem:AVPlayerItem?
     static let manager:MusicManager=MusicManager()
     override init(){
     }
@@ -22,9 +23,14 @@ import AVFoundation
         self.title=title
         self.url=url
         self.song=Song(songEntry: self.title, withURL: self.url)
-        self.player=AVPlayer(URL: url)
+        self.playerItem=AVPlayerItem(URL: url)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:"itemDidFinishPlaying", name: "finished", object: playerItem)
+        self.player=AVPlayer(playerItem: self.playerItem!)
         NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "com.andrew749.muzik.updatestate", object: nil))
         self.play()
+    }
+    func itemDidFinishPlaying(){
+        state=STATE.STOPPED
     }
     //PLAY
     func play(){
