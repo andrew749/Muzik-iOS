@@ -25,7 +25,7 @@
                                             <rect key="frame" x="1" y="8" width="144" height="144"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="143" id="9T8-HB-Ceq"/>
-                                                <constraint firstAttribute="width" constant="144" id="NQM-ik-8AT"/>
+                                                <constraint firstAttribute="width" constant="144" id="cMX-c8-COi"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -39,10 +39,9 @@
                                         <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g6y-Zm-D10">
                                             <rect key="frame" x="153" y="40" width="439" height="80"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="songname" text="SongName" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Io3-DN-kxQ">
-                                                    <rect key="frame" x="8" y="8" width="423" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="songname" text="SongName" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="Io3-DN-kxQ">
+                                                    <rect key="frame" x="8" y="0.0" width="423" height="43"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="V2s-Nc-7UI"/>
                                                         <constraint firstAttribute="width" constant="86" id="ViM-q8-awV"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -62,6 +61,9 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Artist" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Go-hg-adp">
                                                     <rect key="frame" x="8" y="51" width="423" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="qvd-DF-98G"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -69,31 +71,31 @@
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="Io3-DN-kxQ" firstAttribute="leading" secondItem="7Go-hg-adp" secondAttribute="leading" id="CVT-IX-WtR"/>
-                                                <constraint firstItem="7Go-hg-adp" firstAttribute="bottom" secondItem="g6y-Zm-D10" secondAttribute="bottomMargin" id="EWk-xM-gmT"/>
-                                                <constraint firstItem="7Go-hg-adp" firstAttribute="trailing" secondItem="g6y-Zm-D10" secondAttribute="trailingMargin" id="LG5-Ia-3r8"/>
-                                                <constraint firstItem="Io3-DN-kxQ" firstAttribute="trailing" secondItem="7Go-hg-adp" secondAttribute="trailing" id="SYm-Cp-Nbp"/>
-                                                <constraint firstItem="Io3-DN-kxQ" firstAttribute="top" secondItem="g6y-Zm-D10" secondAttribute="topMargin" id="Y4a-wW-uXR"/>
-                                                <constraint firstItem="7Go-hg-adp" firstAttribute="leading" secondItem="g6y-Zm-D10" secondAttribute="leadingMargin" id="b4Z-Rx-Di6"/>
-                                                <constraint firstItem="7Go-hg-adp" firstAttribute="top" secondItem="Io3-DN-kxQ" secondAttribute="bottom" constant="22" id="pKE-ey-hRd"/>
+                                                <constraint firstItem="7Go-hg-adp" firstAttribute="top" secondItem="Io3-DN-kxQ" secondAttribute="bottom" constant="8" symbolic="YES" id="1PE-EL-vmb"/>
+                                                <constraint firstItem="Io3-DN-kxQ" firstAttribute="trailing" secondItem="7Go-hg-adp" secondAttribute="trailing" id="81S-bK-DPi"/>
+                                                <constraint firstItem="7Go-hg-adp" firstAttribute="bottom" secondItem="g6y-Zm-D10" secondAttribute="bottomMargin" id="DBG-pb-UsG"/>
+                                                <constraint firstItem="Io3-DN-kxQ" firstAttribute="leading" secondItem="g6y-Zm-D10" secondAttribute="leadingMargin" id="Mma-md-SkP"/>
+                                                <constraint firstItem="Io3-DN-kxQ" firstAttribute="trailing" secondItem="g6y-Zm-D10" secondAttribute="trailingMargin" id="kk0-2h-oY5"/>
+                                                <constraint firstItem="Io3-DN-kxQ" firstAttribute="top" secondItem="g6y-Zm-D10" secondAttribute="top" id="sEq-Tj-xXV"/>
+                                                <constraint firstItem="7Go-hg-adp" firstAttribute="leading" secondItem="Io3-DN-kxQ" secondAttribute="leading" id="v2V-iz-pFp"/>
                                             </constraints>
                                         </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="g6y-Zm-D10" firstAttribute="top" secondItem="xo9-Lq-I1I" secondAttribute="topMargin" constant="32" id="8Ch-fZ-O8g"/>
+                                        <constraint firstItem="Ony-dm-q4h" firstAttribute="centerY" secondItem="g6y-Zm-D10" secondAttribute="centerY" id="5Xz-7b-O9F"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Ony-dm-q4h" secondAttribute="bottom" constant="-0.5" id="5lt-tV-RqZ"/>
+                                        <constraint firstItem="g6y-Zm-D10" firstAttribute="leading" secondItem="Ony-dm-q4h" secondAttribute="trailing" constant="8" symbolic="YES" id="8Wf-1S-3BG"/>
+                                        <constraint firstItem="g6y-Zm-D10" firstAttribute="top" secondItem="xo9-Lq-I1I" secondAttribute="topMargin" constant="32" id="Br3-5Z-bvB"/>
                                         <constraint firstItem="Ony-dm-q4h" firstAttribute="leading" secondItem="xo9-Lq-I1I" secondAttribute="leadingMargin" constant="-7" id="D2d-hz-gkz"/>
-                                        <constraint firstItem="g6y-Zm-D10" firstAttribute="leading" secondItem="Ony-dm-q4h" secondAttribute="trailing" constant="8" symbolic="YES" id="DRU-Zk-ENV"/>
-                                        <constraint firstItem="Ony-dm-q4h" firstAttribute="top" secondItem="xo9-Lq-I1I" secondAttribute="topMargin" id="I39-yh-Spw"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="g6y-Zm-D10" secondAttribute="trailing" id="NUP-1I-Hmv"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="g6y-Zm-D10" secondAttribute="trailing" constant="-7" id="NV8-Er-Uu7"/>
+                                        <constraint firstItem="Ony-dm-q4h" firstAttribute="top" secondItem="xo9-Lq-I1I" secondAttribute="topMargin" id="NpT-Aa-7mn"/>
                                         <constraint firstItem="Ony-dm-q4h" firstAttribute="leading" secondItem="xo9-Lq-I1I" secondAttribute="leadingMargin" constant="-7" id="Srh-wA-Hf5"/>
                                         <constraint firstItem="Ony-dm-q4h" firstAttribute="bottom" secondItem="xo9-Lq-I1I" secondAttribute="bottomMargin" id="TWV-Wq-hB2"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Ony-dm-q4h" secondAttribute="bottom" id="VeT-Nw-few"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Ony-dm-q4h" secondAttribute="bottom" constant="6.5" id="Vzv-02-I7J"/>
-                                        <constraint firstItem="Ony-dm-q4h" firstAttribute="leading" secondItem="xo9-Lq-I1I" secondAttribute="leadingMargin" id="e8z-g3-Idp"/>
+                                        <constraint firstItem="Ony-dm-q4h" firstAttribute="leading" secondItem="xo9-Lq-I1I" secondAttribute="leadingMargin" constant="-14" id="azn-vc-U12"/>
                                         <constraint firstItem="Ony-dm-q4h" firstAttribute="top" secondItem="xo9-Lq-I1I" secondAttribute="topMargin" id="gpJ-hZ-ukq"/>
                                         <constraint firstItem="Ony-dm-q4h" firstAttribute="top" secondItem="xo9-Lq-I1I" secondAttribute="topMargin" id="jVr-Am-kOV"/>
                                         <constraint firstItem="Ony-dm-q4h" firstAttribute="bottom" secondItem="xo9-Lq-I1I" secondAttribute="bottomMargin" id="okm-FU-oVB"/>
-                                        <constraint firstItem="Ony-dm-q4h" firstAttribute="centerY" secondItem="g6y-Zm-D10" secondAttribute="centerY" id="thi-ny-WV4"/>
                                         <constraint firstItem="Ony-dm-q4h" firstAttribute="leading" secondItem="xo9-Lq-I1I" secondAttribute="leadingMargin" constant="-7" id="vct-6h-mBm"/>
                                     </constraints>
                                     <variation key="default">
