@@ -73,7 +73,11 @@ NSMutableArray * songs;
     for(id element in array){
         for (NSString* key in element){
             @try {
-                [names addObject:[[Song alloc] initSongEntry:key withURL:[NSURL URLWithString:element[key]]]];
+                if (element[key]){
+                    NSURL* url=[NSURL URLWithString:element[key]];
+                    if(url)
+                    [names addObject:[[Song alloc] initSongEntry:key withURL:url]];
+                }
             }
             @catch (NSException *exception) {
                 
