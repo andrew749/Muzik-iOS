@@ -48,7 +48,7 @@
 }
 -(NSMutableArray *)getElements{
     NSMutableArray *elements=[[NSMutableArray alloc]init];
-    NSData* data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://muzik.elasticbeanstalk.com/top"]];
+    NSData* data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://muzik-api.herokuapp.com/top"]];
     NSArray* array = [NSJSONSerialization
                       JSONObjectWithData:data //1
                       options:NSJSONReadingMutableLeaves

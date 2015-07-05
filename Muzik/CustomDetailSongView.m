@@ -60,25 +60,27 @@ NSMutableArray * songs;
 }
 -(void)getLinks:(NSString *)songName{
     NSMutableArray* names=[[NSMutableArray alloc] init];
-    NSString * baseurl=@"http://muzik.elasticbeanstalk.com/search?songname=";
+    NSString * baseurl=@"http://muzik-api.herokuapp.com/search?songname=";
     NSString * encodedName=[songName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSString * finalUrl=[NSString stringWithFormat:@"%@%@",baseurl,encodedName];
     NSData* data = [NSData dataWithContentsOfURL:[NSURL URLWithString:finalUrl]];
-    NSArray* array = [NSJSONSerialization
+    NSDictionary* jsondata = [NSJSONSerialization
                       JSONObjectWithData:data //1
                       
                       options:NSJSONReadingMutableLeaves
                       error:nil];
+    NSArray* array=jsondata[@"url"];
     for(id element in array){
-        NSString *sName=element[@"title"];
-        @try {
-            [names addObject:[[Song alloc] initSongEntry:sName withURL:[NSURL URLWithString:element[@"url"] [0]]]];
-        }
-        @catch (NSException *exception) {
-            
-        }
-        @finally {
-            
+        for (NSString* key in element){
+            @try {
+                [names addObject:[[Song alloc] initSongEntry:key withURL:[NSURL URLWithString:element[key]]]];
+            }
+            @catch (NSException *exception) {
+                
+            }
+            @finally {
+                
+            }
         }
     }
     
