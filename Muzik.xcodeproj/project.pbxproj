@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B01CD9F51AF1B731005340FE /* SearchViewSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01CD9F41AF1B731005340FE /* SearchViewSwift.swift */; };
+		B055B89F1B4CCFA800EC7674 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B055B89E1B4CCFA800EC7674 /* Constants.swift */; };
 		B0693EA31B229A78005F1D93 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0693EA21B229A78005F1D93 /* AudioToolbox.framework */; };
 		B0693EA51B229E3F005F1D93 /* CustomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0693EA41B229E3F005F1D93 /* CustomController.swift */; };
 		B080AA131A7D69BD006D562E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B080AA121A7D69BD006D562E /* main.m */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		B01CD9F31AF1B730005340FE /* Muzik-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Muzik-Bridging-Header.h"; sourceTree = "<group>"; };
 		B01CD9F41AF1B731005340FE /* SearchViewSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewSwift.swift; sourceTree = "<group>"; };
+		B055B89E1B4CCFA800EC7674 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B0693EA21B229A78005F1D93 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		B0693EA41B229E3F005F1D93 /* CustomController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomController.swift; sourceTree = "<group>"; };
 		B080AA0D1A7D69BD006D562E /* Muzik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Muzik.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +122,7 @@
 				B08AA01A1AAAA0D700F95A90 /* Player.h */,
 				B08AA01B1AAAA0D700F95A90 /* Player.m */,
 				B0693EA41B229E3F005F1D93 /* CustomController.swift */,
+				B055B89E1B4CCFA800EC7674 /* Constants.swift */,
 				B0E12BDF1AF51D7A00BBC62F /* MusicManager.swift */,
 				B0F6C0211B4209A2008936FB /* STATE.swift */,
 				B01CD9F41AF1B731005340FE /* SearchViewSwift.swift */,
@@ -286,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B080AA161A7D69BD006D562E /* AppDelegate.m in Sources */,
+				B055B89F1B4CCFA800EC7674 /* Constants.swift in Sources */,
 				B0B841421AA412380088192D /* CustomDetailSongView.m in Sources */,
 				B080AA3B1A7D69E7006D562E /* Song.m in Sources */,
 				B0F6C0221B4209A2008936FB /* STATE.swift in Sources */,

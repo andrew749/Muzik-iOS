@@ -60,10 +60,7 @@ NSMutableArray * songs;
 }
 -(void)getLinks:(NSString *)songName{
     NSMutableArray* names=[[NSMutableArray alloc] init];
-    NSString * baseurl=@"http://muzik-api.herokuapp.com/search?songname=";
-    NSString * encodedName=[songName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSString * finalUrl=[NSString stringWithFormat:@"%@%@",baseurl,encodedName];
-    NSData* data = [NSData dataWithContentsOfURL:[NSURL URLWithString:finalUrl]];
+    NSData* data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[Constants searchURL:songName]]];
     NSDictionary* jsondata = [NSJSONSerialization
                       JSONObjectWithData:data //1
                       
