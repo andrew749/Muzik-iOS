@@ -34,6 +34,8 @@ NSMutableArray * songs;
     if([[MusicManager getObjInstance] isLoaded]){
         self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithTitle:@"Now Playing" style:UIBarButtonItemStylePlain target:self action:@selector(openPlayer)];
         self.navigationItem.rightBarButtonItem.tintColor=[UIColor whiteColor];
+    }else{
+        self.navigationItem.rightBarButtonItem=nil;
     }
 }
 -(void)openPlayer{
