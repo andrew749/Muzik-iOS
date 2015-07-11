@@ -65,20 +65,21 @@ class SearchViewSwift:UIViewController,UITableViewDataSource,UITableViewDelegate
         })
     }
     func loadSongs(query:String){
-        let encodedQuery:String=query.stringByReplacingOccurrencesOfString(" ", withString: "_", options: NSStringCompareOptions.LiteralSearch, range: nil)
-        let stringUrl:String="http://muzik.elasticbeanstalk.com/search?songname="+encodedQuery
+        let stringUrl:String=Constants.searchURL(query)
         var url=NSURL(string:stringUrl)
         var jsonData=NSData(contentsOfURL: url!)
         var err:NSError?
         self.items.removeAll(keepCapacity: false)
         if let data=jsonData{
-            if let json: NSArray = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as? NSArray {
-                for var i=0;i<json.count;i++ {
-                    var obj: AnyObject=json[i]
-                    let title:String=obj["title"] as! String!
-                    let sURL:String=(obj["url"] as! NSArray!)[0] as! String
-                    let url=NSURL(string:sURL)
-                    items.append(Song(songEntry: title, withURL:url))
+            if let json: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as? NSDictionary {
+                for var i=0;i<json["url"]!.count;i++ {
+                    var obj: NSDictionary=json["url"]![i]! as! NSDictionary
+                    for entry in obj{
+                        let title:String=entry.key as! String
+                        let sURL:String=entry.value as! String
+                        let url=NSURL(string:sURL)
+                        items.append(Song(songEntry: title, withURL:url))
+                    }
                 }
             }
         }

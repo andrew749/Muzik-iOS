@@ -10,7 +10,7 @@
 #import "Muzik-Swift.h"
 #import <UIKit/UIKit.h>
 @import AVFoundation;
-@interface Player ()
+@interface Player ()<LoadingDelegate>
 @property (strong,readwrite)UIImage* playImage;
 @property (strong,readwrite)UIImage* pauseImage;
 @property (weak, nonatomic) IBOutlet UILabel *currentTime;
@@ -40,6 +40,8 @@ MusicManager* manager;
         manager.albumImage=self.image;
     }else if(manager.albumImage){
         self.albumImage.image=manager.albumImage;
+    }else{
+        [ImageLoader getImageAsync:self query:[song getSongTitle]];
     }
     if(manager.state == STATENOT_PLAYING|| manager.state==STATESTOPPED){
         [self startSong];
@@ -56,6 +58,12 @@ MusicManager* manager;
                 [playButton setImage:playImage forState:UIControlStateNormal];
             }
         }
+    }
+}
+-(void)doneLoading:(id __nullable)data{
+    if ((UIImage*)data){
+        dispatch_async(dispatch_get_main_queue(), ^{self.albumImage.image = (UIImage *)data;});
+        [MusicManager getObjInstance].albumImage=(UIImage *)data;
     }
 }
 -(void)viewDidDisappear:(BOOL)animated{

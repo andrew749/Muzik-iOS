@@ -25,5 +25,9 @@ import Foundation
         let encodedQuery=query.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
         return "\(baseURL())/search?songname=\(encodedQuery!)"
     }
+    class func imageURL(query:String)->String{
+        let encodedQuery=query.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
+        return "https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=\(encodedQuery!)"
+    }
     
 }

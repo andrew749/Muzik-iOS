@@ -24,6 +24,7 @@
 		B0B841421AA412380088192D /* CustomDetailSongView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B841411AA412380088192D /* CustomDetailSongView.m */; };
 		B0CA5EBE1A7DF8D500EEBDB2 /* HomeScreenTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B0CA5EBD1A7DF8D500EEBDB2 /* HomeScreenTVC.m */; };
 		B0DA770B1B3CFEBE00B31FAA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B080AA201A7D69BD006D562E /* Images.xcassets */; };
+		B0DC20691B50B9B600AF7C5C /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DC20681B50B9B600AF7C5C /* ImageLoader.swift */; };
 		B0E12BE01AF51D7A00BBC62F /* MusicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E12BDF1AF51D7A00BBC62F /* MusicManager.swift */; };
 		B0F6C0221B4209A2008936FB /* STATE.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F6C0211B4209A2008936FB /* STATE.swift */; };
 		B0F6C0251B4214DE008936FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0F6C0231B4214DE008936FB /* Main.storyboard */; };
@@ -67,6 +68,7 @@
 		B0B841411AA412380088192D /* CustomDetailSongView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomDetailSongView.m; sourceTree = "<group>"; };
 		B0CA5EBC1A7DF8D500EEBDB2 /* HomeScreenTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeScreenTVC.h; sourceTree = "<group>"; };
 		B0CA5EBD1A7DF8D500EEBDB2 /* HomeScreenTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeScreenTVC.m; sourceTree = "<group>"; };
+		B0DC20681B50B9B600AF7C5C /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		B0E12BDF1AF51D7A00BBC62F /* MusicManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicManager.swift; sourceTree = "<group>"; };
 		B0F6C0211B4209A2008936FB /* STATE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STATE.swift; sourceTree = "<group>"; };
 		B0F6C0241B4214DE008936FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Muzik/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				B0693EA41B229E3F005F1D93 /* CustomController.swift */,
 				B055B89E1B4CCFA800EC7674 /* Constants.swift */,
 				B0E12BDF1AF51D7A00BBC62F /* MusicManager.swift */,
+				B0DC20681B50B9B600AF7C5C /* ImageLoader.swift */,
 				B0F6C0211B4209A2008936FB /* STATE.swift */,
 				B01CD9F41AF1B731005340FE /* SearchViewSwift.swift */,
 				B0F6C0231B4214DE008936FB /* Main.storyboard */,
@@ -290,6 +293,7 @@
 			files = (
 				B080AA161A7D69BD006D562E /* AppDelegate.m in Sources */,
 				B055B89F1B4CCFA800EC7674 /* Constants.swift in Sources */,
+				B0DC20691B50B9B600AF7C5C /* ImageLoader.swift in Sources */,
 				B0B841421AA412380088192D /* CustomDetailSongView.m in Sources */,
 				B080AA3B1A7D69E7006D562E /* Song.m in Sources */,
 				B0F6C0221B4209A2008936FB /* STATE.swift in Sources */,
