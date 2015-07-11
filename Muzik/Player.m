@@ -34,19 +34,20 @@ MusicManager* manager;
     [songLabel setText:[song getSongTitle]];
     playImage=[UIImage imageNamed:@"playbuttonblack.png"];
     pauseImage=[UIImage imageNamed:@"pausebuttonblack.png"];
+    manager=[MusicManager getObjInstance];
     if(self.image){
         self.albumImage.image=self.image;
-    }else if([MusicManager getObjInstance].albumImage){
-        self.albumImage.image=[MusicManager getObjInstance].albumImage;
+        manager.albumImage=self.image;
+    }else if(manager.albumImage){
+        self.albumImage.image=manager.albumImage;
     }
-    manager=[MusicManager getObjInstance];
-    if(manager.state == STATENOT_PLAYING|| manager.state
-       ==STATESTOPPED){
+    if(manager.state == STATENOT_PLAYING|| manager.state==STATESTOPPED){
         [self startSong];
         [playButton setImage:pauseImage forState:UIControlStateNormal];
     }else{
         if([manager isLoaded]){
             if (![manager.url.absoluteString isEqualToString:[self.song getSongURL].absoluteString]){
+                self.albumImage.image=[manager albumImage];
                 [self startSong];
             }
             if(manager.state == STATEPLAYING){

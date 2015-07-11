@@ -9,9 +9,12 @@
 import Foundation
 
 @objc class Constants:NSObject{
+    class func backupURL()->String{
+        return "http://muzik-api.herokuapp.com"
+    }
     
     class func baseURL()->String{
-        return "http://muzik-dev.elasticbeanstalk.com"
+        return "http://muzik.elasticbeanstalk.com"
     }
     
     class func topURL()->String{
