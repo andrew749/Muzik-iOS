@@ -35,22 +35,24 @@ MusicManager* manager;
     playImage=[UIImage imageNamed:@"playbuttonblack.png"];
     pauseImage=[UIImage imageNamed:@"pausebuttonblack.png"];
     manager=[MusicManager getObjInstance];
-    if(self.image){
-        self.albumImage.image=self.image;
-        manager.albumImage=self.image;
-    }else if(manager.albumImage){
-        self.albumImage.image=manager.albumImage;
-    }else{
-        [ImageLoader getImageAsync:self query:[song getSongTitle]];
-    }
+    
     if(manager.state == STATENOT_PLAYING|| manager.state==STATESTOPPED){
         [self startSong];
+        if (self.image == nil){
+            [ImageLoader getImageAsync:self query:[song getSongTitle]];
+        }else{
+            manager.albumImage=self.image;
+            self.albumImage.image=self.image;
+        }
         [playButton setImage:pauseImage forState:UIControlStateNormal];
     }else{
         if([manager isLoaded]){
             if (![manager.url.absoluteString isEqualToString:[self.song getSongURL].absoluteString]){
-                self.albumImage.image=[manager albumImage];
                 [self startSong];
+                [ImageLoader getImageAsync:self query:[song getSongTitle]];
+            }else{
+                [self updateBar];
+                self.albumImage.image=[manager albumImage];
             }
             if(manager.state == STATEPLAYING){
                 [playButton setImage:pauseImage forState:UIControlStateNormal];

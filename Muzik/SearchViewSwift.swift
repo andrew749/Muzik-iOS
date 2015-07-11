@@ -78,7 +78,9 @@ class SearchViewSwift:UIViewController,UITableViewDataSource,UITableViewDelegate
                         let title:String=entry.key as! String
                         let sURL:String=entry.value as! String
                         let url=NSURL(string:sURL)
-                        items.append(Song(songEntry: title, withURL:url))
+                        if let safeUrl = url{
+                            items.append(Song(songEntry: title, withURL:safeUrl))
+                        }
                     }
                 }
             }
