@@ -49,7 +49,7 @@ class SearchViewSwift:UIViewController,UITableViewDataSource,UITableViewDelegate
         //set frame for activity indicator
         alertView=UIAlertView(title: "Loading Song", message: nil, delegate: nil, cancelButtonTitle: "Cancel")
         activityIndicator=UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
-        alertView?.addSubview(activityIndicator!)
+        alertView?.setValue(activityIndicator, forKey: "accessoryView")
         activityIndicator!.startAnimating()
         alertView?.show()
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {()->Void in
