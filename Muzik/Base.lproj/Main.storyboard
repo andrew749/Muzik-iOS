@@ -219,11 +219,12 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="17q-AL-i8t">
                                 <rect key="frame" x="24" y="72" width="552" height="287"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="musicimage.png" translatesAutoresizingMaskIntoConstraints="NO" id="hkk-Lp-HP3">
-                                        <rect key="frame" x="150" y="18" width="252" height="252"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="musicimage.png" translatesAutoresizingMaskIntoConstraints="NO" id="hkk-Lp-HP3">
+                                        <rect key="frame" x="26" y="-106" width="500" height="500"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="hkk-Lp-HP3" secondAttribute="height" multiplier="1:1" id="Sb9-Dh-biZ"/>
                                             <constraint firstAttribute="width" constant="330" id="UQa-7t-xDf"/>
+                                            <constraint firstAttribute="width" constant="252" id="XSH-y8-vG0"/>
                                             <constraint firstAttribute="width" constant="330" id="Zem-VK-QYZ"/>
                                             <constraint firstAttribute="width" secondItem="hkk-Lp-HP3" secondAttribute="height" multiplier="1:1" id="dhm-gC-DGZ"/>
                                             <constraint firstAttribute="width" constant="313" id="p8s-BJ-wAa"/>
@@ -233,6 +234,7 @@
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="UQa-7t-xDf"/>
+                                                <exclude reference="XSH-y8-vG0"/>
                                                 <exclude reference="Zem-VK-QYZ"/>
                                                 <exclude reference="dhm-gC-DGZ"/>
                                                 <exclude reference="p8s-BJ-wAa"/>

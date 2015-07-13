@@ -62,6 +62,10 @@ MusicManager* manager;
         }
     }
 }
+-(void)setImage:(UIImage *)image{
+    _image=image;
+    [self.albumImage sizeToFit];
+}
 -(void)doneLoading:(id __nullable)data{
     if ((UIImage*)data){
         dispatch_async(dispatch_get_main_queue(), ^{self.albumImage.image = (UIImage *)data;});
