@@ -219,7 +219,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="17q-AL-i8t">
                                 <rect key="frame" x="24" y="72" width="552" height="287"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="musicimage.png" translatesAutoresizingMaskIntoConstraints="NO" id="hkk-Lp-HP3">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="musicimage.png" translatesAutoresizingMaskIntoConstraints="NO" id="hkk-Lp-HP3">
                                         <rect key="frame" x="150" y="18" width="252" height="252"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="hkk-Lp-HP3" secondAttribute="height" multiplier="1:1" id="Sb9-Dh-biZ"/>
@@ -255,6 +255,11 @@
                                     <constraint firstItem="hkk-Lp-HP3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="17q-AL-i8t" secondAttribute="leading" constant="8" id="rZO-rd-jW0"/>
                                     <constraint firstAttribute="centerY" secondItem="hkk-Lp-HP3" secondAttribute="centerY" id="xgT-7O-uaM"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Fkg-7R-9ft"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fc-qN-Mbg">
                                 <rect key="frame" x="551" y="465" width="34" height="30"/>
