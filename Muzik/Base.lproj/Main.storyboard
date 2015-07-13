@@ -147,12 +147,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fc-qN-Mbg">
-                                <rect key="frame" x="534" y="474" width="50" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMO-5c-fh7">
                                 <rect key="frame" x="280" y="503" width="40" height="40"/>
                                 <constraints>
@@ -166,14 +160,20 @@
                                     <action selector="playButtonClick:" destination="gcJ-MT-Ovq" eventType="touchUpInside" id="phJ-eJ-iIl"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="tJp-v7-Q2t">
-                                <rect key="frame" x="14" y="436" width="572" height="31"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="tJp-v7-Q2t">
+                                <rect key="frame" x="14" y="407" width="572" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Vos-AK-eJA"/>
+                                </constraints>
                                 <connections>
                                     <action selector="sliderPanned:" destination="gcJ-MT-Ovq" eventType="valueChanged" id="Fca-fd-9Y0"/>
                                 </connections>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5LG-MG-0iP">
-                                <rect key="frame" x="16" y="474" width="50" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5LG-MG-0iP">
+                                <rect key="frame" x="16" y="465" width="34" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="BQW-zn-zxT"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -199,11 +199,12 @@
                                     <action selector="stopClick:" destination="gcJ-MT-Ovq" eventType="touchUpInside" id="xId-V9-Ok8"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Song Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPE-TX-PgE">
-                                <rect key="frame" x="16" y="407" width="568" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPE-TX-PgE">
+                                <rect key="frame" x="16" y="367" width="568" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="568" id="AK8-jj-0UE"/>
                                     <constraint firstAttribute="width" constant="91" id="VJK-3j-AL1"/>
+                                    <constraint firstAttribute="height" constant="40" id="vGj-V5-AeK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -215,11 +216,11 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="17q-AL-i8t">
-                                <rect key="frame" x="16" y="72" width="568" height="327"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="17q-AL-i8t">
+                                <rect key="frame" x="24" y="72" width="552" height="287"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="musicimage.png" translatesAutoresizingMaskIntoConstraints="NO" id="hkk-Lp-HP3">
-                                        <rect key="frame" x="140" y="6" width="288" height="288"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="musicimage.png" translatesAutoresizingMaskIntoConstraints="NO" id="hkk-Lp-HP3">
+                                        <rect key="frame" x="150" y="18" width="252" height="252"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="hkk-Lp-HP3" secondAttribute="height" multiplier="1:1" id="Sb9-Dh-biZ"/>
                                             <constraint firstAttribute="width" constant="330" id="UQa-7t-xDf"/>
@@ -250,11 +251,17 @@
                                 <constraints>
                                     <constraint firstAttribute="centerX" secondItem="hkk-Lp-HP3" secondAttribute="centerX" id="7Ze-gt-ygp"/>
                                     <constraint firstItem="hkk-Lp-HP3" firstAttribute="width" secondItem="17q-AL-i8t" secondAttribute="height" multiplier="96:109" id="Fkg-7R-9ft"/>
-                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="hkk-Lp-HP3" secondAttribute="trailing" constant="8" id="rRZ-E9-9mL"/>
-                                    <constraint firstItem="hkk-Lp-HP3" firstAttribute="leading" relation="lessThanOrEqual" secondItem="17q-AL-i8t" secondAttribute="leading" constant="8" id="rZO-rd-jW0"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hkk-Lp-HP3" secondAttribute="trailing" constant="8" id="rRZ-E9-9mL"/>
+                                    <constraint firstItem="hkk-Lp-HP3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="17q-AL-i8t" secondAttribute="leading" constant="8" id="rZO-rd-jW0"/>
                                     <constraint firstAttribute="centerY" secondItem="hkk-Lp-HP3" secondAttribute="centerY" id="xgT-7O-uaM"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fc-qN-Mbg">
+                                <rect key="frame" x="551" y="465" width="34" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -318,15 +325,16 @@
                                 <exclude reference="FJu-FX-1yf"/>
                                 <exclude reference="co1-Qh-rYB"/>
                                 <exclude reference="eOz-dc-Bbh"/>
+                                <exclude reference="6bi-hB-Kao"/>
+                                <exclude reference="7SI-L6-WVR"/>
+                                <exclude reference="H26-7p-rGk"/>
+                                <exclude reference="OeU-8x-iM5"/>
+                                <exclude reference="v1c-VQ-7Td"/>
                                 <exclude reference="BWY-Xv-2Ph"/>
                                 <exclude reference="Cif-au-Te4"/>
                                 <exclude reference="eds-Ho-G81"/>
                                 <exclude reference="i4n-Pa-Wzc"/>
                                 <exclude reference="oBR-m2-aem"/>
-                                <exclude reference="6bi-hB-Kao"/>
-                                <exclude reference="7SI-L6-WVR"/>
-                                <exclude reference="H26-7p-rGk"/>
-                                <exclude reference="v1c-VQ-7Td"/>
                                 <exclude reference="2O9-Bk-Eba"/>
                                 <exclude reference="7eA-Bb-Pda"/>
                                 <exclude reference="EuK-jd-hxC"/>
@@ -339,9 +347,9 @@
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="constraints">
-                                <include reference="oBR-m2-aem"/>
                                 <include reference="6bi-hB-Kao"/>
                                 <exclude reference="7SI-L6-WVR"/>
+                                <include reference="oBR-m2-aem"/>
                             </mask>
                         </variation>
                     </view>
@@ -358,7 +366,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VfW-vW-Noc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2790" y="2007"/>
+            <point key="canvasLocation" x="2539" y="2063"/>
         </scene>
         <!--Custom Detail Song View-->
         <scene sceneID="nrj-Y9-Bvn">
