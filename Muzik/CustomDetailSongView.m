@@ -18,10 +18,17 @@
 
 
 NSMutableArray * songs;
+-(id)init{
+    self=[super init];
+    if (self){
+        songs=[[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
 -(void)viewDidLoad{
     [super viewDidLoad];
     [song_Label setText:[song getSongTitle]];
-    songs=[[NSMutableArray alloc] init ];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [self.spinner startAnimating];
         [self getLinks:[song getSongTitle]];
@@ -100,7 +107,6 @@ NSMutableArray * songs;
         NSIndexPath *indexPath=[resultsTable indexPathForSelectedRow];
         Player *controller=segue.destinationViewController;
         controller.song=(Song *)[songs objectAtIndex:indexPath.row];
-        controller.image=song.image;
     }
 }
 
