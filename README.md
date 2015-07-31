@@ -1,6 +1,6 @@
 # Muzik-iOS
 
-Work in progress client for ios to use the muzik web api.
+Work in progress client for ios that uses the muzik web api.
 
 
-ETA public release May 2015.
+
