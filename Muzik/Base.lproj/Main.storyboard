@@ -387,8 +387,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="QyR-eW-9uz">
-                                <rect key="frame" x="16" y="280" width="568" height="300"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Song Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEp-kh-Hzv">
+                                <rect key="frame" x="0.0" y="251" width="600" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="vW5-MA-Xo0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="musicimage.png" translatesAutoresizingMaskIntoConstraints="NO" id="xl4-AH-NZu">
+                                <rect key="frame" x="215" y="72" width="171" height="171"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="1F5-Gs-7as"/>
+                                    <constraint firstAttribute="width" secondItem="xl4-AH-NZu" secondAttribute="height" multiplier="1:1" id="4RJ-HA-tSg"/>
+                                    <constraint firstAttribute="height" constant="200" id="FuN-0b-KxU"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1F5-Gs-7as"/>
+                                        <exclude reference="FuN-0b-KxU"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="KVK-WB-7Pr">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="QyR-eW-9uz">
+                                <rect key="frame" x="16" y="280" width="568" height="271"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="Xn1-SB-axg"/>
@@ -415,6 +441,11 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Xn1-SB-axg"/>
+                                    </mask>
+                                </variation>
                                 <variation key="heightClass=compact" ambiguous="YES">
                                     <rect key="frame" x="16" y="609" width="568" height="300"/>
                                 </variation>
@@ -426,32 +457,6 @@
                                     <outlet property="delegate" destination="Nq2-kf-UWw" id="Us1-0p-lnD"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEp-kh-Hzv">
-                                <rect key="frame" x="0.0" y="251" width="600" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="vW5-MA-Xo0"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="musicimage.png" translatesAutoresizingMaskIntoConstraints="NO" id="xl4-AH-NZu">
-                                <rect key="frame" x="215" y="72" width="171" height="171"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="1F5-Gs-7as"/>
-                                    <constraint firstAttribute="width" secondItem="xl4-AH-NZu" secondAttribute="height" multiplier="1:1" id="4RJ-HA-tSg"/>
-                                    <constraint firstAttribute="height" constant="200" id="FuN-0b-KxU"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="1F5-Gs-7as"/>
-                                        <exclude reference="FuN-0b-KxU"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="KVK-WB-7Pr">
-                                <rect key="frame" x="290" y="290" width="20" height="20"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -620,6 +625,6 @@
         <image name="stopbuttonblack.png" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UPv-xo-aTC"/>
+        <segue reference="ybu-mG-5Q9"/>
     </inferredMetricsTieBreakers>
 </document>
