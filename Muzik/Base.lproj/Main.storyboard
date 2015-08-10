@@ -160,15 +160,6 @@
                                     <action selector="playButtonClick:" destination="gcJ-MT-Ovq" eventType="touchUpInside" id="phJ-eJ-iIl"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="tJp-v7-Q2t">
-                                <rect key="frame" x="14" y="407" width="572" height="51"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Vos-AK-eJA"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="sliderPanned:" destination="gcJ-MT-Ovq" eventType="valueChanged" id="Fca-fd-9Y0"/>
-                                </connections>
-                            </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5LG-MG-0iP">
                                 <rect key="frame" x="16" y="465" width="34" height="30"/>
                                 <constraints>
@@ -200,11 +191,11 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPE-TX-PgE">
-                                <rect key="frame" x="16" y="367" width="568" height="40"/>
+                                <rect key="frame" x="16" y="387" width="568" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="568" id="AK8-jj-0UE"/>
                                     <constraint firstAttribute="width" constant="91" id="VJK-3j-AL1"/>
-                                    <constraint firstAttribute="height" constant="40" id="vGj-V5-AeK"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="vGj-V5-AeK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -217,10 +208,10 @@
                                 </variation>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="17q-AL-i8t">
-                                <rect key="frame" x="24" y="72" width="552" height="287"/>
+                                <rect key="frame" x="24" y="72" width="552" height="307"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="musicimage.png" translatesAutoresizingMaskIntoConstraints="NO" id="hkk-Lp-HP3">
-                                        <rect key="frame" x="26" y="-106" width="500" height="500"/>
+                                        <rect key="frame" x="26" y="-97" width="500" height="501"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="hkk-Lp-HP3" secondAttribute="height" multiplier="1:1" id="Sb9-Dh-biZ"/>
                                             <constraint firstAttribute="width" constant="330" id="UQa-7t-xDf"/>
@@ -269,6 +260,15 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="tJp-v7-Q2t">
+                                <rect key="frame" x="14" y="407" width="572" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Vos-AK-eJA"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderPanned:" destination="gcJ-MT-Ovq" eventType="valueChanged" id="Fca-fd-9Y0"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
